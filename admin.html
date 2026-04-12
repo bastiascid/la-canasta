@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - La Canasta</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background-color: var(--color-bg-light); padding-top: 80px; }
+        .admin-container { max-width: 900px; margin: 0 auto; padding: 2rem; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow-md); margin-bottom: 4rem;}
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;}
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text-main); }
+        .form-control { width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; font-family: var(--font-body); font-size: 1rem; }
+        .form-control:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(26, 93, 46, 0.1); }
+        .products-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+        .products-table th, .products-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+        .products-table th { background-color: var(--color-bg-light); font-family: var(--font-heading); color: var(--color-primary); }
+        .action-btn { background: none; border: none; cursor: pointer; color: var(--color-text-muted); transition: var(--transition); padding: 0.5rem;}
+        .action-btn.delete { color: #ef4444; }
+        .action-btn:hover { transform: scale(1.1); }
+        .img-preview { width: 50px; height: 50px; object-fit: cover; border-radius: 8px; }
+        .seed-btn-container { text-align: right; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html" class="logo-text" style="color:var(--color-primary);">La Canasta <span style="font-size: 1rem; color: var(--color-text-muted); font-weight: 400;">| Admin</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="btn-primary-outline btn-sm">Volver a la Tienda</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h2>Gestión de Productos</h2>
+                <div class="seed-btn-container">
+                    <button id="seedProductsBtn" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Cargar Productos de Prueba</button>
+                </div>
+            </div>
+
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="productName">Nombre del Producto *</label>
+                        <input type="text" id="productName" class="form-control" placeholder="Ej. Queso Mantecoso" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Precio (CLP) *</label>
+                        <input type="number" id="productPrice" class="form-control" placeholder="Ej. 5500" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productImage">URL de Imagen</label>
+                    <input type="url" id="productImage" class="form-control" placeholder="Ej. https://mi-imagen.com/queso.jpg (Dejar vacío para imagen por defecto)">
+                </div>
+
+                <div class="form-group">
+                    <label for="productDesc">Descripción</label>
+                    <textarea id="productDesc" class="form-control" rows="3" placeholder="Descripción breve del producto..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="submitBtn">Guardar Producto</button>
+                <button type="button" class="btn btn-secondary" id="cancelEditBtn" style="display: none; margin-left: 1rem;">Cancelar Edición</button>
+            </form>
+
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody">
+                    <!-- Products will be rendered here via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
