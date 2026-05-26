@@ -702,12 +702,311 @@ footer {
     box-shadow: var(--shadow-lg);
 }
 
+/* Quiénes Somos Section */
+.about-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-white);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+.about-card {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: white;
+    padding: 3rem 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.about-card h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.75rem;
+}
+
+.about-steps-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-steps-list li {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.step-num {
+    background-color: var(--color-secondary);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(223, 123, 43, 0.3);
+}
+
+.about-steps-list li strong {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: white;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.about-steps-list li p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Ofertas Especiales Section */
+.offers-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-light);
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.offer-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.offer-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(223, 123, 43, 0.3);
+}
+
+.offer-img-wrapper {
+    height: 200px;
+    overflow: hidden;
+    background-color: var(--color-bg-light);
+}
+
+.offer-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover .offer-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.offer-details {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-main);
+}
+
+.offer-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+.offer-pricing {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    margin-bottom: 1.25rem;
+}
+
+.offer-price-normal {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+.offer-price-promo {
+    color: var(--color-primary);
+    font-weight: 800;
+    font-size: 1.4rem;
+    font-family: var(--font-heading);
+}
+
+.btn-order-offer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem;
+    border-radius: 50px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(26, 93, 46, 0.2);
+}
+
+.btn-order-offer:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Admin Panel Styles */
+.admin-body {
+    background-color: var(--color-bg-light);
+    min-height: 100vh;
+}
+
+.admin-auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--color-bg-light);
+}
+
+.auth-card {
+    background-color: var(--color-bg-white);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.admin-panel-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-light);
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.admin-card {
+    background-color: var(--color-bg-white);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    padding: 2.5rem;
+}
+
+.admin-table-wrapper {
+    overflow-x: auto;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th {
+    padding: 1rem;
+    border-bottom: 2px solid var(--color-border);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-text-main);
+    font-size: 0.95rem;
+    background-color: var(--color-bg-light);
+}
+
+.admin-table td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.admin-table tr:hover td {
+    background-color: #fafaf9;
+}
+
 /* Responsive Logic */
 @media (max-width: 992px) {
-    .hero-content, .products-grid {
+    .hero-content, .products-grid, .about-container, .admin-grid {
         grid-template-columns: 1fr;
-        text-align: center;
         gap: 2rem;
+    }
+    
+    .hero-content, .products-grid, .about-text {
+        text-align: center;
     }
     
     .hero h1 { font-size: 3rem; }
@@ -732,7 +1031,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .contact-form-container, .info-card {
+    .contact-form-container, .info-card, .admin-card {
         padding: 1.5rem;
     }
     

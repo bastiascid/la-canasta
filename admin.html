@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Canasta - Administración de Ofertas</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+    
+    <!-- Auth Container -->
+    <div id="adminAuth" class="admin-auth-container">
+        <div class="auth-card animate-on-scroll is-visible">
+            <div class="logo text-center">
+                <span class="logo-text">La Canasta</span>
+                <p style="margin-top: 5px; font-weight: 600; color: var(--color-primary);">Panel de Administración</p>
+            </div>
+            <form id="loginForm" class="auth-form" style="margin-top: 2rem;">
+                <div class="form-group">
+                    <label for="passcode">Código de Acceso</label>
+                    <input type="password" id="passcode" required placeholder="Ingresa el código administrador" style="text-align: center;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Acceder al Panel
+                </button>
+                <p id="loginError" class="text-center" style="color: #ef4444; margin-top: 1rem; display: none; font-weight: 600; font-size: 0.9rem;">Código incorrecto. Inténtalo de nuevo.</p>
+            </form>
+            <div class="text-center" style="margin-top: 1.5rem;">
+                <a href="index.html" style="font-size: 0.9rem; text-decoration: underline; color: var(--color-text-muted);">Volver a la Tienda</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Admin Panel (Hidden initially) -->
+    <div id="adminPanel" class="admin-panel-container" style="display: none;">
+        <nav class="navbar">
+            <div class="container nav-content">
+                <div class="logo">
+                    <span class="logo-text">La Canasta <span style="font-size: 1rem; color: var(--color-secondary); font-weight: 600; vertical-align: middle; margin-left: 5px;">Admin</span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="btn-primary-outline btn-sm" style="display: inline-flex; align-items: center; gap: 5px;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        Volver a la Tienda
+                    </a></li>
+                    <li><button id="logoutBtn" class="btn-secondary" style="border: 0; background: transparent; color: #ef4444; font-weight: 600; cursor: pointer;">Cerrar Sesión</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="container" style="padding-top: 120px; padding-bottom: 4rem;">
+            <div class="admin-grid">
+                
+                <!-- Left: Add/Edit Form -->
+                <div class="admin-card animate-on-scroll is-visible">
+                    <h2 style="margin-bottom: 1.5rem; color: var(--color-primary); font-size: 1.75rem;">Nueva Oferta Especial</h2>
+                    <form id="offerForm" class="contact-form">
+                        <input type="hidden" id="offerId">
+                        
+                        <div class="form-group">
+                            <label for="offerName">Nombre del Producto</label>
+                            <input type="text" id="offerName" required placeholder="Ej: Aceite Maravilla 1L (Caja mayorista)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="offerDesc">Descripción / Formato</label>
+                            <input type="text" id="offerDesc" required placeholder="Ej: Formato caja 12 unidades. Precio por botella: $1.250">
+                        </div>
+                        
+                        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div>
+                                <label for="offerNormalPrice">Precio Normal ($)</label>
+                                <input type="number" id="offerNormalPrice" required placeholder="Ej: 18990">
+                            </div>
+                            <div>
+                                <label for="offerPromoPrice">Precio Oferta ($)</label>
+                                <input type="number" id="offerPromoPrice" required placeholder="Ej: 14990">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="offerImage">URL de la Imagen (Opcional)</label>
+                            <input type="url" id="offerImage" placeholder="Ej: https://ejemplo.com/aceite.jpg">
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px;">Si se deja vacío, se usará una imagen representativa genérica.</p>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button type="submit" id="submitBtn" class="btn btn-primary" style="flex-grow: 1; justify-content: center;">
+                                Guardar Oferta
+                            </button>
+                            <button type="button" id="cancelEditBtn" class="btn btn-secondary" style="display: none; justify-content: center;">
+                                Cancelar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Right: Existing List & Utilities -->
+                <div class="admin-card animate-on-scroll is-visible" style="display: flex; flex-direction: column;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h2 style="color: var(--color-primary); font-size: 1.75rem; margin: 0;">Ofertas Activas</h2>
+                        <div class="admin-buttons" style="display: flex; gap: 0.5rem;">
+                            <button id="loadDefaultsBtn" class="btn btn-secondary btn-sm" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                                Cargar de Prueba
+                            </button>
+                            <button id="clearAllBtn" class="btn btn-secondary btn-sm" style="font-size: 0.85rem; padding: 0.5rem 1rem; color: #ef4444; border-color: #fca5a5;">
+                                Borrar Todo
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-table-wrapper" style="flex-grow: 1;">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>P. Normal</th>
+                                    <th>P. Oferta</th>
+                                    <th style="text-align: center; width: 100px;">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="offersTableBody">
+                                <!-- Trs will be injected here -->
+                                <tr>
+                                    <td colspan="4" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">No hay ofertas vigentes. Presiona "Cargar de Prueba" para iniciar.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+
+    <!-- Developer Credit -->
+    <div style="text-align: center; padding: 20px; font-family: sans-serif; font-size: 14px; color: #666; width: 100%; display: block; background-color: var(--color-bg-light); border-top: 1px solid var(--color-border);">
+        Desarrollado por <a href="https://bastiascid.github.io/portafolio" target="_blank" rel="noopener" style="color: #D81B60; text-decoration: none; font-weight: bold;">Cristian Bastias Cid</a>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
