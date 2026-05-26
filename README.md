@@ -60,3 +60,6 @@ Una vez que el código esté en tu repositorio de GitHub:
 
 ---
 Desarrollado por [Cristian Bastias Cid](https://bastiascid.github.io/portafolio).
+
+---
+*Última actualización: 26 de Mayo, 2026*
