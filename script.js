@@ -1,66 +1,729 @@
 /**
- * La Canasta - JavaScript Logic
+ * La Canasta Distribuidora - Client Side JavaScript
  */
 
-const WHATSAPP_NUMBER = '56912345678'; 
+let globalProducts = [];
+let globalBrands = [];
+let globalSettings = {
+    whatsapp_enabled: "0",
+    whatsapp_number: "+56 9 4256 7472",
+    logo_url: "assets/canasta-logo.png"
+};
 
-// Default mock offers for testing
-const DEFAULT_OFFERS = [
-    {
-        id: '1',
-        name: 'Queso Mantecoso Colun (Pieza ~3kg)',
-        description: 'Venta al por mayor. Calidad premium, ideal para rebanar o fundir.',
-        normalPrice: 28990,
-        promoPrice: 22490,
-        image: 'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
-    },
-    {
-        id: '2',
-        name: 'Aceite de Cocina Maravilla 1L (Caja 12 un)',
-        description: 'Formato mayorista cerrado. Precio por botella sale a $1.290.',
-        normalPrice: 21990,
-        promoPrice: 15480,
-        image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
-    },
-    {
-        id: '3',
-        name: 'Harina de Trigo Selecta (Saco 25kg)',
-        description: 'Harina sin polvos de hornear. Ideal para panaderías y amasanderías.',
-        normalPrice: 19990,
-        promoPrice: 14500,
-        image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
-    },
-    {
-        id: '4',
-        name: 'Azúcar Blanca Granulada Iansa (Saco 25kg)',
-        description: 'Saco cerrado. Azúcar de primera calidad, indispensable en tu almacén.',
-        normalPrice: 27990,
-        promoPrice: 20990,
-        image: 'https://images.unsplash.com/photo-1581798459219-318e76ae1db8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
-    }
-];
-
+// Open WhatsApp helper using settings config
 function openWhatsApp(text) {
+    const rawNumber = globalSettings.whatsapp_number.replace(/[^\d]/g, '');
     const encodedText = encodeURIComponent(text);
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
+    const url = `https://wa.me/${rawNumber}?text=${encodedText}`;
     window.open(url, '_blank', 'noopener,noreferrer');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Animations and Scroll ---
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (navbar) {
-            if (window.scrollY > 20) {
-                navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
-            } else {
-                navbar.style.boxShadow = 'none';
-            }
-        }
-    });
+    // --- 1. Load Configurations & Toggle WhatsApp ---
+    function loadSettings() {
+        fetch('api/settings.php')
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 'success' && res.data) {
+                    globalSettings = res.data;
+                    
+                    // Handle Logo replacement (if image exists, use it, else keep text)
+                    const logoContainer = document.getElementById('logoContainer');
+                    const footerLogoTextNode = document.getElementById('footerLogoTextNode');
+                    if (globalSettings.logo_url) {
+                        const logoUrlWithVersion = globalSettings.logo_url + '?v=2';
+                        const imgHtml = `<img src="${logoUrlWithVersion}" alt="La Canasta Logo" style="height: 60px; max-width: 160px; object-fit: contain;">`;
+                        if (logoContainer) {
+                            logoContainer.innerHTML = imgHtml;
+                            logoContainer.style.height = '60px';
+                        }
+                        if (footerLogoTextNode) {
+                            const footerImgHtml = `<img src="${logoUrlWithVersion}" alt="La Canasta Logo" style="height: 38px; max-width: 130px; object-fit: contain; background: white; padding: 4px; border-radius: 4px; box-shadow: var(--shadow-sm);">`;
+                            footerLogoTextNode.innerHTML = footerImgHtml;
+                        }
+                    }
+                    
+                    // Handle WhatsApp Toggle visibility
+                    const isWhatsAppActive = globalSettings.whatsapp_enabled === '1';
+                    document.querySelectorAll('.whatsapp-only-node').forEach(node => {
+                        if (isWhatsAppActive) {
+                            if (node.classList.contains('whatsapp-float-container')) {
+                                node.style.display = 'flex';
+                            } else {
+                                node.style.display = 'block';
+                            }
+                        } else {
+                            node.style.display = 'none';
+                        }
+                    });
+                }
+            })
+            .catch(err => console.error("Error loading settings:", err));
+    }
 
-    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+    // --- 2. Load Brands and Products ---
+    function loadCatalogData() {
+        // Fetch brands first
+        fetch('api/brands.php')
+            .then(res => res.json())
+            .then(brandRes => {
+                if (brandRes.status === 'success') {
+                    globalBrands = brandRes.data;
+                    
+                    // Fetch products
+                    return fetch('api/products.php');
+                }
+                throw new Error("Failed to load brands");
+            })
+            .then(res => res.json())
+            .then(productRes => {
+                if (productRes.status === 'success') {
+                    globalProducts = productRes.data;
+                    
+                    renderBrands();
+                    renderCatalogFilters();
+                    renderCatalog('Todos');
+                }
+            })
+            .catch(err => {
+                console.error("Error loading catalog data:", err);
+                const grids = ['brandsCarouselTrack', 'catalogGrid'];
+                grids.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = `<p class="text-center" style="width: 100%; color: var(--color-secondary);">Error al cargar los datos del catálogo. Por favor, intente más tarde.</p>`;
+                });
+            });
+    }
+
+    // Carousel state variables
+    let carouselIndex = 0;
+    let carouselInterval = null;
+    let cardsToShow = 1;
+
+    // Render Brand Cards
+    function renderBrands() {
+        const track = document.getElementById('brandsCarouselTrack');
+        if (!track) return;
+        
+        if (globalBrands.length === 0) {
+            track.innerHTML = `<p class="text-center" style="width: 100%; color: var(--color-text-muted); padding: 2rem 0;">No hay marcas registradas en este momento.</p>`;
+            return;
+        }
+        
+        track.innerHTML = '';
+        globalBrands.forEach(brand => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+            
+            slide.innerHTML = `
+                <div class="brand-showcase-card" style="margin: 0; width: 100%; display: flex; flex-direction: column;">
+                    <div class="brand-header-flex">
+                        <img src="${brand.logo_url}" alt="${brand.name} Logo" class="brand-logo-img" onerror="this.src='https://placehold.co/120x80/0f2c59/ffffff?text=${brand.name}'">
+                        <h3 style="color: var(--color-primary); font-size: 1.5rem; margin: 0;">${brand.name}</h3>
+                    </div>
+                    <p style="font-size: 0.95rem; line-height: 1.5; flex-grow: 1;">${brand.description || 'Distribución mayorista autorizada.'}</p>
+                    <div style="margin-top: 1.25rem; font-size: 0.85rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                        <a href="${brand.official_url && brand.official_url !== '#' ? brand.official_url : '#contacto'}" ${brand.official_url && brand.official_url !== '#' ? 'target="_blank" rel="noopener"' : ''} style="text-decoration: underline; font-weight: 700; color: var(--color-secondary);">
+                            Sitio Oficial &rarr;
+                        </a>
+                    </div>
+                </div>
+            `;
+            
+            track.appendChild(slide);
+            scrollObserver.observe(slide);
+        });
+
+        // Initialize Carousel
+        initBrandsCarousel();
+    }
+
+    // Brands Carousel Logic
+    function initBrandsCarousel() {
+        const track = document.getElementById('brandsCarouselTrack');
+        const prevBtn = document.getElementById('brandPrevBtn');
+        const nextBtn = document.getElementById('brandNextBtn');
+        const indicatorsContainer = document.getElementById('brandIndicators');
+        
+        if (!track || !prevBtn || !nextBtn || !indicatorsContainer) return;
+        
+        const slides = track.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+        
+        function getCardsToShow() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+        
+        cardsToShow = getCardsToShow();
+        carouselIndex = 0;
+        
+        // Reset translation
+        track.style.transform = `translateX(0)`;
+        
+        // Set setup limit
+        const maxIndex = Math.max(0, totalSlides - cardsToShow);
+        
+        // If there are not enough slides to scroll, hide controls
+        if (totalSlides <= cardsToShow) {
+            prevBtn.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+            indicatorsContainer.classList.add('hidden');
+            return;
+        } else {
+            prevBtn.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+            indicatorsContainer.classList.remove('hidden');
+        }
+        
+        // Setup Indicators (dots)
+        indicatorsContainer.innerHTML = '';
+        for (let i = 0; i <= maxIndex; i++) {
+            const indicator = document.createElement('button');
+            indicator.className = `carousel-indicator ${i === 0 ? 'active' : ''}`;
+            indicator.setAttribute('aria-label', `Ir a marca ${i + 1}`);
+            indicator.addEventListener('click', () => {
+                goToSlide(i);
+                resetAutoPlay();
+            });
+            indicatorsContainer.appendChild(indicator);
+        }
+        
+        function updateCarousel() {
+            // Keep index in bounds
+            if (carouselIndex > maxIndex) carouselIndex = 0;
+            if (carouselIndex < 0) carouselIndex = maxIndex;
+            
+            // Translate track (each slide occupies 100/cardsToShow percent)
+            const offset = carouselIndex * (100 / cardsToShow);
+            track.style.transform = `translateX(-${offset}%)`;
+            
+            // Update indicators active state
+            const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
+            indicators.forEach((ind, i) => {
+                if (i === carouselIndex) {
+                    ind.classList.add('active');
+                } else {
+                    ind.classList.remove('active');
+                }
+            });
+        }
+        
+        function goToSlide(index) {
+            carouselIndex = index;
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            carouselIndex++;
+            if (carouselIndex > maxIndex) {
+                carouselIndex = 0;
+            }
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            carouselIndex--;
+            if (carouselIndex < 0) {
+                carouselIndex = maxIndex;
+            }
+            updateCarousel();
+        }
+        
+        // Set up button listeners
+        prevBtn.onclick = () => {
+            prevSlide();
+            resetAutoPlay();
+        };
+        
+        nextBtn.onclick = () => {
+            nextSlide();
+            resetAutoPlay();
+        };
+        
+        // Autoplay implementation (4s interval)
+        function startAutoPlay() {
+            if (carouselInterval) clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextSlide, 4000);
+        }
+        
+        function stopAutoPlay() {
+            if (carouselInterval) clearInterval(carouselInterval);
+        }
+        
+        function resetAutoPlay() {
+            stopAutoPlay();
+            startAutoPlay();
+        }
+        
+        // Pause when mouse is over elements
+        track.onmouseenter = stopAutoPlay;
+        track.onmouseleave = startAutoPlay;
+        prevBtn.onmouseenter = stopAutoPlay;
+        prevBtn.onmouseleave = startAutoPlay;
+        nextBtn.onmouseenter = stopAutoPlay;
+        nextBtn.onmouseleave = startAutoPlay;
+        
+        // Debounced resize listener
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const newCardsToShow = getCardsToShow();
+                if (newCardsToShow !== cardsToShow) {
+                    initBrandsCarousel();
+                }
+            }, 100);
+        });
+        
+        // Start autoplay initially
+        startAutoPlay();
+    }
+
+    // Advantages Carousel Logic
+    function initAdvantagesCarousel() {
+        const track = document.getElementById('advantagesCarouselTrack');
+        const prevBtn = document.getElementById('advPrevBtn');
+        const nextBtn = document.getElementById('advNextBtn');
+        const indicatorsContainer = document.getElementById('advIndicators');
+        
+        if (!track || !prevBtn || !nextBtn || !indicatorsContainer) return;
+        
+        const slides = track.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+        let cardsToShow = 3;
+        let carouselIndex = 0;
+        let carouselInterval = null;
+        
+        function getCardsToShow() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+        
+        cardsToShow = getCardsToShow();
+        
+        // Reset translation
+        track.style.transform = `translateX(0)`;
+        
+        // Set setup limit
+        const maxIndex = Math.max(0, totalSlides - cardsToShow);
+        
+        // If there are not enough slides to scroll, hide controls
+        if (totalSlides <= cardsToShow) {
+            prevBtn.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+            indicatorsContainer.classList.add('hidden');
+            return;
+        } else {
+            prevBtn.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+            indicatorsContainer.classList.remove('hidden');
+        }
+        
+        // Setup Indicators (dots)
+        indicatorsContainer.innerHTML = '';
+        for (let i = 0; i <= maxIndex; i++) {
+            const indicator = document.createElement('button');
+            indicator.className = `carousel-indicator ${i === 0 ? 'active' : ''}`;
+            indicator.setAttribute('aria-label', `Ir a ventaja ${i + 1}`);
+            indicator.addEventListener('click', () => {
+                goToSlide(i);
+                resetAutoPlay();
+            });
+            indicatorsContainer.appendChild(indicator);
+        }
+        
+        function updateCarousel() {
+            if (carouselIndex > maxIndex) carouselIndex = 0;
+            if (carouselIndex < 0) carouselIndex = maxIndex;
+            
+            const offset = carouselIndex * (100 / cardsToShow);
+            track.style.transform = `translateX(-${offset}%)`;
+            
+            const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
+            indicators.forEach((ind, i) => {
+                if (i === carouselIndex) {
+                    ind.classList.add('active');
+                } else {
+                    ind.classList.remove('active');
+                }
+            });
+        }
+        
+        function goToSlide(index) {
+            carouselIndex = index;
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            carouselIndex++;
+            if (carouselIndex > maxIndex) {
+                carouselIndex = 0;
+            }
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            carouselIndex--;
+            if (carouselIndex < 0) {
+                carouselIndex = maxIndex;
+            }
+            updateCarousel();
+        }
+        
+        prevBtn.onclick = () => {
+            prevSlide();
+            resetAutoPlay();
+        };
+        
+        nextBtn.onclick = () => {
+            nextSlide();
+            resetAutoPlay();
+        };
+        
+        function startAutoPlay() {
+            if (carouselInterval) clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function stopAutoPlay() {
+            if (carouselInterval) clearInterval(carouselInterval);
+        }
+        
+        function resetAutoPlay() {
+            stopAutoPlay();
+            startAutoPlay();
+        }
+        
+        track.onmouseenter = stopAutoPlay;
+        track.onmouseleave = startAutoPlay;
+        prevBtn.onmouseenter = stopAutoPlay;
+        prevBtn.onmouseleave = startAutoPlay;
+        nextBtn.onmouseenter = stopAutoPlay;
+        nextBtn.onmouseleave = startAutoPlay;
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const newCardsToShow = getCardsToShow();
+                if (newCardsToShow !== cardsToShow) {
+                    initAdvantagesCarousel();
+                }
+            }, 100);
+        });
+        
+        startAutoPlay();
+    }
+
+    // Render Catalog Filters
+    function renderCatalogFilters() {
+        const filterBar = document.getElementById('categoryFilterBar');
+        if (!filterBar) return;
+        
+        // Get unique categories from active products
+        const categories = ['Todos', ...new Set(globalProducts.map(p => p.category).filter(Boolean))];
+        
+        filterBar.innerHTML = '';
+        categories.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = `filter-btn ${cat === 'Todos' ? 'active' : ''}`;
+            btn.textContent = cat;
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderCatalog(cat);
+            });
+            filterBar.appendChild(btn);
+        });
+    }
+
+    // Render Products Grid
+    function renderCatalog(selectedCategory) {
+        const catalogGrid = document.getElementById('catalogGrid');
+        if (!catalogGrid) return;
+        
+        const filtered = selectedCategory === 'Todos' 
+            ? globalProducts 
+            : globalProducts.filter(p => p.category === selectedCategory);
+            
+        if (filtered.length === 0) {
+            catalogGrid.innerHTML = `<p class="text-center" style="grid-column: 1/-1; color: var(--color-text-muted); padding: 3rem;">No hay productos registrados en esta categoría.</p>`;
+            return;
+        }
+        
+        catalogGrid.innerHTML = '';
+        filtered.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'offer-card animate-on-scroll';
+            
+            card.innerHTML = `
+                <div class="offer-badge" style="background-color: var(--color-primary);">${product.category}</div>
+                <div class="offer-img-wrapper" style="height: 200px;">
+                    <img src="${product.image_url}" alt="${product.name}" onerror="this.src='https://placehold.co/400x300/f4f6f9/0f2c59?text=Producto'" loading="lazy">
+                </div>
+                <div class="offer-details" style="display: flex; flex-direction: column; height: calc(100% - 200px);">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase;">${product.brand_name}</span>
+                    <h3 class="offer-name" style="margin-top: 5px; min-height: 48px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${product.name}</h3>
+                    <p class="offer-desc" style="flex-grow: 1; min-height: 60px; margin-bottom: 1.5rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${product.description || 'Abarrotes para venta exclusiva en locales comerciales.'}</p>
+                    <button class="btn btn-primary btn-sm" onclick="inquireProduct('${product.name.replace(/'/g, "\\'")}', '${product.brand_name.replace(/'/g, "\\'")}')" style="justify-content: center; width: 100%; border-radius: 6px;">
+                        Solicitar Información
+                    </button>
+                </div>
+            `;
+            catalogGrid.appendChild(card);
+            scrollObserver.observe(card);
+        });
+    }
+
+    // Inquiry action for products - scrolls to form and prefills
+    window.inquireProduct = function(productName, brandName) {
+        const bottomAction = document.getElementById('bottom-action');
+        const bottomComments = document.getElementById('bottom-comments');
+        const contactSection = document.getElementById('contacto');
+        
+        if (bottomAction) bottomAction.value = 'Solicita información';
+        if (bottomComments) {
+            bottomComments.value = `Hola, me interesa recibir informacion comercial y cotizar el producto "${productName}" de la marca "${brandName}" para mi negocio.`;
+        }
+        
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    };
+
+    // --- 3. Form Submissions ---
+    function handleFormSubmit(formId, successId) {
+        const form = document.getElementById(formId);
+        const successDiv = document.getElementById(successId);
+        
+        if (!form) return;
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Email Validation
+            const emailInput = form.querySelector('input[type="email"]');
+            if (emailInput) {
+                const email = emailInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Por favor, ingresa un correo electrónico válido.');
+                    emailInput.focus();
+                    return;
+                }
+            }
+            
+            let payload = {};
+            if (formId === 'heroContactForm') {
+                payload = {
+                    name: document.getElementById('hero-name').value.trim(),
+                    email: document.getElementById('hero-email').value.trim(),
+                    company: document.getElementById('hero-company').value.trim(),
+                    role: document.getElementById('hero-role').value.trim(),
+                    phone: document.getElementById('hero-phone').value.trim(),
+                    region: document.getElementById('hero-region').value,
+                    comments: document.getElementById('hero-comments').value.trim(),
+                    origin: 'Formulario Hero'
+                };
+            } else if (formId === 'middleContactForm') {
+                payload = {
+                    name: document.getElementById('middle-name').value.trim(),
+                    email: document.getElementById('middle-email').value.trim(),
+                    company: document.getElementById('middle-company').value.trim(),
+                    role: document.getElementById('middle-role').value.trim(),
+                    phone: document.getElementById('middle-phone').value.trim(),
+                    region: document.getElementById('middle-region').value,
+                    comments: document.getElementById('middle-comments').value.trim(),
+                    origin: 'Formulario Mitad Página'
+                };
+            } else {
+                payload = {
+                    name: document.getElementById('bottom-name').value.trim(),
+                    email: document.getElementById('bottom-email').value.trim(),
+                    company: document.getElementById('bottom-company').value.trim(),
+                    role: document.getElementById('bottom-role').value.trim(),
+                    phone: document.getElementById('bottom-phone').value.trim(),
+                    region: document.getElementById('bottom-region').value,
+                    comments: document.getElementById('bottom-comments').value.trim(),
+                    origin: 'Formulario Footer'
+                };
+            }
+            
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Enviando...';
+            }
+            
+            fetch('api/leads.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 'success') {
+                    form.style.display = 'none';
+                    if (successDiv) {
+                        successDiv.style.display = 'block';
+                        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                } else {
+                    alert('Error: ' + res.message);
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    }
+                }
+            })
+            .catch(err => {
+                console.error("Error submitting form:", err);
+                alert("Hubo un error de conexión al procesar tu registro. Por favor, intenta de nuevo.");
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            });
+        });
+    }
+
+    // --- 4. Load Coverage Zones ---
+    function loadCoverageZones() {
+        const grid = document.getElementById('coberturaGrid');
+        if (!grid) return;
+        
+        fetch('api/coverage.php')
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 'success' && res.data.length > 0) {
+                    grid.innerHTML = '';
+                    res.data.forEach(zone => {
+                        const card = document.createElement('div');
+                        card.className = 'commune-badge animate-on-scroll';
+                        
+                        card.innerHTML = `
+                            <span class="badge-icon">📍</span>
+                            <span>${zone.name}</span>
+                        `;
+                        
+                        // Click interaction to zoom/pan the Leaflet map and open popup
+                        card.addEventListener('click', () => {
+                            // Remove active state from all badges
+                            document.querySelectorAll('.commune-badge').forEach(b => b.classList.remove('active'));
+                            // Add active state to clicked badge
+                            card.classList.add('active');
+                            
+                            const nameKey = zone.name.trim().toLowerCase();
+                            if (window.coverageMap && window.coverageMarkers && window.coverageMarkers[nameKey]) {
+                                const marker = window.coverageMarkers[nameKey];
+                                window.coverageMap.setView(marker.getLatLng(), 12, { animate: true });
+                                marker.openPopup();
+                            }
+                        });
+                        
+                        grid.appendChild(card);
+                        scrollObserver.observe(card);
+                    });
+                } else {
+                    grid.innerHTML = '<p style="width: 100%; color: var(--color-text-muted);">Zonas de cobertura en actualización.</p>';
+                }
+            })
+            .catch(err => {
+                console.error("Error loading coverage zones:", err);
+                grid.innerHTML = '<p style="width: 100%; color: var(--color-secondary);">Error al cargar cobertura.</p>';
+            });
+    }
+
+    // --- 5. Load Offers and Banners ---
+    function loadOffersBanners() {
+        const grid = document.getElementById('offersGrid');
+        if (!grid) return;
+        
+        fetch('api/offers.php')
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 'success' && res.data.length > 0) {
+                    grid.innerHTML = '';
+                    res.data.forEach(offer => {
+                        const card = document.createElement('div');
+                        card.className = 'offer-card animate-on-scroll';
+                        card.style.display = 'flex';
+                        card.style.flexDirection = 'column';
+                        
+                        card.innerHTML = `
+                            <div class="offer-img-wrapper" style="height: 200px;">
+                                <img src="${offer.image_url}" alt="${offer.title}" onerror="this.src='https://placehold.co/400x250/f4f6f9/0f2c59?text=Campa%C3%B1a'" loading="lazy">
+                            </div>
+                            <div class="offer-details" style="display: flex; flex-direction: column; flex-grow: 1; padding: 1.5rem;">
+                                <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary); margin: 0 0 0.5rem 0;">${offer.title}</h3>
+                                <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; flex-grow: 1; margin: 0 0 1.5rem 0;">${offer.description}</p>
+                                <a href="${offer.link_url}" class="btn btn-secondary btn-sm" style="text-align: center; justify-content: center; width: 100%; border-radius: 6px;">Más Información</a>
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                        scrollObserver.observe(card);
+                    });
+                } else {
+                    grid.innerHTML = '<p class="text-center" style="grid-column: 1/-1; color: var(--color-text-muted);">No hay ofertas vigentes en este momento.</p>';
+                }
+            })
+            .catch(err => {
+                console.error("Error loading offers:", err);
+                grid.innerHTML = '<p class="text-center" style="grid-column: 1/-1; color: var(--color-secondary);">Error al cargar campañas.</p>';
+            });
+    }
+
+    // --- 5. Load Partners / Trusted Clients ---
+    function loadPartners() {
+        const container = document.getElementById('partnersContainer');
+        if (!container) return;
+        
+        fetch('api/partners.php')
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 'success' && res.data.length > 0) {
+                    container.innerHTML = '';
+                    res.data.forEach(p => {
+                        const card = document.createElement('div');
+                        card.className = 'brand-showcase-card animate-on-scroll';
+                        card.style.padding = '2rem';
+                        card.style.textAlign = 'center';
+                        card.style.background = 'white';
+                        card.style.border = '1px solid var(--color-border)';
+                        card.style.borderRadius = 'var(--border-radius)';
+                        card.style.boxShadow = 'var(--shadow-sm)';
+                        card.style.display = 'flex';
+                        card.style.flexDirection = 'column';
+                        card.style.alignItems = 'center';
+                        card.style.justifyContent = 'center';
+                        card.style.transition = 'all 0.3s ease';
+                        
+                        card.innerHTML = `
+                            <img src="${p.logo_url}" alt="${p.name} Logo" style="height: 60px; max-width: 100%; object-fit: contain; margin-bottom: 1rem;" onerror="this.src='https://placehold.co/120x60/0f2c59/ffffff?text=${encodeURIComponent(p.name)}'">
+                            <h4 style="font-size: 1.1rem; color: var(--color-primary); margin: 0 0 0.5rem 0; font-weight: 700;">${p.name}</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.4; margin: 0 0 1rem 0;">${p.description || ''}</p>
+                            ${p.link_url && p.link_url !== '#' ? `<a href="${p.link_url}" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--color-secondary); text-decoration: underline;">Saber más</a>` : ''}
+                        `;
+                        container.appendChild(card);
+                        scrollObserver.observe(card);
+                    });
+                } else {
+                    container.innerHTML = '<p class="text-center" style="grid-column: 1 / -1; color: var(--color-text-muted);">Pronto agregaremos más empresas asociadas.</p>';
+                }
+            })
+            .catch(err => {
+                console.error("Error loading partners:", err);
+                container.innerHTML = '<p class="text-center" style="grid-column: 1 / -1; color: var(--color-text-muted);">Error al cargar empresas asociadas.</p>';
+            });
+    }
+
+    // --- 6. Scroll Animations Setup ---
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
     const scrollObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -72,110 +735,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.animate-on-scroll').forEach(el => scrollObserver.observe(el));
 
-    // --- Offers Render Logic ---
-    const offersGrid = document.getElementById('offersGrid');
-    
-    function formatCurrency(value) {
-        return new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(value);
-    }
-    
-    function loadOffers() {
-        if (!offersGrid) return;
+    // --- 7. Load Sub-Brands Ticker (Horizontal Banner) ---
+    function loadSubBrandsTicker() {
+        const ticker = document.getElementById('subBrandsTicker');
+        if (!ticker) return;
         
-        let stored = localStorage.getItem('laCanastaOffers');
-        let offers = [];
-        
-        if (stored === null) {
-            // Initial load of defaults if empty/first visit
-            offers = DEFAULT_OFFERS;
-            localStorage.setItem('laCanastaOffers', JSON.stringify(offers));
-        } else {
-            offers = JSON.parse(stored);
-        }
-        
-        if (offers.length === 0) {
-            offersGrid.innerHTML = `
-                <div class="text-center" style="grid-column: 1 / -1; padding: 3.5rem; background: var(--color-bg-white); border-radius: 12px; border: 1px dashed var(--color-border); width: 100%;">
-                    <p style="font-size: 1.1rem; color: var(--color-text-muted); font-weight: 600;">No hay ofertas especiales vigentes en este momento.</p>
-                    <p style="font-size: 0.95rem; margin-top: 5px;">Por favor, vuelve más tarde o contáctanos por WhatsApp para consultar precios.</p>
-                </div>`;
-            return;
-        }
-        
-        offersGrid.innerHTML = '';
-        offers.forEach(offer => {
-            const card = document.createElement('div');
-            card.className = 'offer-card animate-on-scroll';
-            
-            // Calculate discount percentage
-            const discount = Math.round(((offer.normalPrice - offer.promoPrice) / offer.normalPrice) * 100);
-            
-            card.innerHTML = `
-                <div class="offer-badge">${discount}% desc.</div>
-                <div class="offer-img-wrapper">
-                    <img src="${offer.image}" alt="${offer.name}" onerror="this.src='https://placehold.co/400x300/fdf6e3/1a5d2e?text=Oferta'" loading="lazy">
-                </div>
-                <div class="offer-details">
-                    <h3 class="offer-name">${offer.name}</h3>
-                    <p class="offer-desc">${offer.description}</p>
-                    <div class="offer-pricing">
-                        <span class="offer-price-normal">${formatCurrency(offer.normalPrice)}</span>
-                        <span class="offer-price-promo">${formatCurrency(offer.promoPrice)}</span>
-                    </div>
-                    <button class="btn-order-offer" onclick="orderOffer('${offer.name.replace(/'/g, "\\'")}', ${offer.promoPrice})">
-                        Pedir Oferta
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="icon" style="margin-left: 5px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                    </button>
-                </div>
-            `;
-            offersGrid.appendChild(card);
-            scrollObserver.observe(card);
-        });
-    }
-    
-    window.orderOffer = function(name, price) {
-        const waMessage = `Hola La Canasta, me interesa pedir la oferta especial de "${name}" por valor de ${formatCurrency(price)}.`;
-        openWhatsApp(waMessage);
-    };
-    
-    loadOffers();
-
-    // --- Contact Form Logic ---
-    const contactForm = document.getElementById('contactForm');
-    const formSuccess = document.getElementById('formSuccess');
-    const sendToWhatsAppBtn = document.getElementById('sendToWhatsAppBtn');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Get form values
-            const name = document.getElementById('form-name').value.trim();
-            const phone = document.getElementById('form-phone').value.trim();
-            const business = document.getElementById('form-business').value;
-            const message = document.getElementById('form-message').value.trim();
-
-            // Simple validation
-            if (!name || !phone || !business || !message) {
-                alert('Por favor, completa todos los campos requeridos.');
-                return;
-            }
-
-            // Hide form and show success message
-            contactForm.style.display = 'none';
-            if (formSuccess) {
-                formSuccess.style.display = 'flex';
-                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-
-            // Configure WhatsApp secondary button action
-            if (sendToWhatsAppBtn) {
-                sendToWhatsAppBtn.onclick = () => {
-                    const waMessage = `Hola La Canasta, me llamo ${name}. Tengo un negocio del tipo "${business}" y mi teléfono de contacto es ${phone}.\n\nConsulta:\n${message}`;
-                    openWhatsApp(waMessage);
-                };
-            }
-        });
+        fetch('api/sub_brands.php')
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 'success' && res.data.length > 0) {
+                    const activeBrands = res.data.filter(b => b.status === 'Activo');
+                    if (activeBrands.length === 0) {
+                        ticker.parentElement.parentElement.style.display = 'none';
+                        return;
+                    }
+                    
+                    // Duplicate elements to ensure smooth continuous scrolling
+                    const items = [...activeBrands, ...activeBrands, ...activeBrands, ...activeBrands];
+                    
+                    ticker.innerHTML = items.map(sb => `
+                        <img src="${sb.logo_url}" alt="${sb.name}" title="${sb.name}" onerror="this.style.display='none'">
+                    `).join('');
+                } else {
+                    ticker.parentElement.parentElement.style.display = 'none';
+                }
+            })
+            .catch(err => {
+                console.error("Error loading sub brands for ticker:", err);
+                ticker.parentElement.parentElement.style.display = 'none';
+            });
     }
 
+    // Initialize Page functions
+    loadSettings();
+    loadCatalogData();
+    loadCoverageZones();
+    loadOffersBanners();
+    loadPartners();
+    loadSubBrandsTicker();
+    initAdvantagesCarousel();
+    handleFormSubmit('heroContactForm', 'heroFormSuccess');
+    handleFormSubmit('middleContactForm', 'middleFormSuccess');
+    handleFormSubmit('bottomContactForm', 'bottomFormSuccess');
 });

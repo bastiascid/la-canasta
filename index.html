@@ -3,53 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Canasta - Distribución de Alimentos</title>
-    <meta name="description" content="Distribución de alimentos directos a tu local. Ofertas imperdibles en quesos al por mayor, rápido despacho en la Sexta Región.">
+    <title>La Canasta Distribuidora - Abastecimiento B2B Canal Tradicional</title>
+    <meta name="description" content="Operador comercial y logístico especializado en el canal tradicional. Abastecimiento de abarrotes de alta rotación para locales, minimarkets y distribuidoras.">
+    <link rel="canonical" href="https://www.lacanastadistribuidora.cl" />
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_TOKEN" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=4">
+    
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Meta Pixel (Facebook) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
+    <!-- Leaflet.js for Interactive Coverage Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 <body>
     
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-content">
-            <div class="logo">
-                <span class="logo-text">La Canasta</span>
+    <!-- Upper Utility Bar -->
+    <div style="background-color: var(--color-primary); color: white; font-size: 0.8rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+                <span style="margin-right: 1.5rem;">📧 <a href="mailto:contacto@lacanastadistribuidora.cl" style="color: white; text-decoration: none;">contacto@lacanastadistribuidora.cl</a></span>
+                <span>📞 Call Center: +56 9 4256 7472</span>
             </div>
+            <div style="display: flex; gap: 1.5rem;">
+                <a href="sobre-nosotros.php" style="color: white; text-decoration: none; font-weight: 600;">Sobre Nosotros</a>
+                <a href="hazte-cliente.php" style="color: var(--color-secondary); text-decoration: none; font-weight: 700;">Hazte Cliente</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" style="position: relative;">
+        <div class="container nav-content">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+                <div id="logoContainer" style="display: flex; align-items: center;"></div>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <span class="logo-text" id="logoTextNode" style="line-height: 1.1; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
+                    <span style="font-size: 0.7rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px;">Distribuidora</span>
+                </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#ofertas">Ofertas</a></li>
-                <li><a href="#beneficios">Beneficios</a></li>
-                <li><a href="#contacto" class="btn-primary-outline btn-sm">Contacto</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-nosotros.php">Sobre Nosotros</a></li>
+                <li><a href="#marcas">Marcas</a></li>
+                <li><a href="#cobertura">Cobertura</a></li>
+                <li><a href="#promociones">Ofertas</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="hazte-cliente.php" class="btn-secondary text-white btn-sm" style="padding: 0.5rem 1rem;">Hazte Cliente</a></li>
+                <li class="whatsapp-only-node" style="display: none;">
+                    <a href="#" onclick="openWhatsApp('Hola, me interesa conocer más sobre los productos y servicios de La Canasta Distribuidora.'); return false;" class="btn btn-primary btn-sm" style="padding: 0.5rem 1rem; font-size: 0.85rem; color: white !important;">
+                        WhatsApp
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with B2B Form Split -->
     <header id="inicio" class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <span class="badge">Solo en la Sexta Región</span>
-                <h1>Distribución de Alimentos <span class="highlight">Directo a tu Local</span></h1>
-                <p>¿Tienes almacén o negocio? Esta es tu oportunidad de abastecerte al mejor precio, sin intermediarios. Calidad, precio y confianza en un solo lugar.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="openWhatsApp('Hola La Canasta, me gustaría cotizar sus productos para mi negocio.')">
-                        Haz tu pedido hoy
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                    </button>
-                    <a href="#ofertas" class="btn btn-secondary">Ver Ofertas</a>
+                <span class="badge">Distribuidora y Comercializadora</span>
+                <div style="margin-top: 1rem; margin-bottom: 1.25rem;">
+                    <img src="assets/canasta-logo.png?v=2" alt="La Canasta Logo" style="height: 220px; width: auto; object-fit: contain;">
+                </div>
+                <h1 style="font-size: 2.8rem; line-height: 1.1; margin-top: 0.5rem; margin-bottom: 1.25rem;">LA CANASTA <span class="highlight">DISTRIBUIDORA</span></h1>
+                <h2 style="font-size: 1.5rem; color: var(--color-primary); font-weight: 500; margin-top: 0.5rem; margin-bottom: 1rem; font-family: var(--font-heading);">Operador Comercial y Logístico para el Canal Tradicional</h2>
+                <p style="margin-top: 1rem; margin-bottom: 1.5rem;">Impulsamos marcas y conectamos productos con almacenes, minimarkets y comercios de barrio.</p>
+                <div class="hero-buttons" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <a href="#" class="btn btn-secondary whatsapp-btn whatsapp-only-node" onclick="openWhatsApp('Hola, quisiera ser cliente de La Canasta Distribuidora.'); return false;" style="background: #25d366; border-color: #25d366; color: white;">Hablar con un Ejecutivo</a>
                 </div>
             </div>
+            
             <div class="hero-image">
-                <!-- Placeholder for the basket of food image -->
-                <div class="image-wrapper shadow-float">
-                    <img src="./assets/canasta-logo.png" alt="Canasta de alimentos frescos" id="hero-img-placeholder" onerror="this.src='https://placehold.co/600x600/fdf6e3/1a5d2e?text=Logo+La+Canasta'">
+                <div class="hero-split-form">
+                    <div class="form-slogan">¡Haz tu Pedido!</div>
+                    <h3 class="form-title">¡Conviértete en <span style="white-space: nowrap;"><span class="highlight">Cliente</span>!</span></h3>
+                    <form id="heroContactForm" class="contact-form" style="gap: 0.75rem;">
+                        <input type="hidden" id="hero-subject" value="Solicita información">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-name" style="font-size: 0.75rem; font-weight: 700;">Nombre</label>
+                                <input type="text" id="hero-name" required placeholder="Tu nombre" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-email" style="font-size: 0.75rem; font-weight: 700;">Correo</label>
+                                <input type="email" id="hero-email" required placeholder="Tu correo" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-company" style="font-size: 0.75rem; font-weight: 700;">Empresa</label>
+                                <input type="text" id="hero-company" required placeholder="Nombre local" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-role" style="font-size: 0.75rem; font-weight: 700;">Cargo</label>
+                                <input type="text" id="hero-role" required placeholder="Ej: Dueño" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-phone" style="font-size: 0.75rem; font-weight: 700;">Teléfono</label>
+                                <input type="tel" id="hero-phone" required placeholder="+56 9..." style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-region" style="font-size: 0.75rem; font-weight: 700;">Región</label>
+                                <select id="hero-region" required style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                                    <option value="" disabled selected>Selecciona</option>
+                                    <option value="Región de O'Higgins">Región de O'Higgins</option>
+                                    <option value="Región Metropolitana">Región Metropolitana</option>
+                                    <option value="Región del Maule">Región del Maule</option>
+                                    <option value="Otra Región">Otra Región</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="gap: 0.15rem;">
+                            <label for="hero-comments" style="font-size: 0.75rem; font-weight: 700;">Comentarios</label>
+                            <textarea id="hero-comments" rows="2" placeholder="Ej: Me interesa comprar y cotizar..." style="padding: 0.45rem 0.65rem; font-size: 0.85rem; resize: none;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.6rem; font-size: 0.9rem; margin-top: 0.25rem;">
+                            Solicitar Información
+                        </button>
+                    </form>
+                    <div id="heroFormSuccess" class="form-success-alert" style="display: none; padding: 2rem 1.5rem; gap: 0.5rem;">
+                        <div class="success-icon" style="width: 48px; height: 48px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 24px; height: 24px;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <h4 style="color: var(--color-primary); font-size: 1.25rem; font-family: var(--font-heading); font-weight: 800; margin: 5px 0;">¡Registro Exitoso!</h4>
+                        <p style="font-size: 0.85rem; color: var(--color-text-muted);">Tus datos han sido guardados. Un ejecutivo te contactará pronto.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,179 +166,362 @@
         </div>
     </header>
 
-    <!-- Quiénes Somos Section -->
-    <section id="nosotros" class="about-section">
-        <div class="container about-container">
-            <div class="about-text animate-on-scroll">
-                <span class="badge">Nuestra Historia</span>
-                <h2>Socio estratégico para <span class="highlight">el Comercio Local</span></h2>
-                <p><strong>La Canasta</strong> nació en la Región de O'Higgins con el propósito claro de ser el aliado clave del canal tradicional. Nos especializamos en el abastecimiento logístico y comercial de almacenes de barrio, minimarkets y mini supermercados de la zona.</p>
-                <p>Entendemos las necesidades reales del comerciante local. Por eso, combinamos compras por volumen directamente a productores, un riguroso proceso de almacenamiento e higiene (fulfillment) y una red de transporte diario para llevar el pedido directamente a la puerta de tu local, eliminando intermediarios y maximizando tu margen de ganancia.</p>
-                <p>Nuestra meta es impulsar la competitividad de los negocios de barrio, ofreciendo precios mayoristas justos, productos esenciales de alta rotación y un servicio de distribución confiable y cercano.</p>
+    <!-- ¿Por qué trabajar con nosotros? Section -->
+    <section id="nosotros" class="about-section" style="background-color: var(--color-bg-white); padding: 6rem 0;">
+        <div class="container animate-on-scroll">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+                <span class="badge">Nuestras Ventajas</span>
+                <h2>¿Por qué trabajar <span class="highlight">con nosotros?</span></h2>
+                <p class="subtitle">Ofrecemos un servicio integral diseñado para el crecimiento del canal tradicional en la región.</p>
             </div>
-            <div class="about-image-wrapper animate-on-scroll">
-                <div class="about-card shadow-float">
-                    <h3>¿Cómo operamos?</h3>
-                    <ul class="about-steps-list">
-                        <li>
-                            <div class="step-num">1</div>
-                            <div>
-                                <strong>Fulfillment & Selección</strong>
-                                <p>Armado de pedidos y control higiénico de alimentos.</p>
+            
+            <div class="brands-carousel-wrapper animate-on-scroll">
+                <div class="carousel-container" id="advantagesCarouselContainer">
+                    <div id="advantagesCarouselTrack" class="carousel-track">
+                        <div class="carousel-slide">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                                <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Cobertura territorial</h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Amplia presencia y red de despachos en las comunas clave de la Región de O'Higgins.</p>
                             </div>
-                        </li>
-                        <li>
-                            <div class="step-num">2</div>
-                            <div>
-                                <strong>Logística Mayorista</strong>
-                                <p>Compras directas por volumen para garantizar mejores precios.</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                                <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Logística eficiente</h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Formatos mayoristas y entregas semanales programadas en la puerta de tu negocio.</p>
                             </div>
-                        </li>
-                        <li>
-                            <div class="step-num">3</div>
-                            <div>
-                                <strong>Despacho de Última Milla</strong>
-                                <p>Flota propia entregando directamente en tu negocio.</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                                <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Atención personalizada</h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Asesoría constante por nuestro equipo de ventas para maximizar el stock de tu comercio.</p>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                                <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Desarrollo de marcas</h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Posicionamos activamente a las marcas líderes en el comercio minorista detallista.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                                <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Experiencia probada</h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Años de conocimiento operativo en las dinámicas y necesidades del canal tradicional.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                                <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Presencia en terreno</h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Vendedores reales visitando tu local comercial periódicamente para tomar pedidos.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                                <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Rapidez de respuesta</h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Despachos rápidos y soporte comercial ágil ante cualquier eventualidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-nav-btn prev-btn" id="advPrevBtn" aria-label="Anterior">&lsaquo;</button>
+                    <button class="carousel-nav-btn next-btn" id="advNextBtn" aria-label="Siguiente">&rsaquo;</button>
                 </div>
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators" id="advIndicators"></div>
             </div>
         </div>
     </section>
 
-    <!-- Ofertas Especiales Section -->
-    <section id="ofertas" class="offers-section">
+    <!-- Nuestras Marcas Section -->
+    <section id="marcas" class="offers-section" style="background-color: var(--color-bg-light); padding: 6rem 0;">
         <div class="container section-header animate-on-scroll">
-            <h2>Ofertas <span class="highlight-orange">Especiales</span></h2>
-            <p class="subtitle">Descuentos exclusivos y por mayor para abastecer tu local comercial.</p>
+            <h2>Nuestras <span class="highlight">Marcas</span></h2>
+            <p class="subtitle">Representamos y distribuimos a los líderes de la industria alimentaria.</p>
         </div>
         
         <div class="container">
-            <div id="offersGrid" class="offers-grid">
-                <!-- Dynamic offers will be loaded here via Javascript -->
-                <p class="text-center" style="grid-column: 1 / -1; color: var(--color-text-muted);">Cargando ofertas vigentes...</p>
+            <div class="brands-carousel-wrapper animate-on-scroll">
+                <div class="carousel-container">
+                    <div id="brandsCarouselTrack" class="carousel-track">
+                        <!-- Brands will be loaded here via Ajax inside .carousel-slide items -->
+                        <p class="text-center" style="width: 100%; color: var(--color-text-muted); padding: 2rem 0;">Cargando marcas representadas...</p>
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-nav-btn prev-btn" id="brandPrevBtn" aria-label="Anterior">&lsaquo;</button>
+                    <button class="carousel-nav-btn next-btn" id="brandNextBtn" aria-label="Siguiente">&rsaquo;</button>
+                </div>
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators" id="brandIndicators"></div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section id="beneficios" class="benefits-section">
-        <div class="container">
-            <h2 class="text-center mb-50 animate-on-scroll">¿Por qué elegirnos?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card animate-on-scroll">
-                    <div class="icon-circle">
-                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    </div>
-                    <h3>Precios Especiales</h3>
-                    <p>Obtén los mejores precios por mayor, aumentando el margen de ganancia de tu negocio.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll" style="transition-delay: 100ms;">
-                    <div class="icon-circle">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                    </div>
-                    <h3>Despachos Rápidos</h3>
-                    <p>Envíos seguros y oportunos en la Sexta Región. Tu mercadería siempre a tiempo.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll" style="transition-delay: 200ms;">
-                    <div class="icon-circle">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    </div>
-                    <h3>Atención Personalizada</h3>
-                    <p>Nos preocupamos por tu negocio. Trato directo y soluciones a tu medida.</p>
-                </div>
+    <!-- Banner Horizontal: Marcas de Productos Ticker -->
+    <section class="subbrands-ticker-section" style="background: white; border-bottom: 1px solid var(--color-border); padding: 1.5rem 0; overflow: hidden;">
+        <div class="ticker-wrap" style="position: relative; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <div id="subBrandsTicker" class="ticker-track" style="display: flex; gap: 4rem; align-items: center; width: max-content;">
+                <!-- Logos will load dynamically here and loop infinitely -->
             </div>
         </div>
     </section>
 
-    <!-- Call To Action -->
-    <section class="cta-section">
-        <div class="container cta-content animate-on-scroll">
-            <h2>¿Listo para abastecer tu local?</h2>
-            <p>Contáctanos ahora y accede a nuestras ofertas exclusivas para comerciantes.</p>
-            <button class="btn btn-primary btn-large cta-pulse" onclick="openWhatsApp('Hola, vengo de la web. Quiero aprovechar la oferta de quesos.')">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                Quiero hacer mi pedido
-            </button>
+    <!-- Cobertura Section -->
+    <section id="cobertura" class="promo-section" style="background-color: var(--color-bg-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: 6rem 0;">
+        <div class="container section-header animate-on-scroll" style="text-align: center; margin-bottom: 4rem;">
+            <span class="badge">Red de Distribución</span>
+            <h2>Nuestra <span class="highlight">Cobertura</span></h2>
+            <p class="subtitle">Conoce las comunas que abastecemos semanalmente de forma directa en la Región de O'Higgins.</p>
         </div>
-    </section>
-
-    <!-- Contact & Location Section -->
-    <section id="contacto" class="contact-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Contacto y <span class="highlight-orange">Ubicación</span></h2>
-                <p class="subtitle">¿Tienes consultas o quieres coordinar un despacho? Escríbenos.</p>
-            </div>
-            
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form-container animate-on-scroll">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="form-name">Nombre Completo</label>
-                            <input type="text" id="form-name" required placeholder="Ej: Juan Pérez">
+        
+        <div class="container animate-on-scroll">
+            <div class="logistica-grid" style="align-items: start; gap: 3rem;">
+                <!-- Left Column: Commune list/badges -->
+                <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 2rem;">
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-top: 0; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                            <span>📍</span> Comunas Abastecidas
+                        </h3>
+                        <div id="coberturaGrid" class="cobertura-scroll-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.75rem; max-height: 380px; overflow-y: auto; padding-right: 0.5rem;">
+                            <!-- Zones will be loaded here via Ajax -->
+                            <p style="color: var(--color-text-muted);">Cargando comunas de cobertura...</p>
                         </div>
-                        <div class="form-group">
-                            <label for="form-phone">Teléfono / WhatsApp</label>
-                            <input type="tel" id="form-phone" required placeholder="Ej: +56 9 1234 5678">
-                        </div>
-                        <div class="form-group">
-                            <label for="form-business">Tipo de Negocio</label>
-                            <select id="form-business" required>
-                                <option value="" disabled selected>Selecciona una opción</option>
-                                <option value="Almacén / Negocio de Barrio">Almacén / Negocio de Barrio</option>
-                                <option value="Minimarket">Minimarket</option>
-                                <option value="Restaurante / Cafetería">Restaurante / Cafetería</option>
-                                <option value="Particular / Mayorista">Particular / Mayorista</option>
-                                <option value="Otro">Otro</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="form-message">Mensaje</label>
-                            <textarea id="form-message" rows="4" required placeholder="Escribe tu consulta o los detalles de tu pedido aquí..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                            Enviar Mensaje
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                        </button>
-                    </form>
-                    
-                    <!-- Form Success Message -->
-                    <div id="formSuccess" class="form-success-alert" style="display: none;">
-                        <div class="success-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </div>
-                        <h3>¡Mensaje Enviado con Éxito!</h3>
-                        <p>Hemos recibido tu consulta. Nos pondremos en contacto contigo a la brevedad.</p>
-                        <button id="sendToWhatsAppBtn" class="btn btn-secondary btn-sm" style="margin-top: 1rem; width: 100%; justify-content: center; gap: 0.5rem;">
-                            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                            Enviar también por WhatsApp
-                        </button>
+                    </div>
+                    <div style="background: var(--color-bg-white); padding: 1.5rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+                        <p style="font-size: 0.95rem; color: var(--color-text-dark); line-height: 1.5; margin: 0 0 1rem 0;">
+                            ¿Tu local está en otra zona de la región? Escríbenos y evaluamos la factibilidad para agregarte a nuestra ruta.
+                        </p>
+                        <a href="#contacto" class="btn btn-secondary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center;">Consultar Nueva Ruta</a>
                     </div>
                 </div>
                 
+                <!-- Right Column: Leaflet Map -->
+                <div>
+                    <div class="map-container" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-md); height: 480px; position: relative;">
+                        <div id="coverageMap" style="width: 100%; height: 100%; background: #e5e7eb; border: 0; z-index: 1;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestra Logística -->
+    <section id="logistica" class="promo-section" style="background-color: var(--color-bg-white); border-top: 1px solid var(--color-border); padding: 6rem 0;">
+        <div class="container animate-on-scroll">
+            <div class="section-header style-center" style="text-align: center; margin-bottom: 4rem;">
+                <span class="badge" style="background-color: var(--color-primary); color: white;">Eficiencia y Confianza</span>
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-top: 0.5rem;">Nuestra <span class="highlight">Logística</span></h2>
+                <p class="subtitle" style="font-size: 1.85rem; color: var(--color-secondary); font-weight: 700; margin-top: 0.5rem; font-family: var(--font-heading);">"Llegamos donde los demás no llegan."</p>
+            </div>
+            
+            <div class="logistica-grid" style="align-items: center;">
+                <!-- Image Column -->
+                <div class="animate-on-scroll" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                    <img src="assets/van-reparto.png" alt="Logística de La Canasta" style="width: 100%; height: auto; display: block; object-fit: cover; border-radius: var(--border-radius);">
+                </div>
+                
+                <!-- Info Column -->
+                <div class="animate-on-scroll" style="display: flex; flex-direction: column; gap: 2rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: var(--color-text-dark); margin: 0;">
+                        En <strong>La Canasta Distribuidora</strong> entendemos que la puntualidad y el abastecimiento continuo son fundamentales para el crecimiento de tu negocio. Por eso, contamos con un sistema logístico de excelencia, cercano y comprometido con el canal tradicional.
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div style="background: var(--color-bg-light); padding: 1.5rem; border-radius: var(--border-radius); border-left: 4px solid var(--color-secondary);">
+                            <h4 style="color: var(--color-primary); font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; font-weight: 700;">
+                                📍 Cobertura
+                            </h4>
+                            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.4; margin: 0;">Llegamos de manera directa a más de 30 comunas y localidades rurales de la región, asegurando que ningún comercio se quede sin abastecimiento.</p>
+                        </div>
+                        
+                        <div style="background: var(--color-bg-light); padding: 1.5rem; border-radius: var(--border-radius); border-left: 4px solid var(--color-primary);">
+                            <h4 style="color: var(--color-primary); font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; font-weight: 700;">
+                                ⚡ Rapidez
+                            </h4>
+                            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.4; margin: 0;">Despachamos tu pedido en menos de 48 horas hábiles directamente a la puerta de tu local comercial, optimizando tu inventario.</p>
+                        </div>
+                        
+                        <div style="background: var(--color-bg-light); padding: 1.5rem; border-radius: var(--border-radius); border-left: 4px solid var(--color-primary);">
+                            <h4 style="color: var(--color-primary); font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; font-weight: 700;">
+                                🚚 Capacidad
+                            </h4>
+                            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.4; margin: 0;">Flota de transporte moderna y adecuada para resguardar la cadena de frío y la integridad física de cada uno de los productos.</p>
+                        </div>
+                        
+                        <div style="background: var(--color-bg-light); padding: 1.5rem; border-radius: var(--border-radius); border-left: 4px solid var(--color-secondary);">
+                            <h4 style="color: var(--color-primary); font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; font-weight: 700;">
+                                🤝 Cercanía
+                            </h4>
+                            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.4; margin: 0;">Atención personalizada y compromiso real en cada entrega. Nuestros choferes y ejecutivos conocen tu negocio y tus necesidades.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo Informativo Section -->
+    <section id="catalogo" class="promo-section" style="background-color: var(--color-bg-white);">
+        <div class="container section-header animate-on-scroll">
+            <h2>Catálogo <span class="highlight">Informativo</span></h2>
+            <p class="subtitle">Explora el portafolio de productos disponibles para abastecer tu local comercial.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="container">
+            <div id="categoryFilterBar" class="filter-bar">
+                <!-- Categories will be rendered here dynamically -->
+            </div>
+        </div>
+        
+        <div class="container">
+            <div id="catalogGrid" class="offers-grid">
+                <!-- Dynamic abarrotes catalog will be loaded here via Javascript -->
+                <p class="text-center" style="grid-column: 1 / -1; color: var(--color-text-muted);">Cargando catálogo de productos...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ofertas y Promociones Section -->
+    <section id="promociones" class="promo-section" style="background-color: var(--color-bg-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: 6rem 0;">
+        <div class="container section-header animate-on-scroll" style="text-align: center;">
+            <span class="badge">Promociones Activas</span>
+            <h2>Campañas y <span class="highlight">Ofertas Vigentes</span></h2>
+            <p class="subtitle">Descubre las últimas campañas comerciales diseñadas para aumentar tu rentabilidad.</p>
+        </div>
+        
+        <div class="container animate-on-scroll">
+            <div id="offersGrid" class="offers-grid" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;">
+                <!-- Dynamic banners will load here -->
+                <p class="text-center" style="grid-column: 1 / -1; color: var(--color-text-muted);">Cargando campañas activas...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registro Express B2B (Mitad de Página - Formulario 2) -->
+    <section class="about-section" style="background-color: var(--color-bg-white); padding: 6rem 0;">
+        <div class="container" style="max-width: 900px;">
+            <div style="background: white; border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: 3.5rem; box-shadow: var(--shadow-lg);">
+                <div class="section-header animate-on-scroll" style="text-align: center; margin-bottom: 2.5rem;">
+                    <span class="badge">Registro Comercial</span>
+                    <h2 style="font-size: 2.25rem; font-weight: 800; color: var(--color-primary); margin-top: 0.5rem; line-height: 1.2;">Alianza Comercial Directa</h2>
+                    <p class="subtitle" style="font-size: 1.05rem; color: var(--color-text-muted); margin-top: 0.5rem;">Registra tu negocio para recibir ofertas por volumen y agendar una visita en terreno.</p>
+                </div>
+                
+                <form id="middleContactForm" class="contact-form animate-on-scroll" style="gap: 1.25rem;">
+                    <input type="hidden" id="middle-subject" value="Registro Mitad Página">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                        <div class="form-group" style="gap: 0.25rem;">
+                            <label for="middle-name" style="font-weight: 700; font-size: 0.9rem;">Nombre Completo *</label>
+                            <input type="text" id="middle-name" required placeholder="Tu nombre" style="padding: 0.75rem; font-size: 0.95rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                        </div>
+                        <div class="form-group" style="gap: 0.25rem;">
+                            <label for="middle-email" style="font-weight: 700; font-size: 0.9rem;">Correo Electrónico *</label>
+                            <input type="email" id="middle-email" required placeholder="Tu correo" style="padding: 0.75rem; font-size: 0.95rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                        <div class="form-group" style="gap: 0.25rem;">
+                            <label for="middle-company" style="font-weight: 700; font-size: 0.9rem;">Nombre de tu Empresa *</label>
+                            <input type="text" id="middle-company" required placeholder="Ej: Minimarket Mercadito" style="padding: 0.75rem; font-size: 0.95rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                        </div>
+                        <div class="form-group" style="gap: 0.25rem;">
+                            <label for="middle-role" style="font-weight: 700; font-size: 0.9rem;">Cargo *</label>
+                            <input type="text" id="middle-role" required placeholder="Ej: Dueño, Administrador" style="padding: 0.75rem; font-size: 0.95rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                        <div class="form-group" style="gap: 0.25rem;">
+                            <label for="middle-phone" style="font-weight: 700; font-size: 0.9rem;">Teléfono / Celular *</label>
+                            <input type="tel" id="middle-phone" required placeholder="Ej: +56 9 1234 5678" style="padding: 0.75rem; font-size: 0.95rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                        </div>
+                        <div class="form-group" style="gap: 0.25rem;">
+                            <label for="middle-region" style="font-weight: 700; font-size: 0.9rem;">Comuna *</label>
+                            <select id="middle-region" required style="padding: 0.75rem; font-size: 0.95rem; border: 1px solid var(--color-border); border-radius: var(--border-radius); background: white;">
+                                <option value="" disabled selected>Selecciona tu comuna</option>
+                                <option value="Rancagua">Rancagua</option>
+                                <option value="Machalí">Machalí</option>
+                                <option value="Graneros">Graneros</option>
+                                <option value="Mostazal">Mostazal</option>
+                                <option value="San Fernando">San Fernando</option>
+                                <option value="Santa Cruz">Santa Cruz</option>
+                                <option value="Otra Comuna (O'Higgins)">Otra Comuna (O'Higgins)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="gap: 0.25rem;">
+                        <label for="middle-comments" style="font-weight: 700; font-size: 0.9rem;">Comentarios</label>
+                        <textarea id="middle-comments" rows="3" placeholder="Ej: Me gustaría agendar una visita comercial..." style="padding: 0.75rem; font-size: 0.95rem; border: 1px solid var(--color-border); border-radius: var(--border-radius); resize: vertical; font-family: inherit;"></textarea>
+                    </div>
+                    <div style="text-align: center; margin-top: 1.25rem;">
+                        <button type="submit" class="btn btn-secondary" style="padding: 0.85rem 3rem; width: 100%; max-width: 320px; font-weight: 700;">Enviar Registro Comercial</button>
+                    </div>
+                </form>
+                
+                <div id="middleFormSuccess" class="form-success-alert animate-on-scroll" style="display: none; padding: 2rem 1.5rem; gap: 0.5rem;">
+                    <div class="success-icon" style="width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; background-color: #2e7d32; color: white; border-radius: 50%;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 24px; height: 24px;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <h4 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 800; margin: 10px 0;">¡Datos Recibidos!</h4>
+                    <p style="font-size: 0.95rem; color: var(--color-text-muted);">Tu negocio ha sido registrado en nuestro sistema. Nos pondremos en contacto muy pronto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Empresas que Confían en Nosotros -->
+    <section id="socios" class="promo-section" style="background-color: var(--color-bg-white); border-top: 1px solid var(--color-border); padding: 5rem 0;">
+        <div class="container">
+            <div class="section-header animate-on-scroll" style="text-align: center; margin-bottom: 3rem;">
+                <h2>Empresas que <span class="highlight">Confían en Nosotros</span></h2>
+                <p class="subtitle">Socios estratégicos, clientes destacados y distribuciones oficiales asociadas.</p>
+            </div>
+            
+            <div id="partnersContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+                <!-- Loaded dynamically via JS from api/partners.php -->
+                <p class="text-center" style="grid-column: 1 / -1; color: var(--color-text-muted);">Cargando empresas asociadas...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Lead Capture Section (Bottom) -->
+    <section id="contacto" class="contact-section" style="background-color: var(--color-bg-light); border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Conviértete en <span class="highlight">Cliente</span></h2>
+            </div>
+            
+            <div class="contact-grid">
                 <!-- Info & Map -->
                 <div class="contact-info-container animate-on-scroll">
                     <div class="info-card">
-                        <h3>Información de Contacto</h3>
+                        <h3>Datos Corporativos</h3>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div>
+                                <strong>Correo Ventas</strong>
+                                <p><a href="mailto:contacto@lacanastadistribuidora.cl">contacto@lacanastadistribuidora.cl</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                            </div>
+                            <div>
+                                <strong>Correo Despacho</strong>
+                                <p><a href="mailto:despacho@lacanastadistribuidora.cl">despacho@lacanastadistribuidora.cl</a></p>
+                            </div>
+                        </div>
                         <div class="info-item">
                             <div class="info-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                             </div>
                             <div>
-                                <strong>WhatsApp de Pedidos</strong>
-                                <p><a href="https://wa.me/56912345678" target="_blank" rel="noopener">+56 9 1234 5678</a></p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            </div>
-                            <div>
-                                <strong>Horario de Atención</strong>
-                                <p>Lunes a Sábado: 8:00 hrs - 18:00 hrs</p>
+                                <strong>Call Center y Contacto</strong>
+                                <p><a href="tel:56942567472">+56 9 4256 7472</a></p>
+                                <span class="whatsapp-only-node" style="display: none; margin-top: 0.5rem; display: block;">
+                                    <button class="btn btn-secondary btn-sm" onclick="openWhatsApp('Hola, quisiera ser cliente de La Canasta Distribuidora.')" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; font-family: var(--font-heading);">
+                                        Hablar con un Ejecutivo
+                                    </button>
+                                </span>
                             </div>
                         </div>
                         <div class="info-item">
@@ -240,23 +529,82 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             </div>
                             <div>
-                                <strong>Zona de Cobertura</strong>
-                                <p>Despacho a locales y almacenes en Rancagua y comunas de la Sexta Región, Chile.</p>
+                                <strong>Dirección Comercial</strong>
+                                <p>Longitudinal Antiguo lote D-2, PC10, Olivar, Chile.</p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Map Frame -->
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105990.23126787612!2d-70.82510255530777!3d-34.16805562723049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9663431669466df5%3A0x6b445763cbba9676!2sRancagua%2C%20O%27Higgins%2C%20Chile!5e0!3m2!1ses!2scl!4v1713000000000!5m2!1ses!2scl" 
-                            width="100%" 
-                            height="250" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                    <div class="map-container" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-md); margin-top: 1.5rem;">
+                        <iframe src="https://maps.google.com/maps?q=-34.21021538550202,-70.77033081170326&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form (Bottom) -->
+                <div class="contact-form-container animate-on-scroll">
+                    <div class="form-slogan">¡Haz tu Pedido!</div>
+                    <form id="bottomContactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="bottom-action">Llamado a la acción / Asunto</label>
+                            <select id="bottom-action" required>
+                                <option value="Conviértete en cliente" selected>Conviértete en cliente</option>
+                                <option value="Solicita información">Solicita información</option>
+                                <option value="Contactar a un ejecutivo">Contactar a un ejecutivo</option>
+                            </select>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label for="bottom-name">Nombre Completo</label>
+                                <input type="text" id="bottom-name" required placeholder="Ej: Juan Pérez">
+                            </div>
+                            <div class="form-group">
+                                <label for="bottom-email">Correo Electrónico</label>
+                                <input type="email" id="bottom-email" required placeholder="Ej: juan@negocio.com">
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label for="bottom-company">Empresa / Negocio</label>
+                                <input type="text" id="bottom-company" required placeholder="Ej: Minimarket La Esquina">
+                            </div>
+                            <div class="form-group">
+                                <label for="bottom-role">Cargo en la Empresa</label>
+                                <input type="text" id="bottom-role" required placeholder="Ej: Dueño / Administrador">
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label for="bottom-phone">Teléfono / Celular</label>
+                                <input type="tel" id="bottom-phone" required placeholder="Ej: +56 9 4256 7472">
+                            </div>
+                            <div class="form-group">
+                                <label for="bottom-region">Región</label>
+                                <select id="bottom-region" required>
+                                    <option value="" disabled selected>Selecciona tu región</option>
+                                    <option value="Región de O'Higgins">Región de O'Higgins</option>
+                                    <option value="Región Metropolitana">Región Metropolitana</option>
+                                    <option value="Región del Maule">Región del Maule</option>
+                                    <option value="Otra Región">Otra Región</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bottom-comments">Comentarios o Consulta</label>
+                            <textarea id="bottom-comments" rows="4" required placeholder="Escribe aquí los productos que te interesa cotizar o tus consultas comerciales..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            Contactar a un Ejecutivo
+                        </button>
+                    </form>
+                    
+                    <!-- Form Success Message -->
+                    <div id="bottomFormSuccess" class="form-success-alert" style="display: none;">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <h3>¡Datos Registrados con Éxito!</h3>
+                        <p>Hemos recibido tus antecedentes comerciales. Un ejecutivo de La Canasta Distribuidora se pondrá en contacto contigo a la brevedad.</p>
                     </div>
                 </div>
             </div>
@@ -267,36 +615,156 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-brand">
-                <span class="logo-text">La Canasta</span>
-                <p>Distribución de Alimentos</p>
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                    <div id="footerLogoTextNode" style="display: flex; align-items: center;"></div>
+                    <span class="logo-text" style="font-size: 1.5rem; font-weight: 800;">La Canasta</span>
+                </div>
+                <p style="margin-top: 5px;">Distribución y Operación Logística</p>
+                <p style="font-size: 0.85rem; margin-top: 10px; color: #9ca3af;">Abastecimiento a almacenes y comercios.</p>
             </div>
-            <div class="footer-links">
-                <h4>Contacto</h4>
-                <p>Sexta Región, Chile</p>
-                <p>Venta exclusiva para comercios</p>
-                <p><a href="admin.html" style="color: #9ca3af; font-size: 0.8rem; text-decoration: underline;">Acceso Admin</a></p>
+            <div class="footer-links" style="display: flex; flex-direction: column; gap: 0.85rem;">
+                <h4 style="margin-bottom: 0.25rem;">Contacto Corporativo</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo Ventas</span>
+                    <a href="mailto:contacto@lacanastadistribuidora.cl" style="color: white; text-decoration: none; font-size: 0.9rem;">contacto@lacanastadistribuidora.cl</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo Despacho</span>
+                    <a href="mailto:despacho@lacanastadistribuidora.cl" style="color: white; text-decoration: none; font-size: 0.9rem;">despacho@lacanastadistribuidora.cl</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo Gerencia</span>
+                    <a href="mailto:gerencia@lacanastadistribuidora.cl" style="color: white; text-decoration: none; font-size: 0.9rem;">gerencia@lacanastadistribuidora.cl</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.15rem;" class="whatsapp-only-node">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">WhatsApp Business</span>
+                    <a href="#" onclick="openWhatsApp('Hola, me interesa conocer más sobre los productos y servicios de La Canasta Distribuidora.'); return false;" style="color: #25d366; text-decoration: none; font-size: 0.9rem; font-weight: 700;">+56 9 4256 7472</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Call Center</span>
+                    <a href="tel:56942567472" style="color: white; text-decoration: none; font-size: 0.9rem;">+56 9 4256 7472</a>
+                </div>
+                <div style="margin-top: 0.5rem;">
+                    <a href="admin.html" style="color: #6b7280; font-size: 0.8rem; text-decoration: underline;">Acceso Admin</a>
+                </div>
             </div>
             <div class="footer-social">
                 <h4>Síguenos</h4>
                 <div class="social-icons">
-                    <!-- Icons could go here -->
                     <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
                     <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 La Canasta Distribución. Todos los derechos reservados.</p>
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; width: 100%;">
+                <p>&copy; 2026 La Canasta Distribuidora. Todos los derechos reservados. | Desarrollado por <a href="https://bastiascid.github.io/portafolio" target="_blank" rel="noopener" style="color: var(--color-secondary-light); text-decoration: none; font-weight: bold;">Cristian Bastias Cid</a></p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="privacidad.html" style="color: #9ca3af; font-size: 0.8rem; text-decoration: none;">Política de Privacidad</a>
+                    <a href="terminos.html" style="color: #9ca3af; font-size: 0.8rem; text-decoration: none;">Términos y Condiciones</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <div class="whatsapp-float-container">
-        <button class="whatsapp-float-btn" onclick="openWhatsApp('Hola La Canasta, necesito más información.')" aria-label="Chat en WhatsApp">
+    <!-- Floating WhatsApp Button (Hidden by default, shown dynamically via JS setting) -->
+    <div class="whatsapp-float-container whatsapp-only-node" style="display: none;">
+        <div class="whatsapp-tooltip">¿Cómo puedo ayudarte?</div>
+        <button class="whatsapp-float-btn" onclick="openWhatsApp('Hola, me interesa conocer más sobre los productos y servicios de La Canasta Distribuidora.')" aria-label="Chat en WhatsApp +56 9 4256 7472" title="Escríbenos al +56 9 4256 7472">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
         </button>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Leaflet JS and map setup -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mapElement = document.getElementById('coverageMap');
+            if (mapElement) {
+                // Centered around the middle of O'Higgins region (e.g. Requínoa / Rengo area)
+                const map = L.map('coverageMap', {
+                    center: [-34.35, -71.12],
+                    zoom: 9,
+                    scrollWheelZoom: false
+                });
+
+                window.coverageMap = map;
+                window.coverageMarkers = {};
+
+                // Load a beautiful, light grayscale style of maps
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 20
+                }).addTo(map);
+
+                // List of 33 communes/localities with active coverage
+                const activeCommunes = [
+                    { name: "Rancagua", coords: [-34.1689, -70.7397] },
+                    { name: "Machalí", coords: [-34.1805, -70.6481] },
+                    { name: "Graneros", coords: [-34.0673, -70.7251] },
+                    { name: "Mostazal", coords: [-33.9904, -70.7187] },
+                    { name: "San Fernando", coords: [-34.5828, -70.9882] },
+                    { name: "Codegua", coords: [-34.0333, -70.6667] },
+                    { name: "Pichilemu", coords: [-34.3857, -72.0048] },
+                    { name: "Navidad", coords: [-33.9535, -71.8267] },
+                    { name: "Paredones", coords: [-34.6508, -71.8994] },
+                    { name: "Nancagua", coords: [-34.6468, -71.2227] },
+                    { name: "Marchigüe", coords: [-34.3981, -71.6214] },
+                    { name: "Santa Cruz", coords: [-34.6394, -71.3644] },
+                    { name: "Litueche", coords: [-34.1169, -71.7371] },
+                    { name: "Placilla", coords: [-34.6366, -71.1245] },
+                    { name: "La Estrella", coords: [-34.2045, -71.6534] },
+                    { name: "Chépica", coords: [-34.7262, -71.2778] },
+                    { name: "Coinco", coords: [-34.2661, -70.9529] },
+                    { name: "Pumanque", coords: [-34.5986, -71.6663] },
+                    { name: "Lolol", coords: [-34.7291, -71.6444] },
+                    { name: "Palmilla", coords: [-34.6042, -71.3564] },
+                    { name: "Doñihue", coords: [-34.2273, -70.9632] },
+                    { name: "Requínoa", coords: [-34.2787, -70.8122] },
+                    { name: "Lo Miranda", coords: [-34.2102, -70.7703] },
+                    { name: "Coltauco", coords: [-34.2625, -71.0772] },
+                    { name: "Las Cabras", coords: [-34.2882, -71.3093] },
+                    { name: "Chimbarongo", coords: [-34.7001, -71.0425] },
+                    { name: "Rengo", coords: [-34.4069, -70.8596] },
+                    { name: "Olivar", coords: [-34.2185, -70.8352] },
+                    { name: "Malloa", coords: [-34.4445, -70.9467] },
+                    { name: "San Vicente de Tagua Tagua", coords: [-34.4379, -71.0746] },
+                    { name: "Peumo", coords: [-34.3976, -71.1687] },
+                    { name: "Pichidegua", coords: [-34.3641, -71.2829] },
+                    { name: "Peralillo", coords: [-34.4827, -71.4883] }
+                ];
+
+                activeCommunes.forEach(function(commune) {
+                    const marker = L.circleMarker(commune.coords, {
+                        radius: 7,
+                        fillColor: '#b83b1d', // warm red
+                        color: '#5d4637',     // brown border
+                        weight: 1.5,
+                        opacity: 0.9,
+                        fillOpacity: 0.75
+                    }).addTo(map)
+                      .bindPopup('<strong>' + commune.name + '</strong><br>Cobertura Activa La Canasta');
+
+                    const nameKey = commune.name.trim().toLowerCase();
+                    window.coverageMarkers[nameKey] = marker;
+
+                    // Highlight corresponding list badge when marker is opened
+                    marker.on('popupopen', function() {
+                        document.querySelectorAll('.commune-badge').forEach(b => {
+                            const badgeText = b.querySelector('span:not(.badge-icon)').textContent.trim().toLowerCase();
+                            if (badgeText === nameKey) {
+                                b.classList.add('active');
+                                b.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            } else {
+                                b.classList.remove('active');
+                            }
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
