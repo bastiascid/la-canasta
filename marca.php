@@ -50,7 +50,7 @@ try {
     <title>Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta Distribuidora</title>
     <meta name="description" content="Distribuidor mayorista oficial de <?php echo htmlspecialchars($brand['name']); ?>. Abastecemos almacenes, minimarkets y comercio detallista en la Región de O'Higgins.">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
     <style>
         .brand-hero {
             background: linear-gradient(135deg, var(--color-primary) 0%, #153c73 100%);
@@ -331,7 +331,10 @@ try {
                     <?php if ($logo_url !== 'assets/canasta-logo.png'): ?>
                         <img src="<?php echo htmlspecialchars($logo_url); ?>" alt="La Canasta Logo" style="height: 40px; max-width: 150px; object-fit: contain;">
                     <?php else: ?>
-                        <span class="logo-bold">La Canasta</span><span class="logo-light" style="white-space: nowrap;">Distribuidora y Comercializadora</span>
+                        <div style="display: flex; flex-direction: column;">
+                            <span class="logo-bold" style="line-height: 1.1; font-weight: 800; color: white; font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
+                            <span class="logo-light" style="font-size: 0.7rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; white-space: nowrap;">Distribuidora y Comercializadora</span>
+                        </div>
                     <?php endif; ?>
                 </a>
                 <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
