@@ -41,7 +41,7 @@ try {
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css?v=5">
     
     
     <!-- Analítica & Tracking (Preparados para Producción) -->
@@ -208,7 +208,7 @@ try {
                 <?php endif; ?>
                 <div style="display: flex; flex-direction: column; justify-content: center;">
                     <span class="logo-bold" style="line-height: 1.1; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
-                    <span class="logo-light" style="font-size: 0.7rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px;">Distribuidora</span>
+                    <span class="logo-light" style="font-size: 0.7rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px; white-space: nowrap;">Distribuidora y Comercializadora</span>
                 </div>
             </a>
             
@@ -395,7 +395,7 @@ try {
                     <?php endif; ?>
                     <div style="display: flex; flex-direction: column; justify-content: center;">
                         <span class="logo-bold" style="line-height: 1.1; font-weight: 800; color: white; font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
-                        <span class="logo-light" style="font-size: 0.7rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px;">Distribuidora</span>
+                        <span class="logo-light" style="font-size: 0.7rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; white-space: nowrap;">Distribuidora y Comercializadora</span>
                     </div>
                 </a>
                 <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
