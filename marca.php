@@ -50,7 +50,7 @@ try {
     <title>Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta Distribuidora</title>
     <meta name="description" content="Distribuidor mayorista oficial de <?php echo htmlspecialchars($brand['name']); ?>. Abastecemos almacenes, minimarkets y comercio detallista en la Región de O'Higgins.">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
     <style>
         .brand-hero {
             background: linear-gradient(135deg, var(--color-primary) 0%, #153c73 100%);
@@ -309,7 +309,11 @@ try {
                             <textarea name="comments" rows="4" placeholder="Indíquenos qué productos le interesan o detalles de su local..." style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--border-radius); font-size: 0.9rem; font-family: inherit; resize: vertical;"></textarea>
                         </div>
 
-                        <div style="text-align: center;">
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border-left: 3px solid var(--color-secondary); padding: 0.6rem; border-radius: 4px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2; width: 100%; max-width: 500px;">
+                                <span style="font-size: 1.1rem;">📦</span>
+                                <span>El Ticket mínimo de Compra desde $25.000</span>
+                            </div>
                             <button type="submit" class="btn btn-secondary" style="padding: 0.75rem 2rem; width: 100%; max-width: 300px; font-weight: 700;">Enviar Formulario B2B</button>
                         </div>
                     </form>

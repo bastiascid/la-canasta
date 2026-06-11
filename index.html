@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
     
     
     <!-- Google Analytics 4 -->
@@ -147,6 +147,10 @@
                             <label for="hero-comments" style="font-size: 0.75rem; font-weight: 700;">Comentarios</label>
                             <textarea id="hero-comments" rows="2" placeholder="Ej: Me interesa comprar y cotizar..." style="padding: 0.45rem 0.65rem; font-size: 0.85rem; resize: none;"></textarea>
                         </div>
+                        <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border-left: 3px solid var(--color-secondary); padding: 0.5rem; border-radius: 4px; text-align: center; margin-top: 0.25rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2;">
+                            <span style="font-size: 1rem;">📦</span>
+                            <span>El Ticket mínimo de Compra desde $25.000</span>
+                        </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.6rem; font-size: 0.9rem; margin-top: 0.25rem;">
                             Solicitar Información
                         </button>
@@ -239,18 +243,9 @@
         </div>
         
         <div class="container">
-            <div class="brands-carousel-wrapper animate-on-scroll">
-                <div class="carousel-container">
-                    <div id="brandsCarouselTrack" class="carousel-track">
-                        <!-- Brands will be loaded here via Ajax inside .carousel-slide items -->
-                        <p class="text-center" style="width: 100%; color: var(--color-text-muted); padding: 2rem 0;">Cargando marcas representadas...</p>
-                    </div>
-                    <!-- Carousel Controls -->
-                    <button class="carousel-nav-btn prev-btn" id="brandPrevBtn" aria-label="Anterior">&lsaquo;</button>
-                    <button class="carousel-nav-btn next-btn" id="brandNextBtn" aria-label="Siguiente">&rsaquo;</button>
-                </div>
-                <!-- Carousel Indicators -->
-                <div class="carousel-indicators" id="brandIndicators"></div>
+            <div id="brandsGrid" class="brands-static-grid animate-on-scroll">
+                <!-- Brands will be loaded here via Ajax -->
+                <p class="text-center" style="width: 100%; color: var(--color-text-muted); padding: 2rem 0;">Cargando marcas representadas...</p>
             </div>
         </div>
     </section>
@@ -451,7 +446,11 @@
                         <label for="middle-comments" style="font-weight: 700; font-size: 0.9rem;">Comentarios</label>
                         <textarea id="middle-comments" rows="3" placeholder="Ej: Me gustaría agendar una visita comercial..." style="padding: 0.75rem; font-size: 0.95rem; border: 1px solid var(--color-border); border-radius: var(--border-radius); resize: vertical; font-family: inherit;"></textarea>
                     </div>
-                    <div style="text-align: center; margin-top: 1.25rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 1.25rem; gap: 0.75rem;">
+                        <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border-left: 3px solid var(--color-secondary); padding: 0.6rem; border-radius: 4px; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2; width: 100%; max-width: 500px;">
+                            <span style="font-size: 1.1rem;">📦</span>
+                            <span>El Ticket mínimo de Compra desde $25.000</span>
+                        </div>
                         <button type="submit" class="btn btn-secondary" style="padding: 0.85rem 3rem; width: 100%; max-width: 320px; font-weight: 700;">Enviar Registro Comercial</button>
                     </div>
                 </form>
@@ -592,6 +591,10 @@
                         <div class="form-group">
                             <label for="bottom-comments">Comentarios o Consulta</label>
                             <textarea id="bottom-comments" rows="4" required placeholder="Escribe aquí los productos que te interesa cotizar o tus consultas comerciales..."></textarea>
+                        </div>
+                        <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border-left: 3px solid var(--color-secondary); padding: 0.5rem; border-radius: 4px; text-align: center; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2;">
+                            <span style="font-size: 1rem;">📦</span>
+                            <span>El Ticket mínimo de Compra desde $25.000</span>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             Contactar a un Ejecutivo
@@ -765,6 +768,6 @@
             }
         });
     </script>
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>

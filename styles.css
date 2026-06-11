@@ -1270,6 +1270,29 @@ footer {
     font-weight: bold;
 }
 
+/* Brands Static Grid */
+.brands-static-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+@media (max-width: 1024px) {
+    .brands-static-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .brands-static-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .brands-static-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Brands Carousel Styling */
 .brands-carousel-wrapper {
     position: relative;

@@ -41,7 +41,7 @@ try {
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
     
     
     <!-- Analítica & Tracking (Preparados para Producción) -->
@@ -373,6 +373,10 @@ try {
                             <textarea name="comments" rows="3" placeholder="Ej: Me interesa distribuir azúcar Iansa y quesos Angelmo..." style="padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); font-size: 0.9rem; font-family: inherit; resize: none;"></textarea>
                         </div>
 
+                        <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border-left: 3px solid var(--color-secondary); padding: 0.6rem; border-radius: 4px; text-align: center; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2;">
+                            <span style="font-size: 1.1rem;">📦</span>
+                            <span>El Ticket mínimo de Compra desde $25.000</span>
+                        </div>
                         <button type="submit" class="btn btn-secondary" style="width: 100%; justify-content: center; padding: 0.85rem; font-weight: 700; font-size: 1rem; border: 0; cursor: pointer; border-radius: var(--border-radius);">
                             Solicitar Contacto Comercial
                         </button>

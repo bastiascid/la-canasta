@@ -103,40 +103,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Render Brand Cards
     function renderBrands() {
-        const track = document.getElementById('brandsCarouselTrack');
-        if (!track) return;
+        const grid = document.getElementById('brandsGrid');
+        if (!grid) return;
         
         if (globalBrands.length === 0) {
-            track.innerHTML = `<p class="text-center" style="width: 100%; color: var(--color-text-muted); padding: 2rem 0;">No hay marcas registradas en este momento.</p>`;
+            grid.innerHTML = `<p class="text-center" style="width: 100%; color: var(--color-text-muted); padding: 2rem 0;">No hay marcas registradas en este momento.</p>`;
             return;
         }
         
-        track.innerHTML = '';
+        grid.innerHTML = '';
         globalBrands.forEach(brand => {
-            const slide = document.createElement('div');
-            slide.className = 'carousel-slide';
+            const card = document.createElement('div');
+            card.className = 'brand-showcase-card';
+            card.style.display = 'flex';
+            card.style.flexDirection = 'column';
             
-            slide.innerHTML = `
-                <div class="brand-showcase-card" style="margin: 0; width: 100%; display: flex; flex-direction: column;">
-                    <div class="brand-header-flex">
-                        <img src="${brand.logo_url}" alt="${brand.name} Logo" class="brand-logo-img" onerror="this.src='https://placehold.co/120x80/0f2c59/ffffff?text=${brand.name}'">
-                        <h3 style="color: var(--color-primary); font-size: 1.5rem; margin: 0;">${brand.name}</h3>
-                    </div>
-                    <p style="font-size: 0.95rem; line-height: 1.5; flex-grow: 1;">${brand.description || 'Distribución mayorista autorizada.'}</p>
-                    <div style="margin-top: 1.25rem; font-size: 0.85rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-                        <a href="${brand.official_url && brand.official_url !== '#' ? brand.official_url : '#contacto'}" ${brand.official_url && brand.official_url !== '#' ? 'target="_blank" rel="noopener"' : ''} style="text-decoration: underline; font-weight: 700; color: var(--color-secondary);">
-                            Sitio Oficial &rarr;
-                        </a>
-                    </div>
+            card.innerHTML = `
+                <div class="brand-header-flex">
+                    <img src="${brand.logo_url}" alt="${brand.name} Logo" class="brand-logo-img" onerror="this.src='https://placehold.co/120x80/0f2c59/ffffff?text=${brand.name}'">
+                    <h3 style="color: var(--color-primary); font-size: 1.5rem; margin: 0; font-weight: 800; font-family: var(--font-heading);">${brand.name}</h3>
                 </div>
+                <p style="font-size: 0.95rem; line-height: 1.5; color: var(--color-text-muted); margin: 0; flex-grow: 1;">${brand.description || 'Distribución mayorista autorizada.'}</p>
             `;
             
-            track.appendChild(slide);
-            scrollObserver.observe(slide);
+            grid.appendChild(card);
+            scrollObserver.observe(card);
         });
-
-        // Initialize Carousel
-        initBrandsCarousel();
     }
 
     // Brands Carousel Logic
