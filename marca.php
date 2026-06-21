@@ -49,8 +49,17 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta Distribuidora</title>
     <meta name="description" content="Distribuidor mayorista oficial de <?php echo htmlspecialchars($brand['name']); ?>. Abastecemos almacenes, minimarkets y comercio detallista en la Región de O'Higgins.">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lacanastadistribuidora.cl/marcas/<?php echo htmlspecialchars($brand['slug']); ?>">
+    <meta property="og:title" content="Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta">
+    <meta property="og:description" content="Distribuidor mayorista oficial de <?php echo htmlspecialchars($brand['name']); ?> para almacenes y minimarkets en la Sexta Región.">
+    <meta property="og:image" content="https://www.lacanastadistribuidora.cl/<?php echo htmlspecialchars($brand['logo_url']); ?>">
+    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=15">
     <style>
         .brand-hero {
             background: linear-gradient(135deg, var(--color-primary) 0%, #153c73 100%);
@@ -141,8 +150,7 @@ try {
                     <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 60px; max-width: 150px; object-fit: contain;">
                 <?php endif; ?>
                 <div style="display: flex; flex-direction: column; justify-content: center;">
-                    <span class="logo-bold" style="line-height: 1.1; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
-                    <span class="logo-light" style="font-size: 0.7rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px; white-space: nowrap;">Distribuidora y Comercializadora</span>
+                    <span class="logo-light" style="font-size: 0.65rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
                 </div>
             </a>
             
@@ -192,7 +200,7 @@ try {
                         <?php echo nl2br(htmlspecialchars($brand['history'] ? $brand['history'] : 'Operamos como distribuidor estratégico de esta marca para el canal tradicional, entregando productos de alta rotación directo a comercios locales.')); ?>
                     </p>
                 </div>
-                <div style="background-color: var(--color-bg-light); padding: 2rem; border-radius: var(--border-radius); border-left: 5px solid var(--color-secondary);">
+                <div style="background-color: var(--color-bg-light); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--color-border);">
                     <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1rem;">Propuesta Comercial B2B</h3>
                     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
                         <li style="display: flex; gap: 0.5rem; align-items: center;">
@@ -202,7 +210,10 @@ try {
                             <span style="color: var(--color-secondary); font-weight: bold;">✓</span> Formatos mayoristas optimizados para el canal retail.
                         </li>
                         <li style="display: flex; gap: 0.5rem; align-items: center;">
-                            <span style="color: var(--color-secondary); font-weight: bold;">✓</span> Material promocional y apoyo comercial en terreno.
+                            <span style="color: var(--color-secondary); font-weight: bold;">✓</span> Activa <strong>fuerza de ventas en terreno</strong> para el desarrollo de los negocios.
+                        </li>
+                        <li style="display: flex; gap: 0.5rem; align-items: center;">
+                            <span style="color: var(--color-secondary); font-weight: bold;">✓</span> <strong>Contacto permanente</strong> y asesoría comercial continua.
                         </li>
                         <li style="display: flex; gap: 0.5rem; align-items: center;">
                             <span style="color: var(--color-secondary); font-weight: bold;">✓</span> Facturación electrónica y logística adaptada.
@@ -261,7 +272,7 @@ try {
                     <form id="brandLeadForm">
                         <input type="hidden" name="comments_prefix" value="Interés en marca: <?php echo htmlspecialchars($brand['name']); ?>. ">
                         
-                        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div class="form-grid" style="margin-bottom: 1rem;">
                             <div class="form-group">
                                 <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text-dark);">Nombre Completo *</label>
                                 <input type="text" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--border-radius); font-size: 0.9rem;">
@@ -272,7 +283,7 @@ try {
                             </div>
                         </div>
 
-                        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div class="form-grid" style="margin-bottom: 1rem;">
                             <div class="form-group">
                                 <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text-dark);">Cargo / Puesto *</label>
                                 <input type="text" name="role" placeholder="Ej. Dueño, Comprador" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--border-radius); font-size: 0.9rem;">
@@ -283,7 +294,7 @@ try {
                             </div>
                         </div>
 
-                        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div class="form-grid" style="margin-bottom: 1rem;">
                             <div class="form-group">
                                 <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text-dark);">Correo Electrónico *</label>
                                 <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--border-radius); font-size: 0.9rem;">
@@ -310,7 +321,7 @@ try {
                         </div>
 
                         <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-                            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border-left: 3px solid var(--color-secondary); padding: 0.6rem; border-radius: 4px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2; width: 100%; max-width: 500px;">
+                            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border: 1px solid rgba(184, 59, 29, 0.15); padding: 0.6rem; border-radius: 4px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2; width: 100%; max-width: 500px;">
                                 <span style="font-size: 1.1rem;">📦</span>
                                 <span>El Ticket mínimo de Compra desde $25.000</span>
                             </div>
@@ -332,8 +343,7 @@ try {
                         <img src="<?php echo htmlspecialchars($logo_url); ?>" alt="La Canasta Logo" style="height: 40px; max-width: 150px; object-fit: contain;">
                     <?php else: ?>
                         <div style="display: flex; flex-direction: column;">
-                            <span class="logo-bold" style="line-height: 1.1; font-weight: 800; color: white; font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
-                            <span class="logo-light" style="font-size: 0.7rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; white-space: nowrap;">Distribuidora y Comercializadora</span>
+                            <span class="logo-light" style="font-size: 0.65rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
                         </div>
                     <?php endif; ?>
                 </a>

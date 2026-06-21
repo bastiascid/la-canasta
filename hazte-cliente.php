@@ -37,11 +37,19 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hazte Cliente - La Canasta Distribuidora</title>
     <meta name="description" content="Únete a nuestra red de distribución B2B. Abastecimiento de marcas líderes, logística eficiente y atención personalizada para almacenes y minimarkets.">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lacanastadistribuidora.cl/hazte-cliente.php">
+    <meta property="og:title" content="Hazte Cliente - La Canasta Distribuidora">
+    <meta property="og:description" content="Únete a nuestra red de distribución B2B. Abastecimiento y logística para almacenes y minimarkets en la Sexta Región.">
+    <meta property="og:image" content="https://www.lacanastadistribuidora.cl/assets/canasta-logo.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=15">
     
     
     <!-- Analítica & Tracking (Preparados para Producción) -->
@@ -207,8 +215,7 @@ try {
                     <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 60px; max-width: 150px; object-fit: contain;">
                 <?php endif; ?>
                 <div style="display: flex; flex-direction: column; justify-content: center;">
-                    <span class="logo-bold" style="line-height: 1.1; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
-                    <span class="logo-light" style="font-size: 0.7rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px; white-space: nowrap;">Distribuidora y Comercializadora</span>
+                    <span class="logo-light" style="font-size: 0.65rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
                 </div>
             </a>
             
@@ -259,8 +266,8 @@ try {
                 <div class="benefit-item">
                     <div class="benefit-icon">✓</div>
                     <div class="benefit-content">
-                        <h3>Atención y Asesoramiento Comercial</h3>
-                        <p>Ejecutivos comerciales en terreno dedicados a apoyarte en la selección de formatos mayoristas con mejor rentabilidad.</p>
+                        <h3>Contacto Permanente y Fuerza de Ventas</h3>
+                        <p>Establecemos un <strong>contacto permanente</strong> con nuestros clientes a través de nuestra <strong>fuerza de ventas en terreno</strong>, impulsando activamente el desarrollo de los negocios y brindando asesoría constante.</p>
                     </div>
                 </div>
                 
@@ -373,7 +380,7 @@ try {
                             <textarea name="comments" rows="3" placeholder="Ej: Me interesa distribuir azúcar Iansa y quesos Angelmo..." style="padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); font-size: 0.9rem; font-family: inherit; resize: none;"></textarea>
                         </div>
 
-                        <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border-left: 3px solid var(--color-secondary); padding: 0.6rem; border-radius: 4px; text-align: center; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2;">
+                        <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border: 1px solid rgba(184, 59, 29, 0.15); padding: 0.6rem; border-radius: 4px; text-align: center; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2;">
                             <span style="font-size: 1.1rem;">📦</span>
                             <span>El Ticket mínimo de Compra desde $25.000</span>
                         </div>
@@ -398,8 +405,7 @@ try {
                         <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 38px; max-width: 130px; object-fit: contain; background: white; padding: 4px; border-radius: 4px; box-shadow: var(--shadow-sm);">
                     <?php endif; ?>
                     <div style="display: flex; flex-direction: column; justify-content: center;">
-                        <span class="logo-bold" style="line-height: 1.1; font-weight: 800; color: white; font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
-                        <span class="logo-light" style="font-size: 0.7rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; white-space: nowrap;">Distribuidora y Comercializadora</span>
+                        <span class="logo-light" style="font-size: 0.65rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
                     </div>
                 </a>
                 <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">

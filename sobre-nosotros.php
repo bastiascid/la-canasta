@@ -32,11 +32,19 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - La Canasta Distribuidora</title>
     <meta name="description" content="Conoce la historia, misión, visión e infraestructura logística de La Canasta Distribuidora, operador comercial líder en el canal tradicional.">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lacanastadistribuidora.cl/sobre-nosotros.php">
+    <meta property="og:title" content="Sobre Nosotros - La Canasta Distribuidora">
+    <meta property="og:description" content="Conoce la historia, misión, visión e infraestructura de La Canasta. Distribución mayorista en la Sexta Región.">
+    <meta property="og:image" content="https://www.lacanastadistribuidora.cl/assets/canasta-logo.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=15">
     
     <!-- Analítica & Tracking -->
     <!-- Google Analytics 4 -->
@@ -146,8 +154,7 @@ try {
                     <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 60px; max-width: 150px; object-fit: contain;">
                 <?php endif; ?>
                 <div style="display: flex; flex-direction: column; justify-content: center;">
-                    <span class="logo-bold" style="line-height: 1.1; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
-                    <span class="logo-light" style="font-size: 0.7rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px; white-space: nowrap;">Distribuidora y Comercializadora</span>
+                    <span class="logo-light" style="font-size: 0.65rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
                 </div>
             </a>
             
@@ -211,7 +218,7 @@ try {
                 <p style="color: var(--color-text-muted);">Los pilares que sostienen nuestra operación diaria.</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
                 <div class="pillar-card">
                     <h4>Experiencia Logística</h4>
                     <p>Contamos con bodegas equipadas y camiones de reparto propios para garantizar entregas exactas y puntuales.</p>
@@ -221,8 +228,12 @@ try {
                     <p>Conectamos comunas rurales y urbanas de la provincia, llevando marcas representadas donde otros no llegan.</p>
                 </div>
                 <div class="pillar-card">
-                    <h4>Desarrollo del Almacenero</h4>
-                    <p>Facilitamos el acceso a material promocional, catálogos digitales e información comercial para aumentar tus ventas.</p>
+                    <h4>Fuerza de Ventas en Terreno</h4>
+                    <p>Contamos con una activa <strong>fuerza de ventas en terreno</strong> para el desarrollo de los negocios, asesorando y visitando periódicamente a cada comercio.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>Contacto Permanente</h4>
+                    <p>Mantenemos un <strong>contacto permanente</strong> y directo con nuestros clientes, asegurando respuestas ágiles y soporte continuo para potenciar sus ventas.</p>
                 </div>
             </div>
         </div>
@@ -238,8 +249,7 @@ try {
                         <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 38px; max-width: 130px; object-fit: contain; background: white; padding: 4px; border-radius: 4px; box-shadow: var(--shadow-sm);">
                     <?php endif; ?>
                     <div style="display: flex; flex-direction: column; justify-content: center;">
-                        <span class="logo-bold" style="line-height: 1.1; font-weight: 800; color: white; font-family: var(--font-heading); font-size: 1.4rem;">La Canasta</span>
-                        <span class="logo-light" style="font-size: 0.7rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; white-space: nowrap;">Distribuidora y Comercializadora</span>
+                        <span class="logo-light" style="font-size: 0.65rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
                     </div>
                 </a>
                 <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
