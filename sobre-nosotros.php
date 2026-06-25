@@ -136,7 +136,7 @@ try {
     <div style="background-color: var(--color-primary); color: white; font-size: 0.8rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
             <div>
-                <span style="margin-right: 1.5rem;">📧 <a href="mailto:contacto@comercializadoralacanasta.cl" style="color: white; text-decoration: none;">contacto@comercializadoralacanasta.cl</a></span>
+                <span style="margin-right: 1.5rem;">📧 <a href="mailto:contacto@lacanastacomercializadora.cl" style="color: white; text-decoration: none;">contacto@lacanastacomercializadora.cl</a></span>
                 <span>📞 Call Center: +56 9 4256 7472</span>
             </div>
             <div style="display: flex; gap: 1.5rem;">
@@ -259,7 +259,7 @@ try {
                 <h4 style="margin-bottom: 0.25rem;">Contacto Corporativo</h4>
                 <div style="display: flex; flex-direction: column; gap: 0.15rem;">
                     <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo de Contacto Único</span>
-                    <a href="mailto:contacto@comercializadoralacanasta.cl" style="color: white; text-decoration: none; font-size: 0.9rem;">contacto@comercializadoralacanasta.cl</a>
+                    <a href="mailto:contacto@lacanastacomercializadora.cl" style="color: white; text-decoration: none; font-size: 0.9rem;">contacto@lacanastacomercializadora.cl</a>
                 </div>
                 <?php if ($whatsapp_enabled === '1'): ?>
                 <div style="display: flex; flex-direction: column; gap: 0.15rem;">

@@ -83,11 +83,11 @@ if ($method === 'POST') {
         // --- Send Email Notifications ---
         
         // 1. Email to Admin
-        $admin_email = 'contacto@comercializadoralacanasta.cl';
+        $admin_email = 'contacto@lacanastacomercializadora.cl';
         $admin_subject = "=?UTF-8?B?" . base64_encode("[Nuevo Lead] La Canasta - $origin") . "?=";
         $admin_headers = "MIME-Version: 1.0\r\n";
         $admin_headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-        $admin_headers .= "From: La Canasta Web <no-reply@comercializadoralacanasta.cl>\r\n";
+        $admin_headers .= "From: La Canasta Web <no-reply@lacanastacomercializadora.cl>\r\n";
         
         $admin_body = "
         <html>
@@ -120,7 +120,7 @@ if ($method === 'POST') {
         $user_subject = "=?UTF-8?B?" . base64_encode("Recibimos tu solicitud - La Canasta") . "?=";
         $user_headers = "MIME-Version: 1.0\r\n";
         $user_headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-        $user_headers .= "From: La Canasta <contacto@comercializadoralacanasta.cl>\r\n";
+        $user_headers .= "From: La Canasta <contacto@lacanastacomercializadora.cl>\r\n";
         
         $user_body = "
         <html>

@@ -31,10 +31,10 @@ try {
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.comercializadoralacanasta.cl/reclamos.php">
+    <meta property="og:url" content="https://www.lacanastacomercializadora.cl/reclamos.php">
     <meta property="og:title" content="Formulario de Reclamos - La Canasta">
     <meta property="og:description" content="Canal de postventa para el ingreso de requerimientos o reclamos. Comercializadora La Canasta.">
-    <meta property="og:image" content="https://www.comercializadoralacanasta.cl/assets/canasta-logo.webp">
+    <meta property="og:image" content="https://www.lacanastacomercializadora.cl/assets/canasta-logo.webp">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -121,7 +121,7 @@ try {
     <div style="background-color: var(--color-primary); color: white; font-size: 0.8rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
             <div>
-                <span style="margin-right: 1.5rem;">📧 <a href="mailto:contacto@comercializadoralacanasta.cl" style="color: white; text-decoration: none;">contacto@comercializadoralacanasta.cl</a></span>
+                <span style="margin-right: 1.5rem;">📧 <a href="mailto:contacto@lacanastacomercializadora.cl" style="color: white; text-decoration: none;">contacto@lacanastacomercializadora.cl</a></span>
                 <span>📞 Call Center: +56 9 4256 7472</span>
             </div>
             <div style="display: flex; gap: 1.5rem;">
@@ -181,7 +181,7 @@ try {
                             <div class="claim-channel-icon">📧</div>
                             <div class="claim-channel-text">
                                 <strong>Correo de Atención Único</strong>
-                                <a href="mailto:contacto@comercializadoralacanasta.cl">contacto@comercializadoralacanasta.cl</a>
+                                <a href="mailto:contacto@lacanastacomercializadora.cl">contacto@lacanastacomercializadora.cl</a>
                             </div>
                         </div>
                         <div class="claim-channel-item">
@@ -295,7 +295,7 @@ try {
                 <h4 style="color: white; margin-bottom: 0.25rem;">Contacto Corporativo</h4>
                 <div style="display: flex; flex-direction: column; gap: 0.15rem;">
                     <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo de Contacto Único</span>
-                    <a href="mailto:contacto@comercializadoralacanasta.cl" style="color: white; text-decoration: none; font-size: 0.9rem;">contacto@comercializadoralacanasta.cl</a>
+                    <a href="mailto:contacto@lacanastacomercializadora.cl" style="color: white; text-decoration: none; font-size: 0.9rem;">contacto@lacanastacomercializadora.cl</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.15rem;">
                     <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Línea Directa / Call Center</span>

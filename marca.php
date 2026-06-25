@@ -53,10 +53,10 @@ try {
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.comercializadoralacanasta.cl/marcas/<?php echo htmlspecialchars($brand['slug']); ?>">
+    <meta property="og:url" content="https://www.lacanastacomercializadora.cl/marcas/<?php echo htmlspecialchars($brand['slug']); ?>">
     <meta property="og:title" content="Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta Comercializadora y Distribuidora">
     <meta property="og:description" content="Distribuidor mayorista oficial de <?php echo htmlspecialchars($brand['name']); ?> para almacenes y minimarkets en la Sexta Región.">
-    <meta property="og:image" content="https://www.comercializadoralacanasta.cl/<?php echo htmlspecialchars($brand['logo_url']); ?>">
+    <meta property="og:image" content="https://www.lacanastacomercializadora.cl/<?php echo htmlspecialchars($brand['logo_url']); ?>">
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=18">
@@ -363,7 +363,7 @@ try {
                 <h3 style="margin-bottom: 0.25rem;">Contacto Corporativo</h3>
                 <div style="display: flex; flex-direction: column; gap: 0.15rem;">
                     <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo de Contacto Único</span>
-                    <a href="mailto:contacto@comercializadoralacanasta.cl" style="color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.85;">contacto@comercializadoralacanasta.cl</a>
+                    <a href="mailto:contacto@lacanastacomercializadora.cl" style="color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.85;">contacto@lacanastacomercializadora.cl</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.15rem;">
                     <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">WhatsApp Business</span>
