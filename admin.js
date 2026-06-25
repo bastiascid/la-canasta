@@ -850,6 +850,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('settings-logo').value = settings.logo_url || 'assets/canasta-logo.webp';
                     document.getElementById('settings-wa-enabled').checked = settings.whatsapp_enabled === '1';
                     document.getElementById('settings-wa-number').value = settings.whatsapp_number || '+56 9 4256 7472';
+                    
+                    // Welcome Promo Popup
+                    document.getElementById('settings-popup-enabled').checked = settings.welcome_popup_enabled === '1';
+                    document.getElementById('settings-popup-image').value = settings.welcome_popup_image || 'assets/welcome-popup-banner.webp';
+                    document.getElementById('settings-popup-title').value = settings.welcome_popup_title || '¡Bienvenidos a La Canasta!';
+                    document.getElementById('settings-popup-desc').value = settings.welcome_popup_description || 'Somos el distribuidor mayorista líder de la Región de O\'Higgins. Abastécete con marcas de alta rotación directo en tu local.';
+                    document.getElementById('settings-popup-btn').value = settings.welcome_popup_btn_text || '¡Comenzar Pedido!';
                 }
             })
             .catch(err => console.error("Error loading settings:", err));
@@ -862,7 +869,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const payload = {
                 logo_url: document.getElementById('settings-logo').value.trim(),
                 whatsapp_enabled: document.getElementById('settings-wa-enabled').checked ? '1' : '0',
-                whatsapp_number: document.getElementById('settings-wa-number').value.trim()
+                whatsapp_number: document.getElementById('settings-wa-number').value.trim(),
+                
+                // Welcome Promo Popup
+                welcome_popup_enabled: document.getElementById('settings-popup-enabled').checked ? '1' : '0',
+                welcome_popup_image: document.getElementById('settings-popup-image').value.trim(),
+                welcome_popup_title: document.getElementById('settings-popup-title').value.trim(),
+                welcome_popup_description: document.getElementById('settings-popup-desc').value.trim(),
+                welcome_popup_btn_text: document.getElementById('settings-popup-btn').value.trim()
             };
             
             fetch('api/settings.php', {

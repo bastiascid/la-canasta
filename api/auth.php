@@ -2,6 +2,20 @@
 // api/auth.php
 // Middleware basic check for admin passcode
 
+// Polyfill for getallheaders() if it does not exist in CGI/FastCGI environments
+if (!function_exists('getallheaders')) {
+    function getallheaders() {
+        $headers = [];
+        foreach ($_SERVER as $name => $value) {
+            if (substr($name, 0, 5) == 'HTTP_') {
+                $header_name = str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))));
+                $headers[$header_name] = $value;
+            }
+        }
+        return $headers;
+    }
+}
+
 function require_admin_auth() {
     $headers = getallheaders();
     $passcode = null;

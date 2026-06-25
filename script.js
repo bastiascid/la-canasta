@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             node.style.display = 'none';
                         }
                     });
+                    
+                    // Setup Welcome Popup with dynamic settings
+                    setupWelcomePopup();
                 }
             })
             .catch(err => console.error("Error loading settings:", err));
@@ -1125,6 +1128,29 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (!popup) return;
         
+        // Only show if enabled in globalSettings
+        if (globalSettings.welcome_popup_enabled !== '1') {
+            popup.style.display = 'none';
+            return;
+        }
+        
+        // Update popup values dynamically
+        const bannerImg = popup.querySelector('.welcome-popup-banner img');
+        if (bannerImg && globalSettings.welcome_popup_image) {
+            bannerImg.src = globalSettings.welcome_popup_image + '?v=18';
+        }
+        const titleH2 = popup.querySelector('.welcome-popup-content h2');
+        if (titleH2 && globalSettings.welcome_popup_title) {
+            titleH2.textContent = globalSettings.welcome_popup_title;
+        }
+        const descP = popup.querySelector('.welcome-popup-content p');
+        if (descP && globalSettings.welcome_popup_description) {
+            descP.textContent = globalSettings.welcome_popup_description;
+        }
+        if (ctaBtn && globalSettings.welcome_popup_btn_text) {
+            ctaBtn.textContent = globalSettings.welcome_popup_btn_text;
+        }
+        
         if (!sessionStorage.getItem('welcome_popup_shown')) {
             setTimeout(() => {
                 popup.style.display = 'flex';
@@ -1163,8 +1189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Init Cart & Popup
+    // Init Cart
     updateCartBadge();
     setupCartDrawerEvents();
-    setupWelcomePopup();
 });

@@ -756,6 +756,35 @@
                                 <input type="text" id="settings-wa-number" placeholder="Ej: +56942567472">
                             </div>
                         </div>
+                        
+                        <div style="border-top: 1px dashed var(--color-border); padding-top: 1.5rem; margin-top: 1.5rem;">
+                            <h4 style="margin-bottom: 1rem; color: var(--color-primary);">Popup de Bienvenida Promocional</h4>
+                            
+                            <div class="form-group" style="flex-direction: row; gap: 0.75rem; align-items: center; margin-bottom: 1.25rem;">
+                                <input type="checkbox" id="settings-popup-enabled" style="width: 20px; height: 20px; cursor: pointer;">
+                                <label for="settings-popup-enabled" style="cursor: pointer; font-weight: 600;">Activar Popup de Bienvenida al ingresar</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="settings-popup-image">Ruta de la Imagen Promocional (WebP/PNG)</label>
+                                <input type="text" id="settings-popup-image" placeholder="Ej: assets/welcome-popup-banner.webp">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="settings-popup-title">Título del Popup</label>
+                                <input type="text" id="settings-popup-title" placeholder="Ej: ¡Bienvenidos a La Canasta!">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="settings-popup-desc">Descripción del Popup</label>
+                                <textarea id="settings-popup-desc" rows="3" placeholder="Mensaje de bienvenida y ofertas..." style="font-family: inherit; resize: none; border-radius: var(--border-radius); border: 1px solid var(--color-border); padding: 0.75rem; font-size: 0.9rem;"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="settings-popup-btn">Texto del Botón de Acción (CTA)</label>
+                                <input type="text" id="settings-popup-btn" placeholder="Ej: ¡Comenzar Pedido!">
+                            </div>
+                        </div>
 
                         <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
                             Guardar Configuraciones

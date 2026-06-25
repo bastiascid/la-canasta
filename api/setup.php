@@ -141,13 +141,25 @@ try {
         $pdo->exec("ALTER TABLE offers ADD COLUMN type VARCHAR(50) DEFAULT 'Campañas comerciales'");
     }
 
-    // 3. Insert Default Settings if empty
-    $check_settings = $pdo->query("SELECT COUNT(*) FROM settings")->fetchColumn();
-    if ($check_settings == 0) {
-        $stmt = $pdo->prepare("INSERT INTO settings (`key`, `value`) VALUES (?, ?)");
-        $stmt->execute(['whatsapp_enabled', '0']);
-        $stmt->execute(['whatsapp_number', '+56 9 4256 7472']);
-        $stmt->execute(['logo_url', 'assets/canasta-logo.webp']);
+    // 3. Ensure all required default settings exist (including welcome popup keys)
+    $required_settings = [
+        'whatsapp_enabled' => '0',
+        'whatsapp_number' => '+56 9 4256 7472',
+        'logo_url' => 'assets/canasta-logo.webp',
+        'welcome_popup_enabled' => '1',
+        'welcome_popup_image' => 'assets/welcome-popup-banner.webp',
+        'welcome_popup_title' => '¡Bienvenidos a La Canasta!',
+        'welcome_popup_description' => 'Somos el distribuidor mayorista líder de la Región de O\'Higgins. Abastécete con marcas de alta rotación directo en tu local.',
+        'welcome_popup_btn_text' => '¡Comenzar Pedido!'
+    ];
+    
+    $stmt_check = $pdo->prepare("SELECT COUNT(*) FROM settings WHERE `key` = ?");
+    $stmt_insert = $pdo->prepare("INSERT INTO settings (`key`, `value`) VALUES (?, ?)");
+    foreach ($required_settings as $k => $v) {
+        $stmt_check->execute([$k]);
+        if ($stmt_check->fetchColumn() == 0) {
+            $stmt_insert->execute([$k, $v]);
+        }
     }
 
     // 4. Insert Default Brands if empty
