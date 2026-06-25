@@ -32,7 +32,7 @@ try {
     $stmt_s = $pdo->query("SELECT `key`, `value` FROM settings");
     $settings = $stmt_s->fetchAll(PDO::FETCH_KEY_PAIR);
     
-    $logo_url = isset($settings['logo_url']) ? $settings['logo_url'] : 'assets/canasta-logo.png';
+    $logo_url = isset($settings['logo_url']) ? $settings['logo_url'] : 'assets/canasta-logo.webp';
     $whatsapp_enabled = isset($settings['whatsapp_enabled']) ? $settings['whatsapp_enabled'] : '0';
     $whatsapp_number = isset($settings['whatsapp_number']) ? $settings['whatsapp_number'] : '+56 9 4256 7472';
 
@@ -47,19 +47,19 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta Distribuidora</title>
+    <title>Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta Comercializadora y Distribuidora</title>
     <meta name="description" content="Distribuidor mayorista oficial de <?php echo htmlspecialchars($brand['name']); ?>. Abastecemos almacenes, minimarkets y comercio detallista en la Región de O'Higgins.">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.lacanastadistribuidora.cl/marcas/<?php echo htmlspecialchars($brand['slug']); ?>">
-    <meta property="og:title" content="Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta">
+    <meta property="og:url" content="https://www.comercializadoralacanasta.cl/marcas/<?php echo htmlspecialchars($brand['slug']); ?>">
+    <meta property="og:title" content="Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta Comercializadora y Distribuidora">
     <meta property="og:description" content="Distribuidor mayorista oficial de <?php echo htmlspecialchars($brand['name']); ?> para almacenes y minimarkets en la Sexta Región.">
-    <meta property="og:image" content="https://www.lacanastadistribuidora.cl/<?php echo htmlspecialchars($brand['logo_url']); ?>">
+    <meta property="og:image" content="https://www.comercializadoralacanasta.cl/<?php echo htmlspecialchars($brand['logo_url']); ?>">
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=15">
+    <link rel="stylesheet" href="styles.css?v=18">
     <style>
         .brand-hero {
             background: linear-gradient(135deg, var(--color-primary) 0%, #153c73 100%);
@@ -145,13 +145,11 @@ try {
     <!-- Header / Navigation -->
     <nav class="navbar" style="position: relative; box-shadow: var(--shadow-sm); background: white; padding: 1rem 0;">
         <div class="container nav-content">
-            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; text-align: center; gap: 0.15rem; margin-top: -5px; margin-bottom: -5px;">
                 <?php if (!empty($logo_url)): ?>
-                    <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 60px; max-width: 150px; object-fit: contain;">
+                    <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 50px; max-width: 150px; object-fit: contain;">
                 <?php endif; ?>
-                <div style="display: flex; flex-direction: column; justify-content: center;">
-                    <span class="logo-light" style="font-size: 0.65rem; color: var(--color-text-muted); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
-                </div>
+                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: -2px;">Comercializadora y Distribuidora</span>
             </a>
             
             <ul class="nav-links">
@@ -310,7 +308,6 @@ try {
                                     <option value="San Fernando">San Fernando</option>
                                     <option value="Santa Cruz">Santa Cruz</option>
                                     <option value="Otra Comuna (Región de O'Higgins)">Otra Comuna (Región de O'Higgins)</option>
-                                    <option value="Fuera de la Región">Fuera de la Región de O'Higgins</option>
                                 </select>
                             </div>
                         </div>
@@ -338,14 +335,13 @@ try {
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="index.html" class="logo logo-white" id="footerLogoTextNode">
-                    <?php if ($logo_url !== 'assets/canasta-logo.png'): ?>
-                        <img src="<?php echo htmlspecialchars($logo_url); ?>" alt="La Canasta Logo" style="height: 40px; max-width: 150px; object-fit: contain;">
-                    <?php else: ?>
-                        <div style="display: flex; flex-direction: column;">
-                            <span class="logo-light" style="font-size: 0.65rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
-                        </div>
+                <a href="index.html" class="logo logo-white" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; margin-bottom: 0.5rem;">
+                    <?php if (!empty($logo_url)): ?>
+                        <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 38px; max-width: 130px; object-fit: contain; background: white; padding: 4px; border-radius: 4px; box-shadow: var(--shadow-sm);">
                     <?php endif; ?>
+                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                        <span class="logo-light" style="font-size: 0.65rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
+                    </div>
                 </a>
                 <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
                     Operador comercial y logístico B2B. Conectando marcas líderes con el canal tradicional y comercio local de la Región de O'Higgins.
@@ -359,22 +355,15 @@ try {
                     <li><a href="index.html#nosotros">¿Por qué nosotros?</a></li>
                     <li><a href="index.html#marcas">Nuestras Marcas</a></li>
                     <li><a href="index.html#catalogo">Catálogo</a></li>
+                    <li><a href="reclamos.php">Formulario de Reclamos</a></li>
                 </ul>
             </div>
             
             <div class="footer-contact" style="display: flex; flex-direction: column; gap: 0.85rem;">
                 <h3 style="margin-bottom: 0.25rem;">Contacto Corporativo</h3>
                 <div style="display: flex; flex-direction: column; gap: 0.15rem;">
-                    <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo Ventas</span>
-                    <a href="mailto:contacto@lacanastadistribuidora.cl" style="color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.85;">contacto@lacanastadistribuidora.cl</a>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
-                    <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo Despacho</span>
-                    <a href="mailto:despacho@lacanastadistribuidora.cl" style="color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.85;">despacho@lacanastadistribuidora.cl</a>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
-                    <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo Gerencia</span>
-                    <a href="mailto:gerencia@lacanastadistribuidora.cl" style="color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.85;">gerencia@lacanastadistribuidora.cl</a>
+                    <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">Correo de Contacto Único</span>
+                    <a href="mailto:contacto@comercializadoralacanasta.cl" style="color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.85;">contacto@comercializadoralacanasta.cl</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 0.15rem;">
                     <span style="font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700; display: block;">WhatsApp Business</span>
@@ -388,8 +377,12 @@ try {
         </div>
         
         <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; <?php echo date('Y'); ?> La Canasta Distribuidora. Todos los derechos reservados. | Desarrollado por <a href="https://bastiascid.github.io/portafolio" target="_blank" rel="noopener" style="color: var(--color-secondary-light); text-decoration: none; font-weight: bold;">Cristian Bastias Cid</a></p>
+            <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; width: 100%;">
+                <p>&copy; <?php echo date('Y'); ?> La Canasta Comercializadora y Distribuidora. Todos los derechos reservados. | Desarrollado por <a href="https://bastiascid.github.io/portafolio" target="_blank" rel="noopener" style="color: var(--color-secondary-light); text-decoration: none; font-weight: bold;">Cristian Bastias Cid</a></p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="privacidad.html" style="color: #9ca3af; font-size: 0.8rem; text-decoration: none;">Política de Privacidad</a>
+                    <a href="terminos.html" style="color: #9ca3af; font-size: 0.8rem; text-decoration: none;">Términos y Condiciones</a>
+                </div>
             </div>
         </div>
     </footer>

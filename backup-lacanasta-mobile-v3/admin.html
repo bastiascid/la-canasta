@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Canasta Distribuidora - Panel de Administración</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+    
+    <!-- Auth Container -->
+    <div id="adminAuth" class="admin-auth-container">
+        <div class="auth-card animate-on-scroll is-visible">
+            <div class="logo text-center">
+                <span class="logo-text">La Canasta</span>
+                <p style="margin-top: 5px; font-weight: 700; color: var(--color-primary);">Panel de Administración B2B</p>
+            </div>
+            <form id="loginForm" class="auth-form" style="margin-top: 2rem;">
+                <div class="form-group">
+                    <label for="passcode">Código de Acceso</label>
+                    <input type="password" id="passcode" required placeholder="Ingresa el código administrador" style="text-align: center;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Acceder al Panel
+                </button>
+                <p id="loginError" class="text-center" style="color: #ef4444; margin-top: 1rem; display: none; font-weight: 700; font-size: 0.9rem;">Código incorrecto. Inténtalo de nuevo.</p>
+            </form>
+            <div class="text-center" style="margin-top: 1.5rem;">
+                <a href="index.html" style="font-size: 0.9rem; text-decoration: underline; color: var(--color-text-muted);">Volver al Sitio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Admin Panel (Hidden initially) -->
+    <div id="adminPanel" class="admin-panel-container" style="display: none;">
+        <nav class="navbar">
+            <div class="container nav-content">
+                <div class="logo">
+                    <span class="logo-text">La Canasta <span style="font-size: 0.9rem; color: var(--color-secondary); font-weight: 700; vertical-align: middle; margin-left: 5px;">Admin B2B</span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="btn-primary-outline btn-sm" style="display: inline-flex; align-items: center; gap: 5px;">
+                        Volver al Sitio
+                    </a></li>
+                    <li><button id="logoutBtn" class="btn-secondary" style="border: 0; background: transparent; color: #ef4444; font-weight: 700; cursor: pointer;">Cerrar Sesión</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="container" style="padding-top: 120px; padding-bottom: 4rem;">
+            
+            <div class="admin-tabs-nav">
+                <button class="admin-tab-btn active" data-tab="tab-dashboard">Dashboard</button>
+                <button class="admin-tab-btn" data-tab="tab-brands">Nuestras Marcas</button>
+                <button class="admin-tab-btn" data-tab="tab-subbrands">Marcas de Productos</button>
+                <button class="admin-tab-btn" data-tab="tab-products">Productos</button>
+                <button class="admin-tab-btn" data-tab="tab-offers">Ofertas y Banners</button>
+                <button class="admin-tab-btn" data-tab="tab-coverage">Cobertura</button>
+                <button class="admin-tab-btn" data-tab="tab-partners">Confían en Nosotros</button>
+                <button class="admin-tab-btn" data-tab="tab-leads">Leads / Contactos</button>
+                <button class="admin-tab-btn" data-tab="tab-settings">Configuraciones</button>
+            </div>
+
+            <!-- TAB 1: DASHBOARD -->
+            <div id="tab-dashboard" class="admin-tab-content active">
+                <div class="dashboard-stats" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                    <div class="stat-card">
+                        <span class="stat-num" id="statLeadsCount">0</span>
+                        <span class="stat-label">Leads / Contactos Totales</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" id="statBrandsCount">0</span>
+                        <span class="stat-label">Marcas Registradas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" id="statProductsCount">0</span>
+                        <span class="stat-label">Productos en Catálogo</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" id="statOffersCount">0</span>
+                        <span class="stat-label">Campañas / Ofertas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" id="statCoverageCount">0</span>
+                        <span class="stat-label">Zonas de Cobertura</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" id="statPartnersCount">0</span>
+                        <span class="stat-label">Empresas Aliadas</span>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Últimos Contactos Registrados</h3>
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Nombre</th>
+                                    <th>Empresa</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Región</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentLeadsBody">
+                                <tr>
+                                    <td colspan="6" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando últimos registros...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: GESTIÓN DE MARCAS -->
+            <div id="tab-brands" class="admin-tab-content">
+                <div class="admin-grid">
+                    <!-- Form -->
+                    <div class="admin-card">
+                        <h3 id="brandFormTitle" style="margin-bottom: 1.5rem; color: var(--color-primary);">Agregar Nueva Marca</h3>
+                        <form id="brandAdminForm" class="contact-form">
+                            <input type="hidden" id="brand-id">
+                            
+                            <div class="form-group">
+                                <label for="brand-name">Nombre de la Marca</label>
+                                <input type="text" id="brand-name" required placeholder="Ej: Angelmo">
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-logo">URL del Logo (120x80)</label>
+                                <input type="text" id="brand-logo" placeholder="Ej: https://... / assets/...">
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-image">URL de Imagen Destacada</label>
+                                <input type="text" id="brand-image" placeholder="Ej: https://...">
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-description">Descripción Breve</label>
+                                <textarea id="brand-description" rows="2" placeholder="Breve reseña de la marca..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-slug">Slug (URL amigable)</label>
+                                <input type="text" id="brand-slug" placeholder="Ej: iansa (se autogenera si se deja vacío)">
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-history">Historia Detallada (Landing Page) *</label>
+                                <textarea id="brand-history" rows="4" placeholder="Historia completa de la marca para su landing page..."></textarea>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="brand-status">Estado</label>
+                                    <select id="brand-status">
+                                        <option value="Activa">Activa</option>
+                                        <option value="Inactiva">Inactiva</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="brand-order">Orden Visual</label>
+                                    <input type="number" id="brand-order" value="0">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-url">URL Oficial (Opcional)</label>
+                                <input type="text" id="brand-url" placeholder="Ej: https://www.marca.cl">
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <button type="submit" id="brandSubmitBtn" class="btn btn-primary" style="flex-grow: 1; justify-content: center;">
+                                    Guardar Marca
+                                </button>
+                                <button type="button" id="cancelBrandEditBtn" class="btn btn-secondary" style="display: none; justify-content: center;">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Table -->
+                    <div class="admin-card">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Marcas Registradas</h3>
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Logo</th>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                        <th>Orden</th>
+                                        <th style="text-align: center; width: 100px;">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="brandsTableBody">
+                                    <tr>
+                                        <td colspan="5" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando marcas...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: GESTIÓN DE PRODUCTOS -->
+            <div id="tab-products" class="admin-tab-content">
+                <div class="admin-grid">
+                    <!-- Form -->
+                    <div class="admin-card">
+                        <h3 id="productFormTitle" style="margin-bottom: 1.5rem; color: var(--color-primary);">Agregar Nuevo Producto</h3>
+                        <form id="productAdminForm" class="contact-form">
+                            <input type="hidden" id="product-id">
+                            
+                            <div class="form-group">
+                                <label for="product-name">Nombre del Producto</label>
+                                <input type="text" id="product-name" required placeholder="Ej: Harina Saco 25kg">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-brand">Marca Asociada</label>
+                                <select id="product-brand" required>
+                                    <option value="" disabled selected>Selecciona una marca</option>
+                                    <!-- Options populated dynamically -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-category">Categoría</label>
+                                <input type="text" id="product-category" required placeholder="Ej: Abarrotes / Lácteos">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-image">URL de la Imagen</label>
+                                <input type="text" id="product-image" placeholder="Ej: https://...">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-description">Descripción Informativa</label>
+                                <textarea id="product-description" rows="3" placeholder="Formato de venta, empaque, ingredientes..."></textarea>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group" style="display: flex; flex-direction: row; gap: 0.5rem; align-items: center; margin-top: 1.8rem;">
+                                    <input type="checkbox" id="product-featured" style="width: 20px; height: 20px; cursor: pointer; margin: 0;">
+                                    <label for="product-featured" style="cursor: pointer; font-weight: 600; margin: 0;">Destacado</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-order">Orden Visual</label>
+                                    <input type="number" id="product-order" value="0">
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <button type="submit" id="productSubmitBtn" class="btn btn-primary" style="flex-grow: 1; justify-content: center;">
+                                    Guardar Producto
+                                </button>
+                                <button type="button" id="cancelProductEditBtn" class="btn btn-secondary" style="display: none; justify-content: center;">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Table -->
+                    <div class="admin-card">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Catálogo de Productos</h3>
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Marca</th>
+                                        <th>Categoría</th>
+                                        <th>Dest.</th>
+                                        <th style="text-align: center; width: 100px;">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTableBody">
+                                    <tr>
+                                        <td colspan="6" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando productos...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: LEADS / CONTACTOS -->
+            <div id="tab-leads" class="admin-tab-content">
+                <div class="admin-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                        <h3 style="color: var(--color-primary); margin: 0;">Base de Datos de Leads</h3>
+                        <div style="display: flex; gap: 0.75rem;">
+                            <button id="exportCsvBtn" class="btn btn-secondary btn-sm" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                                Exportar a CSV
+                            </button>
+                            <button id="exportXlsBtn" class="btn btn-primary btn-sm" style="font-size: 0.85rem; padding: 0.5rem 1rem; background-color: #1a5d2e; border: 0; box-shadow: none;">
+                                Exportar a Excel (.XLS)
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Filtros de Búsqueda -->
+                    <div class="leads-filters" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; background: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-lead-search" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Palabra clave</label>
+                            <input type="text" id="filter-lead-search" placeholder="Nombre, email, comentarios..." style="padding: 0.4rem 0.6rem; font-size: 0.85rem;">
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-lead-region" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Región</label>
+                            <select id="filter-lead-region" style="padding: 0.4rem 0.6rem; font-size: 0.85rem; background: white;">
+                                <option value="">Todas las regiones</option>
+                                <option value="Región de O'Higgins">Región de O'Higgins</option>
+                                <option value="Región Metropolitana">Región Metropolitana</option>
+                                <option value="Región del Maule">Región del Maule</option>
+                                <option value="Otra Región">Otra Región</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-lead-status" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Estado</label>
+                            <select id="filter-lead-status" style="padding: 0.4rem 0.6rem; font-size: 0.85rem; background: white;">
+                                <option value="">Todos los estados</option>
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="Contactado">Contactado</option>
+                                <option value="En Seguimiento">En Seguimiento</option>
+                                <option value="Cliente">Cliente</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-lead-start" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Fecha Inicio</label>
+                            <input type="date" id="filter-lead-start" style="padding: 0.4rem 0.6rem; font-size: 0.85rem;">
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-lead-end" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Fecha Fin</label>
+                            <input type="date" id="filter-lead-end" style="padding: 0.4rem 0.6rem; font-size: 0.85rem;">
+                        </div>
+                        <div style="display: flex; align-items: flex-end; gap: 0.5rem;">
+                            <button id="applyLeadFiltersBtn" class="btn btn-primary btn-sm" style="flex-grow: 1; padding: 0.45rem; font-size: 0.85rem; justify-content: center; height: 38px;">Filtrar</button>
+                            <button id="clearLeadFiltersBtn" class="btn btn-secondary btn-sm" style="padding: 0.45rem; font-size: 0.85rem; justify-content: center; height: 38px;">Limpiar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Nombre</th>
+                                    <th>Empresa</th>
+                                    <th>Cargo</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Región</th>
+                                    <th>Comentarios</th>
+                                    <th>Origen</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leadsTableBody">
+                                <tr>
+                                    <td colspan="10" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando base de datos...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: GESTIÓN DE OFERTAS Y BANNERS -->
+            <div id="tab-offers" class="admin-tab-content">
+                <div class="admin-grid">
+                    <!-- Form -->
+                    <div class="admin-card">
+                        <h3 id="offerFormTitle" style="margin-bottom: 1.5rem; color: var(--color-primary);">Agregar Nueva Oferta</h3>
+                        <form id="offerAdminForm" class="contact-form">
+                            <input type="hidden" id="offer-id">
+                            
+                            <div class="form-group">
+                                <label for="offer-title">Título de la Oferta / Campaña *</label>
+                                <input type="text" id="offer-title" required placeholder="Ej: Despacho Gratis">
+                            </div>
+                            <div class="form-group">
+                                <label for="offer-image">URL de Imagen del Banner *</label>
+                                <input type="text" id="offer-image" required placeholder="Ej: https://... / assets/...">
+                            </div>
+                            <div class="form-group">
+                                <label for="offer-description">Descripción de la Oferta *</label>
+                                <textarea id="offer-description" rows="3" required placeholder="Detalles de la campaña comercial..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="offer-link">Enlace de Destino (Opcional)</label>
+                                <input type="text" id="offer-link" value="#" placeholder="Ej: #contacto">
+                            </div>
+                            <div class="form-group">
+                                <label for="offer-type">Tipo de Banner / Campaña *</label>
+                                <select id="offer-type" required style="background: white;">
+                                    <option value="Campañas comerciales">Campañas comerciales</option>
+                                    <option value="Marcas destacadas">Marcas destacadas</option>
+                                    <option value="Nuevos productos">Nuevos productos</option>
+                                    <option value="Promociones informativas">Promociones informativas</option>
+                                    <option value="Noticias corporativas">Noticias corporativas</option>
+                                </select>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="offer-status">Estado</label>
+                                    <select id="offer-status">
+                                        <option value="Activa">Activa</option>
+                                        <option value="Inactiva">Inactiva</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="offer-order">Orden Visual</label>
+                                    <input type="number" id="offer-order" value="0">
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <button type="submit" id="offerSubmitBtn" class="btn btn-primary" style="flex-grow: 1; justify-content: center;">
+                                    Guardar Oferta
+                                </button>
+                                <button type="button" id="cancelOfferEditBtn" class="btn btn-secondary" style="display: none; justify-content: center;">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="admin-card">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Campañas Activas</h3>
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Título</th>
+                                        <th>Tipo</th>
+                                        <th>Estado</th>
+                                        <th>Orden</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="offersTableBody">
+                                    <tr>
+                                        <td colspan="5" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando campañas...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 6: GESTIÓN DE COBERTURA -->
+            <div id="tab-coverage" class="admin-tab-content">
+                <div class="admin-grid" style="grid-template-columns: 2fr 3fr;">
+                    <!-- Form -->
+                    <div class="admin-card">
+                        <h3 id="coverageFormTitle" style="margin-bottom: 1.5rem; color: var(--color-primary);">Agregar Nueva Zona</h3>
+                        <form id="coverageAdminForm" class="contact-form">
+                            <input type="hidden" id="coverage-id">
+                            
+                            <div class="form-group">
+                                <label for="coverage-name">Comuna / Ciudad *</label>
+                                <input type="text" id="coverage-name" required placeholder="Ej: Rancagua">
+                            </div>
+                            <div class="form-group">
+                                <label for="coverage-region">Región *</label>
+                                <input type="text" id="coverage-region" value="Región de O'Higgins" required placeholder="Ej: Región de O'Higgins">
+                            </div>
+                            <div class="form-group">
+                                <label for="coverage-order">Orden Visual</label>
+                                <input type="number" id="coverage-order" value="0">
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <button type="submit" id="coverageSubmitBtn" class="btn btn-primary" style="flex-grow: 1; justify-content: center;">
+                                    Guardar Zona
+                                </button>
+                                <button type="button" id="cancelCoverageEditBtn" class="btn btn-secondary" style="display: none; justify-content: center;">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="admin-card">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Zonas de Distribución</h3>
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Región</th>
+                                        <th>Orden</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="coverageTableBody">
+                                    <tr>
+                                        <td colspan="4" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando comunas...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: GESTIÓN DE SUB-MARCAS (MARCAS DE PRODUCTOS) -->
+            <div id="tab-subbrands" class="admin-tab-content">
+                <div class="admin-grid">
+                    <!-- Form -->
+                    <div class="admin-card">
+                        <h3 id="subBrandFormTitle" style="margin-bottom: 1.5rem; color: var(--color-primary);">Agregar Nueva Marca de Producto</h3>
+                        <form id="subBrandAdminForm" class="contact-form">
+                            <input type="hidden" id="subbrand-id">
+                            
+                            <div class="form-group">
+                                <label for="subbrand-name">Nombre de la Marca *</label>
+                                <input type="text" id="subbrand-name" required placeholder="Ej: Belmont / Iansa Cero">
+                            </div>
+                            <div class="form-group">
+                                <label for="subbrand-logo">URL del Logo (150x50 o 120x80) *</label>
+                                <input type="text" id="subbrand-logo" required placeholder="Ej: assets/logo.png o https://...">
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="subbrand-status">Estado</label>
+                                    <select id="subbrand-status">
+                                        <option value="Activo">Activo</option>
+                                        <option value="Inactivo">Inactivo</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subbrand-order">Orden Visual</label>
+                                    <input type="number" id="subbrand-order" value="0">
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <button type="submit" id="subBrandSubmitBtn" class="btn btn-primary" style="flex-grow: 1; justify-content: center;">
+                                    Guardar Marca
+                                </button>
+                                <button type="button" id="cancelSubBrandEditBtn" class="btn btn-secondary" style="display: none; justify-content: center;">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="admin-card">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Marcas de Productos Registradas</h3>
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Logo</th>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                        <th>Orden</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="subBrandsTableBody">
+                                    <tr>
+                                        <td colspan="5" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando marcas individuales...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: GESTIÓN DE SOCIOS Y CLIENTES (CONFÍAN EN NOSOTROS) -->
+            <div id="tab-partners" class="admin-tab-content">
+                <div class="admin-grid">
+                    <!-- Form -->
+                    <div class="admin-card">
+                        <h3 id="partnerFormTitle" style="margin-bottom: 1.5rem; color: var(--color-primary);">Agregar Nueva Empresa Aliada</h3>
+                        <form id="partnerAdminForm" class="contact-form">
+                            <input type="hidden" id="partner-id">
+                            
+                            <div class="form-group">
+                                <label for="partner-name">Nombre de la Empresa *</label>
+                                <input type="text" id="partner-name" required placeholder="Ej: Supermercado El Cóndor">
+                            </div>
+                            <div class="form-group">
+                                <label for="partner-logo">URL del Logo (120x60) *</label>
+                                <input type="text" id="partner-logo" required placeholder="Ej: assets/logo.png o https://...">
+                            </div>
+                            <div class="form-group">
+                                <label for="partner-description">Descripción Breve</label>
+                                <textarea id="partner-description" rows="2" placeholder="Ej: Socio estratégico en distribución..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="partner-link">Enlace Web (Opcional)</label>
+                                <input type="text" id="partner-link" value="#" placeholder="Ej: https://...">
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="partner-status">Estado</label>
+                                    <select id="partner-status">
+                                        <option value="Activo">Activo</option>
+                                        <option value="Inactivo">Inactivo</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="partner-order">Orden Visual</label>
+                                    <input type="number" id="partner-order" value="0">
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <button type="submit" id="partnerSubmitBtn" class="btn btn-primary" style="flex-grow: 1; justify-content: center;">
+                                    Guardar Empresa
+                                </button>
+                                <button type="button" id="cancelPartnerEditBtn" class="btn btn-secondary" style="display: none; justify-content: center;">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="admin-card">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Empresas que Confían en Nosotros</h3>
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Logo</th>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                        <th>Orden</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="partnersTableBody">
+                                    <tr>
+                                        <td colspan="5" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando empresas asociadas...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: CONFIGURACIONES (LOGO Y WHATSAPP) -->
+            <div id="tab-settings" class="admin-tab-content">
+                <div class="admin-card" style="max-width: 600px; margin: 0 auto;">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Configuraciones Generales</h3>
+                    <form id="settingsAdminForm" class="contact-form">
+                        
+                        <div class="form-group">
+                            <label for="settings-logo">URL del Logo de la Empresa (Actual o Oficial)</label>
+                            <input type="text" id="settings-logo" required placeholder="Ej: assets/canasta-logo.png">
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px;">Puedes cambiar esta URL para actualizar el logo en toda la plataforma al instante.</p>
+                        </div>
+                        
+                        <div style="border-top: 1px dashed var(--color-border); padding-top: 1.5rem; margin-top: 1.5rem;">
+                            <h4 style="margin-bottom: 1rem; color: var(--color-primary);">Futura Activación WhatsApp Business</h4>
+                            
+                            <div class="form-group" style="flex-direction: row; gap: 0.75rem; align-items: center; margin-bottom: 1.25rem;">
+                                <input type="checkbox" id="settings-wa-enabled" style="width: 20px; height: 20px; cursor: pointer;">
+                                <label for="settings-wa-enabled" style="cursor: pointer; font-weight: 600;">Activar WhatsApp Business en la web</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="settings-wa-number">Número de WhatsApp (con código de país, sin espacios)</label>
+                                <input type="text" id="settings-wa-number" placeholder="Ej: +56942567472">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+                            Guardar Configuraciones
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Developer Credit -->
+    <div style="text-align: center; padding: 20px; font-family: sans-serif; font-size: 14px; color: #666; width: 100%; display: block; background-color: var(--color-bg-light); border-top: 1px solid var(--color-border);">
+        Desarrollado por <a href="https://bastiascid.github.io/portafolio" target="_blank" rel="noopener" style="color: #D81B60; text-decoration: none; font-weight: bold;">Cristian Bastias Cid</a>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const footerLogoTextNode = document.getElementById('footerLogoTextNode');
                     if (globalSettings.logo_url) {
                         const logoUrlWithVersion = globalSettings.logo_url + '?v=2';
-                        const imgHtml = `<img src="${logoUrlWithVersion}" alt="La Canasta Logo" style="height: 60px; max-width: 160px; object-fit: contain;">`;
+                        const imgHtml = `<img src="${logoUrlWithVersion}" alt="La Canasta Logo" style="height: 50px; max-width: 150px; object-fit: contain;">`;
                         if (logoContainer) {
                             logoContainer.innerHTML = imgHtml;
-                            logoContainer.style.height = '60px';
+                            logoContainer.style.height = '50px';
                         }
                         if (footerLogoTextNode) {
                             const footerImgHtml = `<img src="${logoUrlWithVersion}" alt="La Canasta Logo" style="height: 38px; max-width: 130px; object-fit: contain; background: white; padding: 4px; border-radius: 4px; box-shadow: var(--shadow-sm);">`;
@@ -117,6 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'brand-showcase-card';
             card.style.display = 'flex';
             card.style.flexDirection = 'column';
+            card.style.width = '290px';
+            card.style.flexShrink = '0';
             
             card.innerHTML = `
                 <div class="brand-header-flex">
@@ -448,26 +450,103 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         catalogGrid.innerHTML = '';
-        filtered.forEach(product => {
-            const card = document.createElement('div');
-            card.className = 'offer-card animate-on-scroll';
+        
+        // Group filtered products by brand
+        globalBrands.forEach(brand => {
+            const brandProducts = filtered.filter(p => p.brand_id == brand.id);
+            if (brandProducts.length === 0) return;
             
-            card.innerHTML = `
-                <div class="offer-badge" style="background-color: var(--color-primary);">${product.category}</div>
-                <div class="offer-img-wrapper" style="height: 200px;">
-                    <img src="${product.image_url}" alt="${product.name}" onerror="this.src='https://placehold.co/400x300/f4f6f9/0f2c59?text=Producto'" loading="lazy">
-                </div>
-                <div class="offer-details" style="display: flex; flex-direction: column; height: calc(100% - 200px);">
-                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase;">${product.brand_name}</span>
-                    <h3 class="offer-name" style="margin-top: 5px; min-height: 48px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${product.name}</h3>
-                    <p class="offer-desc" style="flex-grow: 1; min-height: 60px; margin-bottom: 1.5rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${product.description || 'Abarrotes para venta exclusiva en locales comerciales.'}</p>
-                    <button class="btn btn-primary btn-sm" onclick="inquireProduct('${product.name.replace(/'/g, "\\'")}', '${product.brand_name.replace(/'/g, "\\'")}')" style="justify-content: center; width: 100%; border-radius: 6px;">
-                        Solicitar Información
-                    </button>
+            const brandSection = document.createElement('div');
+            brandSection.className = 'brand-group-section';
+            brandSection.style.width = '100%';
+            
+            const headerHtml = `
+                <div class="brand-group-header">
+                    <img src="${brand.logo_url}" alt="${brand.name} Logo" class="brand-group-logo" onerror="this.style.display='none'">
+                    <h3 class="brand-group-title">${brand.name}</h3>
                 </div>
             `;
-            catalogGrid.appendChild(card);
-            scrollObserver.observe(card);
+            
+            const gridContainer = document.createElement('div');
+            gridContainer.className = 'offers-grid';
+            gridContainer.style.width = '100%';
+            
+            function renderProductCard(product) {
+                const cart = getCart();
+                const inCart = cart.some(item => item.id == product.id);
+                const buttonText = inCart ? 'Añadido ✓' : 'Añadir al Pedido';
+                const buttonClass = inCart ? 'add-to-cart-btn btn-secondary' : 'add-to-cart-btn';
+                
+                return `
+                    <div class="offer-card" data-product-id="${product.id}" style="width: 100%; max-width: 280px;">
+                        ${product.featured == 1 ? '<span class="offer-badge" style="background-color: var(--color-secondary);">Destacado</span>' : ''}
+                        <div class="offer-img-wrapper" style="height: 180px;">
+                            <img src="${product.image_url}" alt="${product.name}" onerror="this.src='https://placehold.co/400x300/f4f6f9/0f2c59?text=Producto'" loading="lazy">
+                        </div>
+                        <div class="offer-details" style="display: flex; flex-direction: column; height: calc(100% - 180px); padding: 1.25rem;">
+                            <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase;">${product.category}</span>
+                            <h3 class="offer-name" style="margin-top: 5px; min-height: 48px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.1rem; font-weight: 700; color: var(--color-primary);">${product.name}</h3>
+                            <p class="offer-desc" style="flex-grow: 1; min-height: 60px; margin-bottom: 1.5rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.85rem; color: var(--color-text-muted);">${product.description || 'Abarrotes para venta exclusiva en locales comerciales.'}</p>
+                            <button class="${buttonClass}" onclick="handleAddToCartClick(${product.id})">
+                                <span>🛒</span> <span class="btn-text">${buttonText}</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            const featuredProducts = brandProducts.filter(p => p.featured == 1);
+            const nonFeaturedProducts = brandProducts.filter(p => p.featured != 1);
+            
+            let currentProducts = [...featuredProducts];
+            let isExpanded = false;
+            
+            // Internal function to redraw the products of this brand
+            function updateGrid() {
+                gridContainer.innerHTML = '';
+                if (currentProducts.length === 0) {
+                    gridContainer.innerHTML = `<p class="text-center" style="grid-column: 1/-1; color: var(--color-text-muted); padding: 1rem 0; width: 100%;">No hay productos destacados de esta marca en esta categoría. Haz clic abajo para ver todo el catálogo.</p>`;
+                } else {
+                    currentProducts.forEach(product => {
+                        const wrapperDiv = document.createElement('div');
+                        wrapperDiv.innerHTML = renderProductCard(product);
+                        const cardElement = wrapperDiv.firstElementChild;
+                        gridContainer.appendChild(cardElement);
+                        scrollObserver.observe(cardElement);
+                    });
+                }
+            }
+            
+            updateGrid();
+            
+            brandSection.innerHTML = headerHtml;
+            brandSection.appendChild(gridContainer);
+            
+            if (nonFeaturedProducts.length > 0) {
+                const btnContainer = document.createElement('div');
+                btnContainer.className = 'brand-toggle-btn-container';
+                
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'brand-toggle-btn';
+                toggleBtn.textContent = `Ver catálogo completo de ${brand.name}`;
+                
+                toggleBtn.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    if (isExpanded) {
+                        currentProducts = [...brandProducts];
+                        toggleBtn.textContent = `Ver menos`;
+                    } else {
+                        currentProducts = [...featuredProducts];
+                        toggleBtn.textContent = `Ver catálogo completo de ${brand.name}`;
+                    }
+                    updateGrid();
+                });
+                
+                btnContainer.appendChild(toggleBtn);
+                brandSection.appendChild(btnContainer);
+            }
+            
+            catalogGrid.appendChild(brandSection);
         });
     }
 
@@ -593,6 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then(res => {
                 if (res.status === 'success' && res.data.length > 0) {
+                    window.loadedCommunes = res.data; // Save loaded communes globally for search
                     grid.innerHTML = '';
                     res.data.forEach(zone => {
                         const card = document.createElement('div');
@@ -757,6 +837,84 @@ document.addEventListener('DOMContentLoaded', () => {
                 ticker.parentElement.parentElement.style.display = 'none';
             });
     }
+    
+    // --- 9. Interactive Coverage Search ---
+    function setupCoverageSearch() {
+        const searchInput = document.getElementById('coverageSearchInput');
+        const searchBtn = document.getElementById('coverageSearchBtn');
+        const searchResult = document.getElementById('coverageSearchResult');
+        
+        if (!searchInput || !searchBtn || !searchResult) return;
+        
+        function performSearch() {
+            const inputVal = searchInput.value;
+            if (!inputVal.trim()) {
+                searchResult.style.display = 'none';
+                searchResult.className = 'coverage-search-result';
+                searchResult.innerHTML = '';
+                return;
+            }
+            
+            if (!window.loadedCommunes || window.loadedCommunes.length === 0) {
+                searchResult.className = 'coverage-search-result error';
+                searchResult.innerHTML = 'Cargando información de comunas, por favor intenta en unos segundos.';
+                return;
+            }
+            
+            // Clean inputs for comparison (strip accents, convert to lowercase)
+            const cleanString = (str) => {
+                return str.toLowerCase()
+                          .normalize("NFD")
+                          .replace(/[\u0300-\u036f]/g, "")
+                          .replace(/['’]/g, "") // support O'Higgins or other characters
+                          .trim();
+            };
+            
+            const query = cleanString(inputVal);
+            
+            // Look for a matching commune
+            const match = window.loadedCommunes.find(zone => {
+                const zoneClean = cleanString(zone.name);
+                // Matches if input contains the commune name (e.g. "calle santiago, rancagua" contains "rancagua")
+                // or if commune name contains input (e.g. "rancag" matches "rancagua")
+                return query.includes(zoneClean) || (query.length >= 3 && zoneClean.includes(query));
+            });
+            
+            if (match) {
+                searchResult.className = 'coverage-search-result success';
+                searchResult.innerHTML = `✅ Despachamos a tu zona. ¡Haz tu pedido! (Comuna: <strong>${match.name}</strong>)`;
+                
+                // Pan/zoom map to the matched commune and open its popup if it exists
+                const nameKey = match.name.trim().toLowerCase();
+                if (window.coverageMap && window.coverageMarkers && window.coverageMarkers[nameKey]) {
+                    const marker = window.coverageMarkers[nameKey];
+                    window.coverageMap.setView(marker.getLatLng(), 12, { animate: true });
+                    marker.openPopup();
+                }
+                
+                // Highlight corresponding list badge
+                document.querySelectorAll('.commune-badge').forEach(b => {
+                    const badgeText = b.querySelector('span:not(.badge-icon)').textContent.trim().toLowerCase();
+                    if (badgeText === nameKey) {
+                        b.classList.add('active');
+                        b.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    } else {
+                        b.classList.remove('active');
+                    }
+                });
+            } else {
+                searchResult.className = 'coverage-search-result error';
+                searchResult.innerHTML = `❌ Por el momento no despachamos a tu zona. Contáctanos para evaluar una nueva ruta de reparto.`;
+            }
+        }
+        
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
 
     // Initialize Page functions
     loadSettings();
@@ -766,7 +924,247 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPartners();
     loadSubBrandsTicker();
     initAdvantagesCarousel();
+    setupCoverageSearch();
     handleFormSubmit('heroContactForm', 'heroFormSuccess');
     handleFormSubmit('middleContactForm', 'middleFormSuccess');
     handleFormSubmit('bottomContactForm', 'bottomFormSuccess');
+
+    // --- FASE 11: B2B Shopping Cart Logic ---
+    function getCart() {
+        try {
+            return JSON.parse(localStorage.getItem('b2b_cart')) || [];
+        } catch (e) {
+            return [];
+        }
+    }
+    
+    function saveCart(cart) {
+        localStorage.setItem('b2b_cart', JSON.stringify(cart));
+        updateCartBadge();
+    }
+    
+    function updateCartBadge() {
+        const cart = getCart();
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const badge = document.getElementById('cartCountBadge');
+        const floatBtn = document.getElementById('cartFloatingBtn');
+        
+        if (badge) badge.textContent = count;
+        if (floatBtn) {
+            if (count > 0) {
+                floatBtn.style.display = 'flex';
+            } else {
+                floatBtn.style.display = 'none';
+                closeCart();
+            }
+        }
+    }
+    
+    window.handleAddToCartClick = function(productId) {
+        const product = globalProducts.find(p => p.id == productId);
+        if (!product) return;
+        
+        let cart = getCart();
+        const existingIndex = cart.findIndex(item => item.id == productId);
+        
+        if (existingIndex > -1) {
+            cart[existingIndex].quantity += 1;
+        } else {
+            cart.push({
+                id: product.id,
+                name: product.name,
+                brand_name: product.brand_name,
+                image_url: product.image_url,
+                category: product.category,
+                quantity: 1
+            });
+        }
+        
+        saveCart(cart);
+        
+        // Update product card button in DOM
+        const productCards = document.querySelectorAll(`.offer-card[data-product-id="${productId}"]`);
+        productCards.forEach(card => {
+            const btn = card.querySelector('.add-to-cart-btn');
+            if (btn) {
+                btn.className = 'add-to-cart-btn btn-secondary';
+                const btnText = btn.querySelector('.btn-text');
+                if (btnText) btnText.textContent = 'Añadido ✓';
+            }
+        });
+        
+        openCart();
+    };
+    
+    function openCart() {
+        const drawer = document.getElementById('cartDrawer');
+        const overlay = document.getElementById('cartDrawerOverlay');
+        if (drawer) drawer.classList.add('active');
+        if (overlay) overlay.classList.add('active');
+        renderCart();
+    }
+    
+    function closeCart() {
+        const drawer = document.getElementById('cartDrawer');
+        const overlay = document.getElementById('cartDrawerOverlay');
+        if (drawer) drawer.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+    }
+    
+    function renderCart() {
+        const itemsContainer = document.getElementById('cartDrawerItems');
+        if (!itemsContainer) return;
+        
+        const cart = getCart();
+        
+        if (cart.length === 0) {
+            itemsContainer.innerHTML = `<p class="empty-cart-msg">Tu pedido está vacío. Añade productos desde el catálogo.</p>`;
+            return;
+        }
+        
+        itemsContainer.innerHTML = '';
+        cart.forEach(item => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'cart-item';
+            itemEl.innerHTML = `
+                <img src="${item.image_url}" alt="${item.name}" class="cart-item-img" onerror="this.src='https://placehold.co/80x80/f4f6f9/0f2c59?text=Producto'">
+                <div class="cart-item-info">
+                    <span class="cart-item-brand">${item.brand_name}</span>
+                    <h4 class="cart-item-title">${item.name}</h4>
+                    <div class="cart-item-qty">
+                        <button class="qty-btn" onclick="changeQty(${item.id}, -1)">&minus;</button>
+                        <span class="qty-val">${item.quantity}</span>
+                        <button class="qty-btn" onclick="changeQty(${item.id}, 1)">&plus;</button>
+                    </div>
+                </div>
+                <button class="remove-cart-item" onclick="removeCartItem(${item.id})" aria-label="Eliminar item">&times;</button>
+            `;
+            itemsContainer.appendChild(itemEl);
+        });
+    }
+    
+    window.changeQty = function(productId, delta) {
+        let cart = getCart();
+        const idx = cart.findIndex(item => item.id == productId);
+        if (idx === -1) return;
+        
+        cart[idx].quantity += delta;
+        
+        if (cart[idx].quantity <= 0) {
+            cart.splice(idx, 1);
+            resetCardButton(productId);
+        }
+        
+        saveCart(cart);
+        renderCart();
+    };
+    
+    window.removeCartItem = function(productId) {
+        let cart = getCart();
+        cart = cart.filter(item => item.id != productId);
+        resetCardButton(productId);
+        saveCart(cart);
+        renderCart();
+    };
+    
+    function resetCardButton(productId) {
+        const productCards = document.querySelectorAll(`.offer-card[data-product-id="${productId}"]`);
+        productCards.forEach(card => {
+            const btn = card.querySelector('.add-to-cart-btn');
+            if (btn) {
+                btn.className = 'add-to-cart-btn';
+                const btnText = btn.querySelector('.btn-text');
+                if (btnText) btnText.textContent = 'Añadir al Pedido';
+            }
+        });
+    }
+    
+    function setupCartDrawerEvents() {
+        const floatBtn = document.getElementById('cartFloatingBtn');
+        const closeBtn = document.getElementById('closeCartDrawer');
+        const overlay = document.getElementById('cartDrawerOverlay');
+        const checkoutBtn = document.getElementById('checkoutCartBtn');
+        
+        if (floatBtn) floatBtn.addEventListener('click', openCart);
+        if (closeBtn) closeBtn.addEventListener('click', closeCart);
+        if (overlay) overlay.addEventListener('click', closeCart);
+        
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener('click', () => {
+                const cart = getCart();
+                if (cart.length === 0) return;
+                
+                let commentsText = "Detalle de Pedido Mayorista:\n";
+                cart.forEach(item => {
+                    commentsText += `- [${item.brand_name}] ${item.name} (Cantidad: ${item.quantity})\n`;
+                });
+                
+                const bottomComments = document.getElementById('bottom-comments');
+                const heroComments = document.getElementById('hero-comments');
+                const middleComments = document.getElementById('middle-comments');
+                
+                if (bottomComments) bottomComments.value = commentsText;
+                if (heroComments) heroComments.value = commentsText;
+                if (middleComments) middleComments.value = commentsText;
+                
+                closeCart();
+                
+                const contactSection = document.getElementById('contacto');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }
+    }
+
+    // --- FASE 11: Welcome Promo Popup Logic ---
+    function setupWelcomePopup() {
+        const popup = document.getElementById('welcomePopup');
+        const closeBtn = document.getElementById('closeWelcomePopup');
+        const ctaBtn = document.getElementById('welcomePopupCta');
+        
+        if (!popup) return;
+        
+        if (!sessionStorage.getItem('welcome_popup_shown')) {
+            setTimeout(() => {
+                popup.style.display = 'flex';
+                // Trigger transition
+                setTimeout(() => {
+                    popup.classList.add('active');
+                }, 50);
+            }, 1500);
+        }
+        
+        function dismissPopup() {
+            popup.classList.remove('active');
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 300);
+            sessionStorage.setItem('welcome_popup_shown', 'true');
+        }
+        
+        if (closeBtn) closeBtn.addEventListener('click', dismissPopup);
+        if (popup) {
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    dismissPopup();
+                }
+            });
+        }
+        
+        if (ctaBtn) {
+            ctaBtn.addEventListener('click', () => {
+                dismissPopup();
+                const catalogSection = document.getElementById('catalogo');
+                if (catalogSection) {
+                    catalogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+    }
+
+    // Init Cart & Popup
+    updateCartBadge();
+    setupCartDrawerEvents();
+    setupWelcomePopup();
 });

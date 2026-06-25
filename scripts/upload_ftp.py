@@ -21,6 +21,7 @@ FILES_TO_UPLOAD = [
     "marca.php",
     "hazte-cliente.php",
     "sobre-nosotros.php",
+    "reclamos.php",
     "privacidad.html",
     "terminos.html",
     "robots.txt",
@@ -32,7 +33,12 @@ FILES_TO_UPLOAD = [
 ASSETS_TO_UPLOAD = [
     "assets/canasta-logo.png",
     "assets/quesos-promo.png",
-    "assets/van-reparto.png"
+    "assets/van-reparto.png",
+    "assets/canasta-logo.webp",
+    "assets/quesos-promo.webp",
+    "assets/van-reparto.webp",
+    "assets/van-reparto-pequeno.webp",
+    "assets/welcome-popup-banner.webp"
 ]
 
 # API folder files to upload
@@ -49,6 +55,7 @@ API_TO_UPLOAD = [
     "api/coverage.php",
     "api/partners.php",
     "api/sub_brands.php",
+    "api/claims.php",
     "api/upload.php"
 ]
 

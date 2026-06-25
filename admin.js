@@ -5,6 +5,7 @@
 const PASSCODE = 'admin123';
 let brandsCache = [];
 let leadsCache = [];
+let claimsCache = [];
 let offersCache = [];
 let coverageCache = [];
 let partnersCache = [];
@@ -90,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (tabId === 'tab-partners') loadPartners();
             else if (tabId === 'tab-subbrands') loadSubBrands();
             else if (tabId === 'tab-leads') loadLeads();
+            else if (tabId === 'tab-claims') loadClaims();
             else if (tabId === 'tab-settings') loadSettings();
         });
     });
@@ -845,7 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => {
                 if (res.status === 'success' && res.data) {
                     const settings = res.data;
-                    document.getElementById('settings-logo').value = settings.logo_url || 'assets/canasta-logo.png';
+                    document.getElementById('settings-logo').value = settings.logo_url || 'assets/canasta-logo.webp';
                     document.getElementById('settings-wa-enabled').checked = settings.whatsapp_enabled === '1';
                     document.getElementById('settings-wa-number').value = settings.whatsapp_number || '+56 9 4256 7472';
                 }
@@ -1259,7 +1261,156 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusLabel.textContent = 'Error de conexión';
                 statusLabel.style.color = '#ef4444';
             });
+            });
         });
+
+        // --- 11. Claims Operations (Fase 11) ---
+        function loadClaims() {
+            const headers = getAuthHeaders();
+            
+            const search = document.getElementById('filter-claim-search') ? document.getElementById('filter-claim-search').value.trim() : '';
+            const type = document.getElementById('filter-claim-type') ? document.getElementById('filter-claim-type').value : '';
+            const status = document.getElementById('filter-claim-status') ? document.getElementById('filter-claim-status').value : '';
+            const startDate = document.getElementById('filter-claim-start') ? document.getElementById('filter-claim-start').value : '';
+            const endDate = document.getElementById('filter-claim-end') ? document.getElementById('filter-claim-end').value : '';
+            
+            let url = 'api/claims.php?';
+            const params = new URLSearchParams();
+            if (search) params.append('search', search);
+            if (type) params.append('claim_type', type);
+            if (status) params.append('status', status);
+            if (startDate) params.append('start_date', startDate);
+            if (endDate) params.append('end_date', endDate);
+            
+            url += params.toString();
+            
+            fetch(url, { headers })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.status === 'success') {
+                        claimsCache = res.data;
+                        renderClaimsTable();
+                    }
+                })
+                .catch(err => console.error("Error loading claims database:", err));
+        }
+
+        function renderClaimsTable() {
+            const container = document.getElementById('claimsTableBody');
+            if (!container) return;
+            
+            if (claimsCache.length === 0) {
+                container.innerHTML = `<tr><td colspan="8" class="text-center">No hay registros de reclamos que coincidan con la búsqueda.</td></tr>`;
+                return;
+            }
+            
+            container.innerHTML = claimsCache.map(claim => `
+                <tr>
+                    <td style="white-space: nowrap;">${claim.created_at}</td>
+                    <td><strong>${claim.name}</strong></td>
+                    <td>${claim.company || '-'}<br><span style="font-size: 0.8rem; color: var(--color-text-muted);">${claim.rut || ''}</span></td>
+                    <td>${claim.phone || '-'}<br><a href="mailto:${claim.email}" style="font-size: 0.85rem; color: var(--color-primary);">${claim.email}</a></td>
+                    <td><span style="font-size: 0.8rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${claim.claim_type}</span></td>
+                    <td>${claim.invoice_number || '-'}</td>
+                    <td style="max-width: 250px; font-size: 0.85rem; line-height: 1.4;">${claim.comments}</td>
+                    <td>
+                        <select onchange="updateClaimStatus(${claim.id}, this.value)" style="padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; border: 1px solid var(--color-border); background: white; font-weight: 700; cursor: pointer; color: ${claim.status === 'Nuevo' ? '#2563eb' : claim.status === 'En Revisión' ? '#d97706' : claim.status === 'Resuelto' ? '#059669' : '#dc2626'}">
+                            <option value="Nuevo" ${claim.status === 'Nuevo' ? 'selected' : ''}>Nuevo</option>
+                            <option value="En Revisión" ${claim.status === 'En Revisión' ? 'selected' : ''}>En Revisión</option>
+                            <option value="Resuelto" ${claim.status === 'Resuelto' ? 'selected' : ''}>Resuelto</option>
+                            <option value="Rechazado" ${claim.status === 'Rechazado' ? 'selected' : ''}>Rechazado</option>
+                        </select>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        window.updateClaimStatus = function(id, newStatus) {
+            fetch('api/claims.php?action=update_status', {
+                method: 'POST',
+                headers: getAuthHeaders(),
+                body: JSON.stringify({ id, status: newStatus })
+            })
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 'success') {
+                    loadClaims();
+                } else {
+                    alert('Error al actualizar estado del reclamo: ' + res.message);
+                }
+            })
+            .catch(err => console.error("Error updating claim status:", err));
+        };
+
+        // Claims filter event listeners
+        const applyClaimFiltersBtn = document.getElementById('applyClaimFiltersBtn');
+        const clearClaimFiltersBtn = document.getElementById('clearClaimFiltersBtn');
+        
+        if (applyClaimFiltersBtn) {
+            applyClaimFiltersBtn.addEventListener('click', loadClaims);
+        }
+        
+        if (clearClaimFiltersBtn) {
+            clearClaimFiltersBtn.addEventListener('click', () => {
+                if (document.getElementById('filter-claim-search')) document.getElementById('filter-claim-search').value = '';
+                if (document.getElementById('filter-claim-type')) document.getElementById('filter-claim-type').value = '';
+                if (document.getElementById('filter-claim-status')) document.getElementById('filter-claim-status').value = '';
+                if (document.getElementById('filter-claim-start')) document.getElementById('filter-claim-start').value = '';
+                if (document.getElementById('filter-claim-end')) document.getElementById('filter-claim-end').value = '';
+                loadClaims();
+            });
+        }
+
+        // Claims Export Buttons Action
+        const exportClaimsCsvBtn = document.getElementById('exportClaimsCsvBtn');
+        const exportClaimsXlsBtn = document.getElementById('exportClaimsXlsBtn');
+        
+        if (exportClaimsCsvBtn) {
+            exportClaimsCsvBtn.addEventListener('click', () => {
+                const passcode = sessionStorage.getItem('laCanastaAdminPasscode');
+                const search = document.getElementById('filter-claim-search') ? document.getElementById('filter-claim-search').value.trim() : '';
+                const type = document.getElementById('filter-claim-type') ? document.getElementById('filter-claim-type').value : '';
+                const status = document.getElementById('filter-claim-status') ? document.getElementById('filter-claim-status').value : '';
+                const startDate = document.getElementById('filter-claim-start') ? document.getElementById('filter-claim-start').value : '';
+                const endDate = document.getElementById('filter-claim-end') ? document.getElementById('filter-claim-end').value : '';
+                
+                const params = new URLSearchParams();
+                params.append('action', 'export');
+                params.append('format', 'csv');
+                params.append('passcode', passcode);
+                if (search) params.append('search', search);
+                if (type) params.append('claim_type', type);
+                if (status) params.append('status', status);
+                if (startDate) params.append('start_date', startDate);
+                if (endDate) params.append('end_date', endDate);
+                
+                window.open(`api/claims.php?${params.toString()}`, '_blank');
+            });
+        }
+        
+        if (exportClaimsXlsBtn) {
+            exportClaimsXlsBtn.addEventListener('click', () => {
+                const passcode = sessionStorage.getItem('laCanastaAdminPasscode');
+                const search = document.getElementById('filter-claim-search') ? document.getElementById('filter-claim-search').value.trim() : '';
+                const type = document.getElementById('filter-claim-type') ? document.getElementById('filter-claim-type').value : '';
+                const status = document.getElementById('filter-claim-status') ? document.getElementById('filter-claim-status').value : '';
+                const startDate = document.getElementById('filter-claim-start') ? document.getElementById('filter-claim-start').value : '';
+                const endDate = document.getElementById('filter-claim-end') ? document.getElementById('filter-claim-end').value : '';
+                
+                const params = new URLSearchParams();
+                params.append('action', 'export');
+                params.append('format', 'xls');
+                params.append('passcode', passcode);
+                if (search) params.append('search', search);
+                if (type) params.append('claim_type', type);
+                if (status) params.append('status', status);
+                if (startDate) params.append('start_date', startDate);
+                if (endDate) params.append('end_date', endDate);
+                
+                window.open(`api/claims.php?${params.toString()}`, '_blank');
+            });
+        }
+
     });
 
 });

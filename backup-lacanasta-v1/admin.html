@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Canasta Distribuidora - Panel de Administración</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+    
+    <!-- Auth Container -->
+    <div id="adminAuth" class="admin-auth-container">
+        <div class="auth-card animate-on-scroll is-visible">
+            <div class="logo text-center">
+                <span class="logo-text">La Canasta</span>
+                <p style="margin-top: 5px; font-weight: 700; color: var(--color-primary);">Panel de Administración B2B</p>
+            </div>
+            <form id="loginForm" class="auth-form" style="margin-top: 2rem;">
+                <div class="form-group">
+                    <label for="passcode">Código de Acceso</label>
+                    <input type="password" id="passcode" required placeholder="Ingresa el código administrador" style="text-align: center;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Acceder al Panel
+                </button>
+                <p id="loginError" class="text-center" style="color: #ef4444; margin-top: 1rem; display: none; font-weight: 700; font-size: 0.9rem;">Código incorrecto. Inténtalo de nuevo.</p>
+            </form>
+            <div class="text-center" style="margin-top: 1.5rem;">
+                <a href="index.html" style="font-size: 0.9rem; text-decoration: underline; color: var(--color-text-muted);">Volver al Sitio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Admin Panel (Hidden initially) -->
+    <div id="adminPanel" class="admin-panel-container" style="display: none;">
+        <nav class="navbar">
+            <div class="container nav-content">
+                <div class="logo">
+                    <span class="logo-text">La Canasta <span style="font-size: 0.9rem; color: var(--color-secondary); font-weight: 700; vertical-align: middle; margin-left: 5px;">Admin B2B</span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="btn-primary-outline btn-sm" style="display: inline-flex; align-items: center; gap: 5px;">
+                        Volver al Sitio
+                    </a></li>
+                    <li><button id="logoutBtn" class="btn-secondary" style="border: 0; background: transparent; color: #ef4444; font-weight: 700; cursor: pointer;">Cerrar Sesión</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="container" style="padding-top: 120px; padding-bottom: 4rem;">
+            
+            <!-- Navigation Tabs -->
+            <div class="admin-tabs-nav">
+                <button class="admin-tab-btn active" data-tab="tab-dashboard">Dashboard</button>
+                <button class="admin-tab-btn" data-tab="tab-brands">Nuestras Marcas</button>
+                <button class="admin-tab-btn" data-tab="tab-products">Productos</button>
+                <button class="admin-tab-btn" data-tab="tab-leads">Leads / Contactos</button>
+                <button class="admin-tab-btn" data-tab="tab-settings">Configuraciones</button>
+            </div>
+
+            <!-- TAB 1: DASHBOARD -->
+            <div id="tab-dashboard" class="admin-tab-content active">
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <span class="stat-num" id="statLeadsCount">0</span>
+                        <span class="stat-label">Leads / Contactos Totales</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" id="statBrandsCount">0</span>
+                        <span class="stat-label">Marcas Registradas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" id="statProductsCount">0</span>
+                        <span class="stat-label">Productos en Catálogo</span>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Últimos Contactos Registrados</h3>
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Nombre</th>
+                                    <th>Empresa</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Región</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentLeadsBody">
+                                <tr>
+                                    <td colspan="6" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando últimos registros...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: GESTIÓN DE MARCAS -->
+            <div id="tab-brands" class="admin-tab-content">
+                <div class="admin-grid">
+                    <!-- Form -->
+                    <div class="admin-card">
+                        <h3 id="brandFormTitle" style="margin-bottom: 1.5rem; color: var(--color-primary);">Agregar Nueva Marca</h3>
+                        <form id="brandAdminForm" class="contact-form">
+                            <input type="hidden" id="brand-id">
+                            
+                            <div class="form-group">
+                                <label for="brand-name">Nombre de la Marca</label>
+                                <input type="text" id="brand-name" required placeholder="Ej: Angelmo">
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-logo">URL del Logo (120x80)</label>
+                                <input type="text" id="brand-logo" placeholder="Ej: https://... / assets/...">
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-image">URL de Imagen Destacada</label>
+                                <input type="text" id="brand-image" placeholder="Ej: https://...">
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-description">Descripción Breve</label>
+                                <textarea id="brand-description" rows="3" placeholder="Breve reseña de la marca..."></textarea>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="brand-status">Estado</label>
+                                    <select id="brand-status">
+                                        <option value="Activa">Activa</option>
+                                        <option value="Inactiva">Inactiva</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="brand-order">Orden Visual</label>
+                                    <input type="number" id="brand-order" value="0">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-url">URL Oficial (Opcional)</label>
+                                <input type="text" id="brand-url" placeholder="Ej: https://www.marca.cl">
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <button type="submit" id="brandSubmitBtn" class="btn btn-primary" style="flex-grow: 1; justify-content: center;">
+                                    Guardar Marca
+                                </button>
+                                <button type="button" id="cancelBrandEditBtn" class="btn btn-secondary" style="display: none; justify-content: center;">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Table -->
+                    <div class="admin-card">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Marcas Registradas</h3>
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Logo</th>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                        <th>Orden</th>
+                                        <th style="text-align: center; width: 100px;">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="brandsTableBody">
+                                    <tr>
+                                        <td colspan="5" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando marcas...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: GESTIÓN DE PRODUCTOS -->
+            <div id="tab-products" class="admin-tab-content">
+                <div class="admin-grid">
+                    <!-- Form -->
+                    <div class="admin-card">
+                        <h3 id="productFormTitle" style="margin-bottom: 1.5rem; color: var(--color-primary);">Agregar Nuevo Producto</h3>
+                        <form id="productAdminForm" class="contact-form">
+                            <input type="hidden" id="product-id">
+                            
+                            <div class="form-group">
+                                <label for="product-name">Nombre del Producto</label>
+                                <input type="text" id="product-name" required placeholder="Ej: Harina Saco 25kg">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-brand">Marca Asociada</label>
+                                <select id="product-brand" required>
+                                    <option value="" disabled selected>Selecciona una marca</option>
+                                    <!-- Options populated dynamically -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-category">Categoría</label>
+                                <input type="text" id="product-category" required placeholder="Ej: Abarrotes / Lácteos">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-image">URL de la Imagen</label>
+                                <input type="text" id="product-image" placeholder="Ej: https://...">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-description">Descripción Informativa</label>
+                                <textarea id="product-description" rows="3" placeholder="Formato de venta, empaque, ingredientes..."></textarea>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="product-featured">Destacado (Home)</label>
+                                    <select id="product-featured">
+                                        <option value="0">No</option>
+                                        <option value="1">Sí</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-order">Orden Visual</label>
+                                    <input type="number" id="product-order" value="0">
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <button type="submit" id="productSubmitBtn" class="btn btn-primary" style="flex-grow: 1; justify-content: center;">
+                                    Guardar Producto
+                                </button>
+                                <button type="button" id="cancelProductEditBtn" class="btn btn-secondary" style="display: none; justify-content: center;">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Table -->
+                    <div class="admin-card">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Catálogo de Productos</h3>
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Marca</th>
+                                        <th>Categoría</th>
+                                        <th>Dest.</th>
+                                        <th style="text-align: center; width: 100px;">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTableBody">
+                                    <tr>
+                                        <td colspan="6" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando productos...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: LEADS / CONTACTOS -->
+            <div id="tab-leads" class="admin-tab-content">
+                <div class="admin-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                        <h3 style="color: var(--color-primary); margin: 0;">Base de Datos de Leads</h3>
+                        <div style="display: flex; gap: 0.75rem;">
+                            <button id="exportCsvBtn" class="btn btn-secondary btn-sm" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                                Exportar a CSV
+                            </button>
+                            <button id="exportXlsBtn" class="btn btn-primary btn-sm" style="font-size: 0.85rem; padding: 0.5rem 1rem; background-color: #1a5d2e; border: 0; box-shadow: none;">
+                                Exportar a Excel (.XLS)
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Nombre</th>
+                                    <th>Empresa</th>
+                                    <th>Cargo</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Región</th>
+                                    <th>Comentarios</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leadsTableBody">
+                                <tr>
+                                    <td colspan="8" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando base de datos...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: CONFIGURACIONES (LOGO Y WHATSAPP) -->
+            <div id="tab-settings" class="admin-tab-content">
+                <div class="admin-card" style="max-width: 600px; margin: 0 auto;">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Configuraciones Generales</h3>
+                    <form id="settingsAdminForm" class="contact-form">
+                        
+                        <div class="form-group">
+                            <label for="settings-logo">URL del Logo de la Empresa (Actual o Oficial)</label>
+                            <input type="text" id="settings-logo" required placeholder="Ej: assets/canasta-logo.png">
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px;">Puedes cambiar esta URL para actualizar el logo en toda la plataforma al instante.</p>
+                        </div>
+                        
+                        <div style="border-top: 1px dashed var(--color-border); padding-top: 1.5rem; margin-top: 1.5rem;">
+                            <h4 style="margin-bottom: 1rem; color: var(--color-primary);">Futura Activación WhatsApp Business</h4>
+                            
+                            <div class="form-group" style="flex-direction: row; gap: 0.75rem; align-items: center; margin-bottom: 1.25rem;">
+                                <input type="checkbox" id="settings-wa-enabled" style="width: 20px; height: 20px; cursor: pointer;">
+                                <label for="settings-wa-enabled" style="cursor: pointer; font-weight: 600;">Activar WhatsApp Business en la web</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="settings-wa-number">Número de WhatsApp (con código de país, sin espacios)</label>
+                                <input type="text" id="settings-wa-number" placeholder="Ej: +56942567472">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+                            Guardar Configuraciones
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Developer Credit -->
+    <div style="text-align: center; padding: 20px; font-family: sans-serif; font-size: 14px; color: #666; width: 100%; display: block; background-color: var(--color-bg-light); border-top: 1px solid var(--color-border);">
+        Desarrollado por <a href="https://bastiascid.github.io/portafolio" target="_blank" rel="noopener" style="color: #D81B60; text-decoration: none; font-weight: bold;">Cristian Bastias Cid</a>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

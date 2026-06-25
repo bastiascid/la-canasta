@@ -64,6 +64,7 @@
                 <button class="admin-tab-btn" data-tab="tab-coverage">Cobertura</button>
                 <button class="admin-tab-btn" data-tab="tab-partners">Confían en Nosotros</button>
                 <button class="admin-tab-btn" data-tab="tab-leads">Leads / Contactos</button>
+                <button class="admin-tab-btn" data-tab="tab-claims">Reclamos</button>
                 <button class="admin-tab-btn" data-tab="tab-settings">Configuraciones</button>
             </div>
 
@@ -363,6 +364,86 @@
                             </tbody>
                         </table>
                     </div>
+            </div>
+
+            <!-- TAB: RECLAMOS -->
+            <div id="tab-claims" class="admin-tab-content">
+                <div class="admin-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                        <h3 style="color: var(--color-primary); margin: 0;">Gestión de Reclamos</h3>
+                        <div style="display: flex; gap: 0.75rem;">
+                            <button id="exportClaimsCsvBtn" class="btn btn-secondary btn-sm" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                                Exportar a CSV
+                            </button>
+                            <button id="exportClaimsXlsBtn" class="btn btn-primary btn-sm" style="font-size: 0.85rem; padding: 0.5rem 1rem; background-color: #1a5d2e; border: 0; box-shadow: none;">
+                                Exportar a Excel (.XLS)
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Filtros de Reclamos -->
+                    <div class="claims-filters" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; background: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-claim-search" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Palabra clave</label>
+                            <input type="text" id="filter-claim-search" placeholder="Nombre, RUT, detalle..." style="padding: 0.4rem 0.6rem; font-size: 0.85rem;">
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-claim-type" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Tipo Reclamo</label>
+                            <select id="filter-claim-type" style="padding: 0.4rem 0.6rem; font-size: 0.85rem; background: white;">
+                                <option value="">Todos</option>
+                                <option value="Problema de Despacho / Logística">Problema de Despacho / Logística</option>
+                                <option value="Producto Dañado / Merma">Producto Dañado / Merma</option>
+                                <option value="Error de Facturación / Cobro">Error de Facturación / Cobro</option>
+                                <option value="Diferencia de Mercadería">Diferencia de Mercadería</option>
+                                <option value="Atención del Vendedor / Repartidor">Atención del Vendedor / Repartidor</option>
+                                <option value="Otro Reclamo">Otro Reclamo</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-claim-status" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Estado</label>
+                            <select id="filter-claim-status" style="padding: 0.4rem 0.6rem; font-size: 0.85rem; background: white;">
+                                <option value="">Todos los estados</option>
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="En Revisión">En Revisión</option>
+                                <option value="Resuelto">Resuelto</option>
+                                <option value="Rechazado">Rechazado</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-claim-start" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Fecha Inicio</label>
+                            <input type="date" id="filter-claim-start" style="padding: 0.4rem 0.6rem; font-size: 0.85rem;">
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="filter-claim-end" style="font-size: 0.8rem; font-weight: 600; color: var(--color-text-dark);">Fecha Fin</label>
+                            <input type="date" id="filter-claim-end" style="padding: 0.4rem 0.6rem; font-size: 0.85rem;">
+                        </div>
+                        <div style="display: flex; align-items: flex-end; gap: 0.5rem;">
+                            <button id="applyClaimFiltersBtn" class="btn btn-primary btn-sm" style="flex-grow: 1; padding: 0.45rem; font-size: 0.85rem; justify-content: center; height: 38px;">Filtrar</button>
+                            <button id="clearClaimFiltersBtn" class="btn btn-secondary btn-sm" style="padding: 0.45rem; font-size: 0.85rem; justify-content: center; height: 38px;">Limpiar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Nombre</th>
+                                    <th>Empresa/RUT</th>
+                                    <th>Contacto</th>
+                                    <th>Tipo</th>
+                                    <th>Documento (Factura/Guía)</th>
+                                    <th>Detalles</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="claimsTableBody">
+                                <tr>
+                                    <td colspan="8" class="text-center" style="padding: 2rem; color: var(--color-text-muted);">Cargando reclamos...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -658,7 +739,7 @@
                         
                         <div class="form-group">
                             <label for="settings-logo">URL del Logo de la Empresa (Actual o Oficial)</label>
-                            <input type="text" id="settings-logo" required placeholder="Ej: assets/canasta-logo.png">
+                            <input type="text" id="settings-logo" required placeholder="Ej: assets/canasta-logo.webp">
                             <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px;">Puedes cambiar esta URL para actualizar el logo en toda la plataforma al instante.</p>
                         </div>
                         
