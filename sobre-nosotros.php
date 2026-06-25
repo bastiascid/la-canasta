@@ -153,7 +153,7 @@ try {
                 <?php if (!empty($logo_url)): ?>
                     <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 50px; max-width: 150px; object-fit: contain;">
                 <?php endif; ?>
-                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: -2px;">Comercializadora y Distribuidora</span>
+                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y Distribuidora</span>
             </a>
             
             <ul class="nav-links">
