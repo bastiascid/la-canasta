@@ -2,7 +2,13 @@
  * La Canasta Distribuidora - Admin Panel JS (Redesign Upgrade)
  */
 
+window.onerror = function(message, source, lineno, colno, error) {
+    alert("Runtime Error: " + message + "\nIn: " + source + "\nLine: " + lineno + "\nCol: " + colno + (error ? "\nStack: " + error.stack : ""));
+    return false;
+};
+
 const PASSCODE = 'admin123';
+
 let brandsCache = [];
 let leadsCache = [];
 let claimsCache = [];
