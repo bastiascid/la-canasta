@@ -1,65 +1,51 @@
 # La Canasta - Distribución de Alimentos
 
-Landing page moderna y optimizada para **La Canasta**, distribuidora de alimentos en la Sexta Región, Chile. Venta exclusiva para almacenes y comercios con atención directa y rápida.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)
 
-## Características
-- **Diseño Premium**: Interfaz moderna, limpia y responsive con una paleta de colores armónica basada en el logo original (Verdes y Naranjos).
-- **Acceso Directo a Pedidos**: Enlace directo a pedidos por WhatsApp con mensajes pre-formateados desde el Hero y un botón flotante persistente.
-- **Formulario de Contacto**: Formulario interactivo que valida los campos, muestra un mensaje de éxito estético al enviar y ofrece la opción de reenviar los datos directamente por WhatsApp si es necesario.
-- **Ubicación Integrada**: Mapa interactivo de la zona de cobertura en Rancagua y comunas aledañas, con información de contacto clara y horarios de atención.
+## 📌 Descripción
 
----
+Landing page moderna, optimizada y responsive para **La Canasta**, distribuidora de alimentos en la Sexta Región, Chile. El proyecto está enfocado en facilitar el contacto directo y rápido para ventas a almacenes y comercios.
 
-## Cómo Publicar en GitHub Pages
+## 🚀 Características Principales
 
-Sigue estos sencillos pasos para publicar esta landing page en internet de forma gratuita usando **GitHub Pages**:
+- **Diseño Premium y Responsivo:** Interfaz limpia y moderna con una paleta de colores armónica.
+- **Acceso Directo a Pedidos (WhatsApp):** Enlaces directos a WhatsApp con mensajes pre-formateados.
+- **Formulario de Contacto:** Validado en el frontend y backend.
+- **Ubicación Integrada:** Mapa interactivo de la zona de cobertura.
+- **SEO Optimizado:** Estructura semántica y metadatos para mejor posicionamiento.
 
-### Paso 1: Confirmar y guardar tus cambios locales en Git
-Abre tu terminal dentro del directorio del proyecto (`la-canasta`) y ejecuta:
-```bash
-# 1. Agregar todos los cambios realizados
-git add .
+## 🛠 Tecnologías Utilizadas
 
-# 2. Hacer un commit (guardar los cambios)
-git commit -m "Convertir a landing page con formulario de contacto y mapa"
-```
+- **Frontend:** HTML5, CSS3 Vanilla, JavaScript (Vanilla).
+- **Backend:** PHP (para procesamiento de formularios).
+- **Herramientas:** Integración de Google Maps y WhatsApp Business.
 
-### Paso 2: Crear el repositorio en tu cuenta de GitHub
-1. Ingresa a tu cuenta de GitHub y crea un nuevo repositorio público ingresando a: [https://github.com/new](https://github.com/new).
-2. Nómbralo como **`la-canasta`** (u otro nombre que prefieras).
-3. **No** selecciones "Add a README file", "Add .gitignore" o "Choose a license" (déjalo vacío).
-4. Haz clic en **Create repository**.
+## 📦 Instalación Local
 
-### Paso 3: Vincular tu repositorio local con GitHub y subir el código
-Copia y ejecuta los siguientes comandos en tu terminal (asegúrate de que tu usuario sea `bastiascid`):
+Para ejecutar este proyecto localmente, necesitas un servidor web con soporte PHP (como XAMPP, WAMP o Docker).
 
-**Si usas HTTPS:**
-```bash
-git remote add origin https://github.com/bastiascid/la-canasta.git
-git branch -M main
-git push -u origin main
-```
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/bastiascid/la-canasta.git
+   ```
 
-**Si usas SSH:**
-```bash
-git remote add origin git@github.com:bastiascid/la-canasta.git
-git branch -M main
-git push -u origin main
-```
+2. **Mueve el proyecto a tu servidor:**
+   Coloca la carpeta dentro del directorio `htdocs` (XAMPP) o `www` (WAMP).
 
-### Paso 4: Activar GitHub Pages
-Una vez que el código esté en tu repositorio de GitHub:
-1. En GitHub, entra a la pestaña **Settings** (Configuración) de tu repositorio `la-canasta`.
-2. En la barra lateral izquierda, busca la sección **Code and automation** y haz clic en **Pages**.
-3. En la sección **Build and deployment**:
-   - En **Source**, selecciona **Deploy from a branch**.
-   - En **Branch**, selecciona **`main`** y la carpeta **`/ (root)`**.
-   - Haz clic en **Save** (Guardar).
-4. Espera 1 o 2 minutos. GitHub Pages generará tu enlace. Podrás acceder a tu landing page desde:
-   **`https://bastiascid.github.io/la-canasta/`**
+3. **Accede en tu navegador:**
+   Navega a `http://localhost/la-canasta`
+
+## 🤝 Contribución
+
+¡Las contribuciones son bienvenidas! Revisa nuestro archivo [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## 📜 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
 Desarrollado por [Cristian Bastias Cid](https://bastiascid.github.io/portafolio).
-
----
-*Última actualización: 26 de Mayo, 2026*
