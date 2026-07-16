@@ -62,4 +62,13 @@ Una vez que el código esté en tu repositorio de GitHub:
 Desarrollado por [Cristian Bastias Cid](https://bastiascid.github.io/portafolio).
 
 ---
-*Última actualización: 26 de Mayo, 2026*
+## Historial de Cambios y Actualizaciones (Julio 2026)
+- **Panel de Administración y Reclamos**: Implementación de un panel para administrar la página y visualización de formularios de reclamos.
+- **Carrito B2B**: Adaptación del carrito para compras B2B (distribuidores).
+- **Optimizaciones SEO**: Incorporación de `robots.txt`, `sitemap.xml`, `favicon.png` y meta-etiquetas Open Graph.
+- **Migración de Dominio**: Correcciones de dominio y de correo de contacto hacia `lacanastacomercializadora.cl`.
+- **Diseño UI**: Actualizaciones de diseño en el Hero, ajuste de logo a vertical, y actualización de título de marca.
+- **Sistema de Caché y Errores**: Implementación de *cache-busting* (v=4) y manejo global de errores en Javascript (`admin.js`, `script.js`).
+
+---
+*Última actualización: 16 de Julio, 2026*

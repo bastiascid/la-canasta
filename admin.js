@@ -86,13 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             btn.classList.add('active');
             const tabId = btn.getAttribute('data-tab');
-            const tabEl = document.getElementById(tabId);
-            if (tabEl) {
-                tabEl.classList.add('active');
-                alert("Tab: " + tabId + "\nHTML Length: " + tabEl.innerHTML.length + "\nVisible: " + (tabEl.offsetWidth > 0 || tabEl.offsetHeight > 0));
-            } else {
-                alert("Error: Element with ID " + tabId + " not found!");
-            }
+            document.getElementById(tabId).classList.add('active');
+
 
             
             // Load specific tab data
