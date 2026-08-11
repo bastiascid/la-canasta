@@ -33,13 +33,14 @@ try {
     <title>Sobre Nosotros - La Canasta Distribuidora</title>
     <meta name="description" content="Conoce la historia, misión, visión e infraestructura logística de La Canasta Distribuidora, operador comercial líder en el canal tradicional.">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="canonical" href="https://www.lacanastacomercializadora.cl/sobre-nosotros.php" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.lacanastadistribuidora.cl/sobre-nosotros.php">
+    <meta property="og:url" content="https://www.lacanastacomercializadora.cl/sobre-nosotros.php">
     <meta property="og:title" content="Sobre Nosotros - La Canasta Distribuidora">
     <meta property="og:description" content="Conoce la historia, misión, visión e infraestructura de La Canasta. Distribución mayorista en la Sexta Región.">
-    <meta property="og:image" content="https://www.lacanastadistribuidora.cl/assets/canasta-logo.webp">
+    <meta property="og:image" content="https://www.lacanastacomercializadora.cl/assets/canasta-logo.webp">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -48,13 +49,39 @@ try {
     
     <!-- Analítica & Tracking -->
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TE0RMDKPX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-6TE0RMDKPX');
     </script>
+    
+    <!-- Meta Pixel (Facebook) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '4411421472402929');
+      fbq('track', 'PageView');
+
+      // Listener global para clics en enlaces estáticos de WhatsApp sin PII
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            if (typeof fbq === 'function') {
+              fbq('trackCustom', 'WhatsAppClick', { origin: 'static_link' });
+            }
+          });
+        });
+      });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4411421472402929&ev=PageView&noscript=1" /></noscript>
     
     <style>
         .page-header-banner {
@@ -153,7 +180,7 @@ try {
                 <?php if (!empty($logo_url)): ?>
                     <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 50px; max-width: 150px; object-fit: contain;">
                 <?php endif; ?>
-                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y Distribuidora</span>
+                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y<br>Distribuidora</span>
             </a>
             
             <ul class="nav-links">

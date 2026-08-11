@@ -15,6 +15,15 @@ function openWhatsApp(text) {
     const rawNumber = globalSettings.whatsapp_number.replace(/[^\d]/g, '');
     const encodedText = encodeURIComponent(text);
     const url = `https://wa.me/${rawNumber}?text=${encodedText}`;
+    
+    if (typeof fbq === 'function') {
+        fbq('trackCustom', 'WhatsAppClick', { origin: 'dynamic_button' });
+    }
+    
+    if (typeof gtag === 'function') {
+        gtag('event', 'click_whatsapp', { origin: 'dynamic_button' });
+    }
+    
     window.open(url, '_blank', 'noopener,noreferrer');
 }
 
@@ -473,6 +482,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const gridContainer = document.createElement('div');
             gridContainer.className = 'offers-grid';
             gridContainer.style.width = '100%';
+            gridContainer.style.gap = '1rem';
+            gridContainer.style.justifyContent = 'center';
             
             function renderProductCard(product) {
                 const cart = getCart();
@@ -481,16 +492,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const buttonClass = inCart ? 'add-to-cart-btn btn-secondary' : 'add-to-cart-btn';
                 
                 return `
-                    <div class="offer-card" data-product-id="${product.id}" style="width: 100%; max-width: 280px;">
-                        ${product.featured == 1 ? '<span class="offer-badge" style="background-color: var(--color-secondary);">Destacado</span>' : ''}
-                        <div class="offer-img-wrapper" style="height: 180px;">
+                    <div class="offer-card" data-product-id="${product.id}" style="width: 100%; max-width: 190px;">
+                        ${product.featured == 1 ? '<span class="offer-badge" style="background-color: var(--color-secondary); font-size: 0.65rem; padding: 3px 6px;">Destacado</span>' : ''}
+                        <div class="offer-img-wrapper" style="height: 110px;">
                             <img src="${product.image_url}" alt="${product.name}" onerror="this.src='https://placehold.co/400x300/f4f6f9/0f2c59?text=Producto'" loading="lazy">
                         </div>
-                        <div class="offer-details" style="display: flex; flex-direction: column; height: calc(100% - 180px); padding: 1.25rem;">
-                            <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase;">${product.category}</span>
-                            <h3 class="offer-name" style="margin-top: 5px; min-height: 48px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.1rem; font-weight: 700; color: var(--color-primary);">${product.name}</h3>
-                            <p class="offer-desc" style="flex-grow: 1; min-height: 60px; margin-bottom: 1.5rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.85rem; color: var(--color-text-muted);">${product.description || 'Abarrotes para venta exclusiva en locales comerciales.'}</p>
-                            <button class="${buttonClass}" onclick="handleAddToCartClick(${product.id})">
+                        <div class="offer-details" style="display: flex; flex-direction: column; height: calc(100% - 110px); padding: 0.75rem;">
+                            <span style="font-size: 0.65rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase;">${product.category}</span>
+                            <h3 class="offer-name" style="margin-top: 3px; min-height: 36px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.9rem; font-weight: 700; color: var(--color-primary);">${product.name}</h3>
+                            <p class="offer-desc" style="flex-grow: 1; min-height: 40px; margin-bottom: 0.75rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.75rem; color: var(--color-text-muted);">${product.description || 'Abarrotes para venta exclusiva.'}</p>
+                            <button class="${buttonClass}" onclick="handleAddToCartClick(${product.id})" style="padding: 0.4rem; font-size: 0.8rem;">
                                 <span>🛒</span> <span class="btn-text">${buttonText}</span>
                             </button>
                         </div>
@@ -498,17 +509,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             }
             
-            const featuredProducts = brandProducts.filter(p => p.featured == 1);
-            const nonFeaturedProducts = brandProducts.filter(p => p.featured != 1);
+            const initialProducts = brandProducts.slice(0, 5);
+            const hiddenProducts = brandProducts.slice(5);
             
-            let currentProducts = [...featuredProducts];
+            let currentProducts = [...initialProducts];
             let isExpanded = false;
             
             // Internal function to redraw the products of this brand
             function updateGrid() {
                 gridContainer.innerHTML = '';
                 if (currentProducts.length === 0) {
-                    gridContainer.innerHTML = `<p class="text-center" style="grid-column: 1/-1; color: var(--color-text-muted); padding: 1rem 0; width: 100%;">No hay productos destacados de esta marca en esta categoría. Haz clic abajo para ver todo el catálogo.</p>`;
+                    gridContainer.innerHTML = `<p class="text-center" style="grid-column: 1/-1; color: var(--color-text-muted); padding: 1rem 0; width: 100%;">No hay productos en esta categoría.</p>`;
                 } else {
                     currentProducts.forEach(product => {
                         const wrapperDiv = document.createElement('div');
@@ -525,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
             brandSection.innerHTML = headerHtml;
             brandSection.appendChild(gridContainer);
             
-            if (nonFeaturedProducts.length > 0) {
+            if (hiddenProducts.length > 0) {
                 const btnContainer = document.createElement('div');
                 btnContainer.className = 'brand-toggle-btn-container';
                 
@@ -539,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         currentProducts = [...brandProducts];
                         toggleBtn.textContent = `Ver menos`;
                     } else {
-                        currentProducts = [...featuredProducts];
+                        currentProducts = [...initialProducts];
                         toggleBtn.textContent = `Ver catálogo completo de ${brand.name}`;
                     }
                     updateGrid();
@@ -642,6 +653,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then(res => {
                 if (res.status === 'success') {
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead');
+                    }
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead');
+                    }
                     form.style.display = 'none';
                     if (successDiv) {
                         successDiv.style.display = 'block';

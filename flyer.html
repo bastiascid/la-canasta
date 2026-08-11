@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyer Comercial - La Canasta Distribuidora</title>
+    <link rel="canonical" href="https://www.lacanastacomercializadora.cl/flyer.html" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to the CSS -->
+    <link rel="stylesheet" href="flyer.css">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TE0RMDKPX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6TE0RMDKPX');
+    </script>
+    
+    <!-- Meta Pixel (Facebook) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '4411421472402929');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4411421472402929&ev=PageView&noscript=1" /></noscript>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.location.search.includes('screenshot=true')) {
+                document.body.classList.add('screenshot');
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Control bar (hidden during print) -->
+    <div class="control-bar no-print">
+        <div class="control-container">
+            <span class="control-title">Vista Previa del Flyer Comercial (Proporción A5)</span>
+            <button onclick="window.print()" class="print-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                Imprimir o Guardar PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Flyer Container -->
+    <div class="flyer-container">
+        
+        <!-- Header -->
+        <header class="flyer-header">
+            <div class="logo-wrapper">
+                <img src="assets/canasta-logo.webp" alt="La Canasta Logo" class="flyer-logo" onerror="this.src='assets/canasta-logo.png'">
+            </div>
+            <p class="tagline">Comercializadora & Distribuidora Mayorista</p>
+        </header>
+
+        <!-- Hero Title -->
+        <section class="flyer-hero">
+            <h1 class="main-title">¡ABASTECE TU NEGOCIO CON LOS MEJORES!</h1>
+            <p class="hero-subtitle">Distribución y logística B2B para almacenes, minimarkets y locales comerciales en la Región de O'Higgins.</p>
+        </section>
+
+        <!-- Main Content: Two core messages -->
+        <main class="flyer-content">
+            
+            <!-- Column 1: Hazte Cliente -->
+            <div class="feature-card card-primary">
+                <div class="card-badge">CAPTACIÓN</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                </div>
+                <h2 class="card-title">¿Aún no eres cliente?</h2>
+                <h3 class="card-action">¡HAZTE CLIENTE HOY!</h3>
+                <ul class="benefit-list">
+                    <li>
+                        <span class="bullet-check">✓</span>
+                        <div class="benefit-text"><strong>Vendedor en terreno:</strong> Asignamos un ejecutivo para visitar tu local periódicamente.</div>
+                    </li>
+                    <li>
+                        <span class="bullet-check">✓</span>
+                        <div class="benefit-text"><strong>Precios de distribuidor:</strong> Accede a ofertas y precios mayoristas muy convenientes.</div>
+                    </li>
+                    <li>
+                        <span class="bullet-check">✓</span>
+                        <div class="benefit-text"><strong>Registro rápido:</strong> Inscripción 100% gratuita y sin trámites complicados.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Haz Pedido -->
+            <div class="feature-card card-secondary">
+                <div class="card-badge">COMPRAS</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </div>
+                <h2 class="card-title">¿Ya eres cliente?</h2>
+                <h3 class="card-action">¡HAZ TU PEDIDO FÁCIL!</h3>
+                <ul class="benefit-list">
+                    <li>
+                        <span class="bullet-check">✓</span>
+                        <div class="benefit-text"><strong>Compra 24/7 en la Web:</strong> Pide a cualquier hora desde nuestra plataforma digital.</div>
+                    </li>
+                    <li>
+                        <span class="bullet-check">✓</span>
+                        <div class="benefit-text"><strong>Pedidos por WhatsApp:</strong> Haz tus pedidos de forma directa y rápida con nosotros.</div>
+                    </li>
+                    <li>
+                        <span class="bullet-check">✓</span>
+                        <div class="benefit-text"><strong>Despacho rápido:</strong> Entrega directa en tu negocio en un plazo de 24 a 48 horas.</div>
+                    </li>
+                </ul>
+            </div>
+
+        </main>
+
+        <!-- Call to Action Section with QR Code -->
+        <section class="flyer-cta">
+            <div class="cta-info">
+                <h3 class="cta-heading">¿Cómo contactarnos?</h3>
+                
+                <div class="contact-methods">
+                    <a href="https://www.lacanastacomercializadora.cl" class="contact-item web-link" target="_blank">
+                        <span class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </span>
+                        <div class="contact-text">
+                            <span class="contact-label">PÁGINA WEB</span>
+                            <span class="contact-value">www.lacanastacomercializadora.cl</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://wa.me/56942567472" class="contact-item whatsapp-link" target="_blank">
+                        <span class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        </span>
+                        <div class="contact-text">
+                            <span class="contact-label">WHATSAPP VENTAS</span>
+                            <span class="contact-value">+56 9 4256 7472</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="cta-qr-code">
+                <div class="qr-container">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.lacanastacomercializadora.cl&color=5d4637" alt="QR Code La Canasta" class="qr-image">
+                </div>
+                <span class="qr-label">ESCANEA Y VISÍTANOS</span>
+            </div>
+        </section>
+
+        <!-- Associated Brands / Coverage -->
+        <section class="flyer-footer-details">
+            <div class="coverage-info">
+                <strong>Zona de Cobertura:</strong> Rancagua, Machalí, Graneros, Mostazal, Codegua, San Francisco, Rengo, San Fernando y comunas de la Región de O'Higgins.
+            </div>
+            
+            <div class="brands-wrapper">
+                <span class="brands-title">Distribuidor Oficial de Marcas Líderes:</span>
+                <div class="brands-list">
+                    <span class="brand-tag">Iansa</span>
+                    <span class="brand-tag">Watt's</span>
+                    <span class="brand-tag">Traverso</span>
+                    <span class="brand-tag">Angelmo</span>
+                    <span class="brand-tag">Mercado Nacional</span>
+                    <span class="brand-tag">& más</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subtle Footer Signature -->
+        <footer class="flyer-footer">
+            <p>La Canasta Comercializadora y Distribuidora Ltda. • contacto@lacanastacomercializadora.cl</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -28,6 +28,7 @@ try {
     <title>Formulario de Reclamos - La Canasta Comercializadora y Distribuidora</title>
     <meta name="description" content="Canal formal para el ingreso y seguimiento de reclamos, mermas o problemas con tu pedido. Atendemos tu caso a la brevedad.">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="canonical" href="https://www.lacanastacomercializadora.cl/reclamos.php" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -40,6 +41,44 @@ try {
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css?v=18">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TE0RMDKPX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6TE0RMDKPX');
+    </script>
+    
+    <!-- Meta Pixel (Facebook) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '4411421472402929');
+      fbq('track', 'PageView');
+
+      // Listener global para clics en enlaces estáticos de WhatsApp sin PII
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            if (typeof fbq === 'function') {
+              fbq('trackCustom', 'WhatsAppClick', { origin: 'static_link' });
+            }
+            if (typeof gtag === 'function') {
+              gtag('event', 'click_whatsapp', { origin: 'static_link' });
+            }
+          });
+        });
+      });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4411421472402929&ev=PageView&noscript=1" /></noscript>
     
     <style>
         .page-header-banner {
@@ -138,7 +177,7 @@ try {
                 <?php if (!empty($logo_url)): ?>
                     <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 50px; max-width: 150px; object-fit: contain;">
                 <?php endif; ?>
-                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y Distribuidora</span>
+                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y<br>Distribuidora</span>
             </a>
             
             <ul class="nav-links">
@@ -359,6 +398,9 @@ try {
                     .then(res => res.json())
                     .then(res => {
                         if (res.status === 'success') {
+                            if (typeof fbq === 'function') {
+                                fbq('track', 'Contact');
+                            }
                             form.style.display = 'none';
                             successText.innerHTML = `Reclamo enviado exitosamente con el número de ticket: <strong>#${res.case_id}</strong>.`;
                             successDiv.style.display = 'flex';

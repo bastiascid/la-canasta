@@ -50,6 +50,7 @@ try {
     <title>Distribución B2B <?php echo htmlspecialchars($brand['name']); ?> - La Canasta Comercializadora y Distribuidora</title>
     <meta name="description" content="Distribuidor mayorista oficial de <?php echo htmlspecialchars($brand['name']); ?>. Abastecemos almacenes, minimarkets y comercio detallista en la Región de O'Higgins.">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="canonical" href="https://www.lacanastacomercializadora.cl/marcas/<?php echo htmlspecialchars($brand['slug'], ENT_QUOTES, 'UTF-8'); ?>" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -60,6 +61,65 @@ try {
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=18">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TE0RMDKPX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6TE0RMDKPX');
+    </script>
+    
+    <!-- Meta Pixel (Facebook) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '4411421472402929');
+      fbq('track', 'PageView');
+
+      <?php if (isset($products) && count($products) > 0): ?>
+      <?php 
+        $product_ids = array_map(function($p) { return (int)$p['id']; }, $products);
+        $ga4_items = array_map(function($p) use ($brand) {
+            return [
+                'item_id' => (string)$p['id'],
+                'item_name' => $p['name'],
+                'item_brand' => $brand['name']
+            ];
+        }, $products);
+      ?>
+      fbq('track', 'ViewContent', {
+        content_ids: <?php echo json_encode($product_ids); ?>,
+        content_name: <?php echo json_encode($brand['name']); ?>,
+        content_type: 'product'
+      });
+      gtag('event', 'view_item', {
+        items: <?php echo json_encode($ga4_items); ?>
+      });
+      <?php endif; ?>
+
+      // Listener global para clics en enlaces estáticos de WhatsApp sin PII
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            if (typeof fbq === 'function') {
+              fbq('trackCustom', 'WhatsAppClick', { origin: 'static_link' });
+            }
+            if (typeof gtag === 'function') {
+              gtag('event', 'click_whatsapp', { origin: 'static_link' });
+            }
+          });
+        });
+      });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4411421472402929&ev=PageView&noscript=1" /></noscript>
     <style>
         .brand-hero {
             background: linear-gradient(135deg, var(--color-primary) 0%, #153c73 100%);
@@ -149,7 +209,7 @@ try {
                 <?php if (!empty($logo_url)): ?>
                     <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 50px; max-width: 150px; object-fit: contain;">
                 <?php endif; ?>
-                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y Distribuidora</span>
+                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y<br>Distribuidora</span>
             </a>
             
             <ul class="nav-links">

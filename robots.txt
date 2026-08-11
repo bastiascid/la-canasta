@@ -6,4 +6,4 @@ Disallow: /admin.js
 Disallow: /database_backup*.json
 Disallow: /backup-lacanasta-*/
 
-Sitemap: https://lacanastadistribuidora.cl/sitemap.xml
+Sitemap: https://www.lacanastacomercializadora.cl/sitemap.xml

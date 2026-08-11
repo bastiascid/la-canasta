@@ -1,0 +1,627 @@
+/* CSS variables and styles for La Canasta Flyer */
+:root {
+    --color-primary: #5d4637;       /* Logo Brown */
+    --color-primary-light: #7e6250;
+    --color-secondary: #b83b1d;     /* Premium Terracotta Red */
+    --color-secondary-light: #d0533c;
+    --color-bg-light: #f5efe6;      /* Rich warm coffee-beige background */
+    --color-bg-card: #ffffff;
+    --color-text-main: #2b2623;      /* Slightly warmer text */
+    --color-text-muted: #5c5552;
+    --color-whatsapp: #25d366;
+    --color-whatsapp-dark: #128c7e;
+    --color-web: #34495e;
+    
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --shadow-premium: 0 20px 40px rgba(93, 70, 55, 0.12);
+    --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.05);
+    --border-radius-lg: 16px;
+    --border-radius-md: 8px;
+}
+
+/* Base resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-main);
+    background-color: #dfd7ce; /* Darker coffee background to contrast the flyer container on screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 60px; /* Space for control bar */
+}
+
+/* Control Bar */
+.control-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(43, 38, 35, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.control-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.control-title {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.print-btn {
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.print-btn:hover {
+    background-color: var(--color-secondary-light);
+    transform: translateY(-1px);
+}
+
+.print-btn:active {
+    transform: translateY(1px);
+}
+
+/* Flyer Container */
+.flyer-container {
+    width: 800px;
+    height: 1130px; /* A5 Aspect ratio (1 : 1.414) */
+    background: linear-gradient(180deg, #ffffff 0%, var(--color-bg-light) 100%);
+    box-shadow: var(--shadow-premium);
+    border-radius: var(--border-radius-lg);
+    padding: 2.2rem;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(93, 70, 55, 0.1);
+}
+
+/* Decorative background elements */
+.flyer-container::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184, 59, 29, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+}
+
+.flyer-container::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(93, 70, 55, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+}
+
+/* Header */
+.flyer-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.logo-wrapper {
+    background: white;
+    padding: 0.5rem 1.8rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(93, 70, 55, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+}
+
+.flyer-logo {
+    max-height: 48px;
+    object-fit: contain;
+}
+
+.tagline {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary-light);
+}
+
+/* Hero Section */
+.flyer-hero {
+    text-align: center;
+    margin-bottom: 1.2rem;
+    padding: 0 1rem;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    line-height: 1.4;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Content Grid: 2 Cards */
+.flyer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.feature-card {
+    background: var(--color-bg-card);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.card-action {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+/* Primary Card Styling (Hazte Cliente) */
+.card-primary {
+    border-top: 5px solid var(--color-secondary);
+    background: linear-gradient(180deg, #ffffff 70%, rgba(184, 59, 29, 0.02) 100%);
+}
+
+.card-primary .card-badge {
+    background: rgba(184, 59, 29, 0.1);
+    color: var(--color-secondary);
+}
+
+.card-primary .card-icon {
+    background: rgba(184, 59, 29, 0.08);
+    color: var(--color-secondary);
+}
+
+.card-primary .card-action {
+    color: var(--color-secondary);
+}
+
+/* Secondary Card Styling (Haz Pedido) */
+.card-secondary {
+    border-top: 5px solid var(--color-primary);
+    background: linear-gradient(180deg, #ffffff 70%, rgba(93, 70, 55, 0.02) 100%);
+}
+
+.card-secondary .card-badge {
+    background: rgba(93, 70, 55, 0.1);
+    color: var(--color-primary);
+}
+
+.card-secondary .card-icon {
+    background: rgba(93, 70, 55, 0.08);
+    color: var(--color-primary);
+}
+
+.card-secondary .card-action {
+    color: var(--color-primary);
+}
+
+/* Benefit List inside cards */
+.benefit-list {
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.bullet-check {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.card-primary .bullet-check {
+    color: var(--color-secondary);
+}
+
+.card-secondary .bullet-check {
+    color: var(--color-primary);
+}
+
+.benefit-text {
+    font-size: 0.82rem;
+    line-height: 1.35;
+    color: var(--color-text-main);
+}
+
+.benefit-text strong {
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+/* Call to Action with QR Section */
+.flyer-cta {
+    background: #ffffff;
+    border-radius: var(--border-radius-lg);
+    padding: 1.2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 1.5rem;
+    align-items: center;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(93, 70, 55, 0.06);
+    margin-bottom: 0.8rem;
+}
+
+.cta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.cta-heading {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.cta-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    border-radius: 2px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border: 1px solid #efefef;
+    background: #fafaf9;
+}
+
+.contact-item:hover {
+    transform: translateX(3px);
+}
+
+.contact-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 0.5px;
+}
+
+.contact-value {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+/* Specific Contact Styling */
+.web-link .contact-icon {
+    background-color: var(--color-web);
+}
+.web-link .contact-value {
+    color: var(--color-web);
+}
+.web-link:hover {
+    box-shadow: 0 4px 10px rgba(52, 73, 94, 0.1);
+    border-color: rgba(52, 73, 94, 0.2);
+}
+
+.whatsapp-link .contact-icon {
+    background-color: var(--color-whatsapp);
+}
+.whatsapp-link .contact-value {
+    color: var(--color-whatsapp-dark);
+}
+.whatsapp-link:hover {
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.15);
+    border-color: rgba(37, 211, 102, 0.3);
+}
+
+/* QR Code */
+.cta-qr-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #eeeeee;
+    padding-left: 1.5rem;
+}
+
+.qr-container {
+    background: white;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-image {
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+.qr-label {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* Footer Details: Brands & Coverage */
+.flyer-footer-details {
+    background: rgba(93, 70, 55, 0.04);
+    border-radius: var(--border-radius-md);
+    padding: 0.9rem 1.2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px dashed rgba(93, 70, 55, 0.15);
+}
+
+.coverage-info {
+    font-size: 0.72rem;
+    line-height: 1.3;
+    color: var(--color-text-muted);
+}
+
+.coverage-info strong {
+    color: var(--color-primary);
+}
+
+.brands-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.brands-title {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.brands-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+}
+
+.brand-tag {
+    background: #ffffff;
+    border: 1px solid rgba(93, 70, 55, 0.1);
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Small Signature Footer */
+.flyer-footer {
+    text-align: center;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(93, 70, 55, 0.08);
+}
+
+.flyer-footer p {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.3px;
+}
+
+/* Print Optimizations */
+@media print {
+    body {
+        background: #ffffff !important;
+        padding-top: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+    
+    .flyer-container {
+        width: 100% !important;
+        height: 100vh !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        margin: 0 !important;
+        padding: 2.5cm 1.5cm !important; /* Elegant margins on paper */
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        border: none !important;
+        background: #ffffff !important;
+    }
+    
+    /* Ensure page-break behaves nicely */
+    @page {
+        size: auto;
+        margin: 0;
+    }
+}
+
+/* Screenshot Optimizations */
+body.screenshot {
+    padding-top: 0 !important;
+    background: transparent !important;
+    display: block !important;
+}
+
+body.screenshot .control-bar {
+    display: none !important;
+}
+
+body.screenshot .flyer-container {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 800px !important;
+    height: 1130px !important;
+}
+

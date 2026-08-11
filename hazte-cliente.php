@@ -38,6 +38,7 @@ try {
     <title>Hazte Cliente - La Canasta Comercializadora y Distribuidora</title>
     <meta name="description" content="Únete a nuestra red de distribución B2B. Abastecimiento de marcas líderes, logística eficiente y atención personalizada para almacenes y minimarkets.">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="canonical" href="https://www.lacanastacomercializadora.cl/hazte-cliente.php" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -54,12 +55,12 @@ try {
     
     <!-- Analítica & Tracking (Preparados para Producción) -->
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TE0RMDKPX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX'); // Reemplazar con ID oficial
+      gtag('config', 'G-6TE0RMDKPX'); // Reemplazar con ID oficial
     </script>
     
     <!-- Meta Pixel (Facebook) -->
@@ -72,10 +73,24 @@ try {
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'YOUR_PIXEL_ID'); // Reemplazar con ID oficial
+      fbq('init', '4411421472402929');
       fbq('track', 'PageView');
+
+      // Listener global para clics en enlaces estáticos de WhatsApp sin PII
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            if (typeof fbq === 'function') {
+              fbq('trackCustom', 'WhatsAppClick', { origin: 'static_link' });
+            }
+            if (typeof gtag === 'function') {
+              gtag('event', 'click_whatsapp', { origin: 'static_link' });
+            }
+          });
+        });
+      });
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4411421472402929&ev=PageView&noscript=1" /></noscript>
     
     <style>
         .page-header-banner {
@@ -214,7 +229,7 @@ try {
                 <?php if (!empty($logo_url)): ?>
                     <img src="<?php echo htmlspecialchars($logo_url); ?>?v=2" alt="La Canasta Logo" style="height: 50px; max-width: 150px; object-fit: contain;">
                 <?php endif; ?>
-                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y Distribuidora</span>
+                <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y<br>Distribuidora</span>
             </a>
             
             <ul class="nav-links">
@@ -519,6 +534,12 @@ try {
             .then(res => res.json())
             .then(res => {
                 if (res.status === 'success') {
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead');
+                    }
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead');
+                    }
                     feedbackDiv.style.color = '#2e7d32'; // Green
                     feedbackDiv.textContent = res.message;
                     form.reset();

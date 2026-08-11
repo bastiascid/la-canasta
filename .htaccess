@@ -8,8 +8,15 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^marcas/([a-zA-Z0-9-]+)/?$ marca.php?slug=$1 [L,QSA]
 
-# 2. Deshabilitar listado de directorios por seguridad
+# Enrutamiento para sitemap dinámico
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# 2. Deshabilitar listado de directorios y bloquear archivos sensibles
 Options -Indexes
+
+<FilesMatch "\.json$">
+    Require all denied
+</FilesMatch>
 
 # 3. Compresión Gzip (mod_deflate) para acelerar la carga de código y textos
 <IfModule mod_deflate.c>
