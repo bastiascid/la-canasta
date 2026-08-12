@@ -26,6 +26,10 @@ FILES_TO_UPLOAD = [
     "terminos.html",
     "robots.txt",
     "sitemap.xml",
+    "sitemap.php",
+    "flyer.html",
+    "flyer.css",
+    "flyer-digital.png",
     "favicon.png"
 ]
 
