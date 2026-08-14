@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - La Canasta Comercializadora y Distribuidora</title>
+    <title>Política de Privacidad - La Canasta Distribuidora</title>
+    <meta name="description" content="Política de Privacidad y Tratamiento de Datos Personales de La Canasta Comercializadora y Distribuidora.">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link rel="canonical" href="https://www.lacanastacomercializadora.cl/privacidad.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lacanastacomercializadora.cl/privacidad.html">
+    <meta property="og:title" content="Política de Privacidad - La Canasta Distribuidora">
+    <meta property="og:description" content="Política de Privacidad y Tratamiento de Datos Personales de La Canasta.">
+    <meta property="og:image" content="https://www.lacanastacomercializadora.cl/assets/canasta-logo.webp">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=18">
+    
+    <link rel="stylesheet" href="styles.css?v=17">
     
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TE0RMDKPX"></script>
@@ -31,144 +43,552 @@
       fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4411421472402929&ev=PageView&noscript=1" /></noscript>
+    
     <style>
-        .legal-content {
-            padding: 5rem 0;
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--color-text-dark);
-            line-height: 1.8;
-        }
-        .legal-content h1 {
-            font-size: 2.2rem;
-            color: var(--color-primary);
-            margin-bottom: 2rem;
+        .page-header-banner {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            padding: 6rem 0 3.5rem 0;
             text-align: center;
-            font-weight: 800;
         }
-        .legal-content h2 {
-            font-size: 1.4rem;
+        .policy-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+        }
+        .policy-content h2 {
             color: var(--color-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-top: 2rem;
             margin-bottom: 1rem;
-            font-weight: 700;
-            border-bottom: 1px solid var(--color-border);
-            padding-bottom: 5px;
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: 0.5rem;
         }
-        .legal-content p {
-            margin-bottom: 1.25rem;
+        .policy-content h3 {
+            color: var(--color-secondary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .policy-content p {
+            color: var(--color-text-dark);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        .policy-content ul {
+            color: var(--color-text-dark);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            padding-left: 1.5rem;
+        }
+        .policy-content li {
+            margin-bottom: 0.5rem;
+        }
+        .policy-content a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .policy-content a:hover {
+            text-decoration: underline;
+        }
+        .policy-meta {
+            background: var(--color-bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            border-left: 4px solid var(--color-primary);
+        }
+        .policy-meta p {
+            margin: 0.25rem 0;
+            font-size: 0.95rem;
+        }
+        .policy-meta strong {
+            color: var(--color-primary);
+        }
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 1.5rem;
+                margin: 2rem auto;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Upper Utility Bar -->
+    <div style="background-color: var(--color-primary); color: white; font-size: 0.8rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+                <span style="margin-right: 1.5rem;">📧 <a href="mailto:contacto@lacanastacomercializadora.cl" style="color: white; text-decoration: none;">contacto@lacanastacomercializadora.cl</a></span>
+                <span>📞 Call Center: +56 9 4256 7472</span>
+            </div>
+            <div style="display: flex; gap: 1.5rem;">
+                <a href="sobre-nosotros.php" style="color: white; text-decoration: none; font-weight: 600;">Sobre Nosotros</a>
+                <a href="hazte-cliente.php" style="color: white; text-decoration: none; font-weight: 600;">Hazte Cliente</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Header / Navigation -->
-    <header class="header" style="position: relative; box-shadow: var(--shadow-sm); top: 0; background: white;">
-        <div class="container header-container">
+    <nav class="navbar" style="position: relative; box-shadow: var(--shadow-sm); background: white; padding: 1rem 0;">
+        <div class="container nav-content">
             <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; text-align: center; gap: 0.15rem; margin-top: -5px; margin-bottom: -5px;">
                 <img src="assets/canasta-logo.webp?v=2" alt="La Canasta Logo" style="height: 50px; max-width: 150px; object-fit: contain;">
                 <span style="font-size: 0.6rem; color: var(--color-text-muted); font-weight: 700; line-height: 1.1; margin-top: 3px;">Comercializadora y<br>Distribuidora</span>
             </a>
             
-            <nav class="nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sobre-nosotros.php">Sobre Nosotros</a></li>
-                    <li><a href="index.html#marcas">Marcas</a></li>
-                    <li><a href="index.html#catalogo">Catálogo</a></li>
-                    <li><a href="hazte-cliente.php" class="btn btn-secondary text-white" style="padding: 0.5rem 1rem;">Quiero ser Cliente</a></li>
-                </ul>
-            </nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-nosotros.php">Sobre Nosotros</a></li>
+                <li><a href="index.html#marcas">Marcas</a></li>
+                <li><a href="index.html#catalogo">Catálogo</a></li>
+                <li><a href="hazte-cliente.php" class="btn-secondary text-white btn-sm" style="padding: 0.5rem 1rem; text-decoration: none; display: inline-flex; align-items: center; border-radius: 4px;">Quiero ser Cliente</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
+    <!-- Page Header Banner -->
+    <section class="page-header-banner">
+        <div class="container">
+            <h1 style="font-size: 2.75rem; font-weight: 800; margin: 0 0 0.5rem 0;">Política de Privacidad</h1>
+            <p style="font-size: 1.15rem; color: white; opacity: 0.9; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                Tratamiento de Datos Personales
+            </p>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
     <main class="container">
-        <article class="legal-content">
-            <h1>Política de Privacidad</h1>
-            
-            <p><strong>Última actualización:</strong> Junio 2026</p>
-            
-            <p>En <strong>La Canasta Comercializadora y Distribuidora</strong>, valoramos y respetamos la privacidad de nuestros usuarios y clientes comerciales. Esta Política de Privacidad describe cómo recopilamos, utilizamos, almacenamos y protegemos la información personal y comercial que nos proporciona a través de nuestros formularios en el sitio web <a href="https://www.lacanastacomercializadora.cl">www.lacanastacomercializadora.cl</a>.</p>
-            
-            <h2>1. Información que Recopilamos</h2>
-            <p>Recopilamos información comercial exclusivamente orientada al contacto B2B y a la evaluación de prospectos para distribución mayorista, que incluye:</p>
-            <ul>
-                <li>Nombre completo del contacto.</li>
-                <li>Nombre de la empresa, almacén o razón social.</li>
-                <li>Cargo o función dentro de la empresa.</li>
-                <li>Número de teléfono de contacto comercial.</li>
-                <li>Dirección de correo electrónico corporativo o personal.</li>
-                <li>Comuna y región de operación comercial.</li>
-                <li>Comentarios, requerimientos de marcas o abarrotes específicos.</li>
-            </ul>
+        <div class="policy-container">
+            <div class="policy-meta">
+                <p><strong>Responsable:</strong> Comercializadora La Canasta SpA</p>
+                <p><strong>RUT:</strong> 77.160.947-3</p>
+                <p><strong>Nombre comercial:</strong> La Canasta Comercializadora y Distribuidora</p>
+                <p><strong>Última actualización:</strong> Agosto 2026</p>
+                <p><strong>Versión:</strong> 2.0</p>
+                <p><strong>Entrada en vigencia:</strong> 1 de diciembre de 2026</p>
+            </div>
 
-            <h2>2. Finalidad del Tratamiento de Datos</h2>
-            <p>Los datos ingresados en nuestros formularios son utilizados con los siguientes propósitos comerciales:</p>
-            <ul>
-                <li>Evaluar y dar curso a solicitudes de incorporación como nuevos clientes mayoristas.</li>
-                <li>Establecer contacto telefónico o vía correo electrónico por parte de nuestros ejecutivos de venta.</li>
-                <li>Enviar catálogos informativos de marcas representadas y abarrotes.</li>
-                <li>Medir el rendimiento de nuestras campañas comerciales y fuentes de tráfico web.</li>
-            </ul>
+            <div class="policy-content">
+                <h2>1. Responsable del tratamiento</h2>
+                <p>El responsable del tratamiento de los datos personales es:</p>
+                <ul>
+                    <li><strong>Razón social:</strong> Comercializadora La Canasta SpA</li>
+                    <li><strong>RUT:</strong> 77.160.947-3</li>
+                    <li><strong>Nombre comercial:</strong> La Canasta Comercializadora y Distribuidora</li>
+                    <li><strong>Domicilio:</strong> Longitudinal Antiguo, Lote D-2, Parcelación 10, Olivar, Región del Libertador General Bernardo O'Higgins, Chile</li>
+                    <li><strong>Representante legal:</strong> Jaime Marcelo Dapik Bunde</li>
+                    <li><strong>Correo electrónico:</strong> <a href="mailto:contacto@lacanastacomercializadora.cl">contacto@lacanastacomercializadora.cl</a></li>
+                    <li><strong>Sitio web:</strong> <a href="http://www.lacanastacomercializadora.cl/">www.lacanastacomercializadora.cl</a></li>
+                </ul>
+                <p>En adelante, "La Canasta" o el "Responsable". La Canasta determina las finalidades y los medios utilizados para el tratamiento de los datos personales, directamente o mediante proveedores que actúen por su cuenta.</p>
 
-            <h2>3. Consentimiento y Almacenamiento</h2>
-            <p>Al rellenar y enviar cualquier formulario en nuestro sitio, usted otorga su consentimiento expreso para que almacenemos esta información en nuestra base de datos segura. No compartimos, vendemos ni cedemos sus datos a terceros ajenos a la operación logística o de distribución de La Canasta.</p>
+                <h2>2. Alcance de esta política</h2>
+                <p>Esta Política de Privacidad regula el tratamiento de datos personales realizado por La Canasta mediante su sitio web, formularios de contacto, solicitudes comerciales, correo electrónico, CRM propio, herramientas de analítica, herramientas de medición de campañas y otros canales utilizados para desarrollar sus actividades comerciales.</p>
+                <p>Esta política se aplica especialmente a los datos personales de personas naturales que actúan como contactos, representantes, trabajadores, encargados o potenciales clientes de empresas, almacenes, comercios u otras organizaciones.</p>
+                <p>El carácter comercial o B2B de una relación no excluye la aplicación de las normas de protección de datos personales respecto de las personas naturales cuyos datos sean tratados.</p>
 
-            <h2>4. Uso de Cookies y Analítica</h2>
-            <p>Este sitio web utiliza cookies básicas e integraciones de herramientas de terceros (como Google Analytics 4 y Meta Pixel) para analizar de forma estadística el volumen de visitas, páginas más frecuentadas y conversiones en formularios comerciales. Estas herramientas recopilan datos de navegación anónimos.</p>
+                <h2>3. Datos personales que recopilamos</h2>
+                <p>La Canasta podrá tratar las siguientes categorías de datos personales, dependiendo del formulario, servicio o interacción realizada.</p>
+                
+                <h3>3.1. Datos de identificación y contacto</h3>
+                <ul>
+                    <li>Nombre y apellidos.</li>
+                    <li>Número de teléfono.</li>
+                    <li>Dirección de correo electrónico.</li>
+                    <li>Cargo o función dentro de una empresa u organización.</li>
+                </ul>
 
-            <h2>5. Derechos del Titular</h2>
-            <p>Usted puede en cualquier momento solicitar la rectificación, actualización o eliminación definitiva de sus datos comerciales de nuestros registros enviando un correo electrónico detallado a <a href="mailto:contacto@lacanastacomercializadora.cl">contacto@lacanastacomercializadora.cl</a>.</p>
-        </article>
+                <h3>3.2. Datos relacionados con la actividad comercial</h3>
+                <ul>
+                    <li>Nombre de la empresa, almacén u organización.</li>
+                    <li>Razón social, cuando sea proporcionada.</li>
+                    <li>Comuna y región de operación comercial.</li>
+                    <li>Productos o marcas de interés.</li>
+                    <li>Requerimientos comerciales.</li>
+                    <li>Comentarios o información ingresada voluntariamente por el titular.</li>
+                </ul>
+
+                <h3>3.3. Datos técnicos y de navegación</h3>
+                <p>Dependiendo de las tecnologías habilitadas en el sitio web, pueden ser tratados determinados datos técnicos y de navegación, tales como:</p>
+                <ul>
+                    <li>Dirección IP.</li>
+                    <li>Tipo y versión del navegador.</li>
+                    <li>Tipo de dispositivo.</li>
+                    <li>Sistema operativo.</li>
+                    <li>Fecha y hora de acceso.</li>
+                    <li>Páginas visitadas.</li>
+                    <li>Interacciones realizadas con el sitio.</li>
+                    <li>Fuente de tráfico.</li>
+                    <li>Información relacionada con campañas digitales.</li>
+                    <li>Identificadores técnicos o de cookies, cuando corresponda.</li>
+                </ul>
+                <p>La naturaleza y alcance de estos datos dependerán de la configuración efectiva de las herramientas utilizadas por el sitio web.</p>
+
+                <h2>4. Principios del tratamiento</h2>
+                <p>La Canasta tratará los datos personales conforme a los principios establecidos por la legislación chilena aplicable, incluyendo:</p>
+                <ul>
+                    <li>Licitud y lealtad.</li>
+                    <li>Finalidad.</li>
+                    <li>Proporcionalidad.</li>
+                    <li>Calidad.</li>
+                    <li>Transparencia.</li>
+                    <li>Seguridad.</li>
+                    <li>Confidencialidad.</li>
+                    <li>Responsabilidad.</li>
+                </ul>
+                <p>Los datos serán tratados para finalidades determinadas, explícitas y lícitas y se limitarán a aquellos que sean adecuados, pertinentes y necesarios para dichas finalidades.</p>
+
+                <h2>5. Finalidades del tratamiento</h2>
+                <p>Los datos personales podrán ser tratados para las siguientes finalidades:</p>
+                
+                <h3>5.1. Gestión de solicitudes comerciales</h3>
+                <p>Recibir, registrar, evaluar y responder solicitudes realizadas mediante formularios de contacto o canales comerciales.</p>
+                
+                <h3>5.2. Contacto comercial</h3>
+                <p>Contactar al titular mediante teléfono o correo electrónico para responder consultas, aclarar requerimientos o gestionar una eventual relación comercial.</p>
+
+                <h3>5.3. Gestión precontractual y contractual</h3>
+                <p>Realizar las actuaciones necesarias para evaluar, iniciar o desarrollar una relación comercial cuando corresponda.</p>
+
+                <h3>5.4. Administración de clientes</h3>
+                <p>Gestionar información necesaria para administrar relaciones comerciales existentes.</p>
+
+                <h3>5.5. Información sobre productos y servicios</h3>
+                <p>Enviar catálogos, información sobre productos, marcas, novedades y servicios de La Canasta cuando exista una base de legitimidad válida.</p>
+
+                <h3>5.6. Marketing directo</h3>
+                <p>Enviar comunicaciones comerciales, promociones, catálogos y novedades cuando corresponda conforme a la legislación aplicable.</p>
+                <p>El titular podrá oponerse al tratamiento de sus datos personales para fines de marketing directo.</p>
+
+                <h3>5.7. Analítica y medición</h3>
+                <p>Medir el funcionamiento del sitio web, analizar campañas, conocer fuentes de tráfico, evaluar conversiones y mejorar los canales digitales.</p>
+
+                <h3>5.8. Seguridad</h3>
+                <p>Detectar, analizar y gestionar actividades que puedan afectar la seguridad, disponibilidad o funcionamiento del sitio y de los sistemas de La Canasta.</p>
+
+                <h3>5.9. Cumplimiento de obligaciones legales</h3>
+                <p>Cumplir obligaciones legales, atender requerimientos de autoridades competentes y ejercer o defender derechos cuando corresponda.</p>
+                <p>La Canasta no utilizará los datos personales para finalidades incompatibles con aquellas informadas al titular, salvo que exista una base de legitimidad que permita dicho tratamiento.</p>
+
+                <h2>6. Bases de legitimidad</h2>
+                <p>El tratamiento de datos personales se realizará sobre una base de legitimidad reconocida por la legislación aplicable.</p>
+                <p>Dependiendo de la finalidad y de las circunstancias concretas, podrá utilizarse:</p>
+                <ul>
+                    <li>Consentimiento del titular.</li>
+                    <li>Ejecución de un contrato.</li>
+                    <li>Adopción de medidas precontractuales solicitadas por el titular.</li>
+                    <li>Cumplimiento de obligaciones legales.</li>
+                    <li>Intereses legítimos, cuando corresponda.</li>
+                    <li>Ejercicio o defensa de derechos.</li>
+                </ul>
+                <p>La base de legitimidad utilizada dependerá del tratamiento concreto realizado.</p>
+
+                <h2>7. Consentimiento</h2>
+                <p>Cuando el tratamiento se base en el consentimiento, éste deberá ser:</p>
+                <ul>
+                    <li>Libre.</li>
+                    <li>Informado.</li>
+                    <li>Específico.</li>
+                    <li>Previo.</li>
+                    <li>Inequívoco.</li>
+                </ul>
+                <p>El consentimiento será obtenido mediante una manifestación o acción afirmativa del titular.</p>
+                <p>No se considerará consentimiento una casilla previamente marcada o una acción que no permita identificar claramente la voluntad del titular.</p>
+                <p>El titular podrá retirar su consentimiento en cualquier momento mediante un mecanismo gratuito y expedito.</p>
+                <p>La revocación del consentimiento no afectará la licitud de los tratamientos realizados con anterioridad a su retiro.</p>
+                <p>Cuando corresponda, La Canasta conservará evidencia que permita acreditar la obtención del consentimiento.</p>
+
+                <h2>8. Formularios de contacto</h2>
+                <p>Los formularios del sitio web podrán solicitar información necesaria para gestionar una solicitud comercial.</p>
+                <p>Cuando corresponda, las autorizaciones para la gestión de la solicitud y para comunicaciones comerciales deberán mantenerse diferenciadas.</p>
+                <p>La entrega de datos necesarios para responder una solicitud comercial no implicará automáticamente la autorización para recibir comunicaciones comerciales adicionales cuando éstas requieran una base de legitimidad distinta.</p>
+
+                <h2>9. Comunicaciones comerciales y marketing directo</h2>
+                <p>La Canasta podrá utilizar datos personales para enviar información comercial, catálogos, novedades, promociones y comunicaciones relacionadas con sus productos y servicios cuando exista una base de legitimidad válida.</p>
+                <p>El titular podrá oponerse al tratamiento de sus datos para fines de marketing directo en cualquier momento.</p>
+                <p>La solicitud podrá realizarse mediante: Correo electrónico: <a href="mailto:contacto@lacanastacomercializadora.cl">contacto@lacanastacomercializadora.cl</a></p>
+                <p>La oposición al marketing directo no impedirá otros tratamientos que tengan una base de legitimidad independiente.</p>
+
+                <h2>10. Cookies y tecnologías similares</h2>
+                <p>El sitio web puede utilizar cookies y tecnologías similares para distintas finalidades, incluyendo:</p>
+                <ul>
+                    <li>Funcionamiento técnico.</li>
+                    <li>Seguridad.</li>
+                    <li>Preferencias.</li>
+                    <li>Analítica.</li>
+                    <li>Medición de campañas.</li>
+                    <li>Medición de conversiones.</li>
+                    <li>Marketing, cuando corresponda.</li>
+                </ul>
+                <p>Las tecnologías que requieran consentimiento serán gestionadas de acuerdo con las preferencias expresadas por el usuario y la legislación aplicable.</p>
+                <p>La información específica sobre las cookies utilizadas, sus finalidades, proveedores y duración podrá ser complementada mediante una Política de Cookies y los mecanismos de configuración disponibles en el sitio web.</p>
+
+                <h2>11. Google Analytics</h2>
+                <p>La Canasta utiliza Google Analytics como herramienta de analítica digital.</p>
+                <p>Esta herramienta puede procesar información relacionada con la navegación e interacción de los usuarios con el sitio web, dependiendo de su configuración.</p>
+                <p>La información puede utilizarse para:</p>
+                <ul>
+                    <li>Medir visitas.</li>
+                    <li>Analizar el funcionamiento del sitio.</li>
+                    <li>Conocer fuentes de tráfico.</li>
+                    <li>Evaluar campañas.</li>
+                    <li>Medir conversiones.</li>
+                    <li>Mejorar la experiencia digital.</li>
+                </ul>
+                <p>La Canasta procurará configurar esta herramienta de manera proporcional a las finalidades informadas y conforme a las preferencias de consentimiento que correspondan.</p>
+
+                <h2>12. Meta Pixel</h2>
+                <p>La Canasta utiliza Meta Pixel como herramienta de medición de campañas y conversiones.</p>
+                <p>Dependiendo de su configuración, esta tecnología puede procesar información relacionada con determinadas interacciones realizadas en el sitio web.</p>
+                <p>Puede utilizarse para:</p>
+                <ul>
+                    <li>Medir campañas.</li>
+                    <li>Evaluar conversiones.</li>
+                    <li>Analizar el rendimiento publicitario.</li>
+                    <li>Optimizar campañas.</li>
+                    <li>Obtener estadísticas de interacción.</li>
+                </ul>
+                <p>La Canasta procurará que esta herramienta sea utilizada de acuerdo con las finalidades informadas y las preferencias de consentimiento aplicables.</p>
+
+                <h2>13. Proveedores tecnológicos</h2>
+                <p>Para desarrollar sus actividades, La Canasta utiliza sistemas y proveedores tecnológicos, entre ellos:</p>
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse; margin-top: 1rem; margin-bottom: 1.5rem;">
+                        <tr style="background-color: var(--color-primary-light); color: white;">
+                            <th style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: left;">Proveedor o sistema</th>
+                            <th style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: left;">Finalidad</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">cPanelHost</td>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">Hosting y servicios de infraestructura web</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">Gmail / Google</td>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">Correo electrónico</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">CRM propio</td>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">Gestión de información comercial</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">Google Analytics</td>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">Analítica y medición</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">Meta Pixel</td>
+                            <td style="padding: 0.75rem; border: 1px solid var(--color-border);">Medición de campañas y conversiones</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>La Canasta podrá incorporar, sustituir o modificar proveedores tecnológicos cuando sea necesario para desarrollar sus actividades.</p>
+                <p>Cuando un proveedor trate datos personales por cuenta de La Canasta, se establecerán las condiciones correspondientes de acuerdo con la legislación aplicable.</p>
+
+                <h2>14. Comunicación y tratamiento por terceros</h2>
+                <p>La Canasta no vende datos personales.</p>
+                <p>Los datos personales podrán ser tratados por proveedores tecnológicos cuando sea necesario para proporcionar servicios asociados a las finalidades informadas. Estos proveedores pueden incluir servicios de:</p>
+                <ul>
+                    <li>Hosting.</li>
+                    <li>Correo electrónico.</li>
+                    <li>CRM.</li>
+                    <li>Analítica.</li>
+                    <li>Medición de campañas.</li>
+                    <li>Seguridad informática.</li>
+                    <li>Infraestructura tecnológica.</li>
+                </ul>
+                <p>Los datos también podrán ser comunicados cuando exista una obligación legal o un requerimiento válido de una autoridad competente.</p>
+                <p>Cuando corresponda, La Canasta establecerá con sus proveedores las obligaciones de confidencialidad, seguridad y tratamiento de datos exigidas por la legislación aplicable.</p>
+
+                <h2>15. Transferencias internacionales</h2>
+                <p>Algunos proveedores tecnológicos utilizados por La Canasta pueden operar infraestructura o prestar servicios desde fuera de Chile.</p>
+                <p>Cuando exista una transferencia internacional de datos personales, ésta se realizará de acuerdo con los mecanismos y condiciones establecidos por la legislación chilena aplicable.</p>
+                <p>La Canasta mantendrá identificados los proveedores que efectivamente realicen transferencias internacionales y las condiciones aplicables a dichas transferencias.</p>
+                <p>Cuando corresponda, se informará al titular el país o territorio de destino, el nivel de protección aplicable y las garantías utilizadas para efectuar la transferencia.</p>
+
+                <h2>16. Conservación de los datos personales</h2>
+                <p>La Canasta conservará los datos personales durante el tiempo que resulte necesario para cumplir las finalidades para las cuales fueron recopilados y mientras exista una relación comercial, precontractual, contractual o una finalidad legítima que justifique su tratamiento.</p>
+                <p>Cuando el tratamiento se base en el consentimiento, los datos podrán conservarse mientras dicho consentimiento permanezca vigente y no haya sido retirado, sin perjuicio de las situaciones en que exista otra base de legitimidad que permita continuar el tratamiento.</p>
+                <p>El titular podrá solicitar la supresión de sus datos personales cuando corresponda conforme a la legislación vigente.</p>
+                <p>Cuando los datos personales dejen de ser necesarios para las finalidades que justificaron su tratamiento, La Canasta procederá a su supresión, anonimización o tratamiento conforme a una obligación legal que permita o exija su conservación.</p>
+                <p>La solicitud de supresión no afectará aquellos datos cuya conservación resulte necesaria para:</p>
+                <ul>
+                    <li>Cumplir una obligación legal.</li>
+                    <li>Cumplir obligaciones contractuales.</li>
+                    <li>Ejercer o defender derechos.</li>
+                    <li>Atender requerimientos de autoridades competentes.</li>
+                    <li>Mantener antecedentes cuya conservación se encuentre permitida o exigida por la legislación aplicable.</li>
+                </ul>
+                <p>La Canasta mantendrá procedimientos internos destinados a revisar la necesidad de conservar los datos personales y aplicará medidas de supresión o anonimización cuando corresponda.</p>
+
+                <h2>17. Derechos de los titulares</h2>
+                <p>Los titulares de datos personales podrán ejercer los derechos reconocidos por la legislación aplicable, incluyendo:</p>
+                <ul>
+                    <li><strong>Derecho de acceso:</strong> Solicitar información sobre si La Canasta trata sus datos personales y acceder a ellos.</li>
+                    <li><strong>Derecho de rectificación:</strong> Solicitar la corrección de datos personales inexactos, incompletos o desactualizados.</li>
+                    <li><strong>Derecho de supresión:</strong> Solicitar la eliminación de sus datos personales cuando corresponda.</li>
+                    <li><strong>Derecho de oposición:</strong> Oponerse a determinados tratamientos cuando se cumplan las condiciones legales. Esto incluye la oposición al marketing directo.</li>
+                    <li><strong>Derecho de portabilidad:</strong> Solicitar la entrega de determinados datos personales en un formato estructurado y de uso común cuando se cumplan los requisitos legales.</li>
+                    <li><strong>Derecho de bloqueo:</strong> Solicitar la suspensión temporal del tratamiento en los casos establecidos por la legislación.</li>
+                </ul>
+                <p>El ejercicio de estos derechos será gratuito y se realizará de acuerdo con los procedimientos y requisitos establecidos por la legislación aplicable.</p>
+
+                <h2>18. Ejercicio de derechos</h2>
+                <p>El titular podrá ejercer sus derechos enviando una solicitud a: <a href="mailto:contacto@lacanastacomercializadora.cl">contacto@lacanastacomercializadora.cl</a></p>
+                <p>La solicitud deberá indicar, en la medida necesaria:</p>
+                <ul>
+                    <li>Nombre del titular.</li>
+                    <li>Medio de contacto.</li>
+                    <li>Derecho que desea ejercer.</li>
+                    <li>Descripción de la solicitud.</li>
+                    <li>Antecedentes necesarios para localizar los datos, cuando corresponda.</li>
+                </ul>
+                <p>La Canasta podrá solicitar antecedentes razonables para verificar la identidad del solicitante cuando ello resulte necesario para proteger los datos personales.</p>
+                <p>Las solicitudes serán gestionadas dentro de los plazos y condiciones establecidos por la legislación aplicable.</p>
+                <p>Si una solicitud es rechazada o no es respondida oportunamente, el titular podrá ejercer las acciones y recursos que la legislación establezca ante la autoridad competente en materia de protección de datos personales.</p>
+
+                <h2>19. Retiro del consentimiento</h2>
+                <p>Cuando el tratamiento se base en el consentimiento del titular, éste podrá retirar dicho consentimiento en cualquier momento y sin necesidad de expresar una causa.</p>
+                <p>La solicitud podrá realizarse mediante: Correo electrónico: <a href="mailto:contacto@lacanastacomercializadora.cl">contacto@lacanastacomercializadora.cl</a></p>
+                <p>El retiro del consentimiento no afectará la licitud del tratamiento realizado con anterioridad a su revocación.</p>
+                <p>La Canasta podrá continuar tratando determinados datos cuando exista otra base de legitimidad que permita legalmente dicho tratamiento.</p>
+
+                <h2>20. Seguridad de los datos</h2>
+                <p>La Canasta adoptará medidas técnicas y organizativas apropiadas para proteger los datos personales frente a: Accesos no autorizados, pérdida, destrucción, alteración, filtración, tratamiento ilícito y uso no autorizado.</p>
+                <p>Las medidas podrán incluir, según corresponda:</p>
+                <ul>
+                    <li>Control de acceso.</li>
+                    <li>Gestión de usuarios.</li>
+                    <li>Protección de credenciales.</li>
+                    <li>Gestión de permisos.</li>
+                    <li>Copias de seguridad.</li>
+                    <li>Protección de infraestructura.</li>
+                    <li>Seguridad del CRM.</li>
+                    <li>Actualización de sistemas.</li>
+                    <li>Gestión de incidentes.</li>
+                    <li>Control de proveedores.</li>
+                </ul>
+                <p>Las medidas concretas se determinarán considerando los riesgos asociados al tratamiento y la naturaleza de los datos tratados.</p>
+
+                <h2>21. Vulneraciones de seguridad</h2>
+                <p>La Canasta gestionará los incidentes de seguridad que puedan afectar los datos personales mediante procedimientos destinados a identificar, contener, investigar y solucionar las vulneraciones que correspondan.</p>
+                <p>Cuando exista una obligación legal de informar una vulneración a la autoridad competente o a los titulares afectados, La Canasta realizará las comunicaciones correspondientes dentro de los plazos y condiciones establecidos por la legislación aplicable.</p>
+
+                <h2>22. Decisiones automatizadas y elaboración de perfiles</h2>
+                <p>La Canasta no utilizará decisiones individuales automatizadas que produzcan efectos jurídicos o afecten significativamente a los titulares, salvo que dicho tratamiento sea informado y realizado conforme a las exigencias legales aplicables.</p>
+                <p>Las herramientas de analítica y publicidad utilizadas en el sitio pueden realizar procesos técnicos de medición o segmentación propios de sus respectivas plataformas, dependiendo de su configuración.</p>
+                <p>Cuando corresponda, los titulares podrán ejercer los derechos reconocidos por la legislación respecto de decisiones automatizadas y elaboración de perfiles.</p>
+
+                <h2>23. Protección de datos desde el diseño y por defecto</h2>
+                <p>La Canasta procurará incorporar medidas de protección de datos personales desde el diseño de sus formularios, sistemas y procesos.</p>
+                <p>La recopilación de datos se limitará a la información necesaria para las finalidades informadas. Las configuraciones predeterminadas procurarán limitar el tratamiento a lo necesario para las finalidades correspondientes.</p>
+
+                <h2>24. Confidencialidad</h2>
+                <p>Las personas que tengan acceso a datos personales debido a sus funciones deberán mantener la confidencialidad de dicha información y utilizarla exclusivamente para las finalidades autorizadas. Este deber se mantendrá conforme a las obligaciones legales y contractuales aplicables.</p>
+
+                <h2>25. Fuente de los datos personales</h2>
+                <p>Los datos personales tratados por La Canasta podrán provenir principalmente de:</p>
+                <ul>
+                    <li>Formularios completados directamente por el titular.</li>
+                    <li>Comunicaciones realizadas directamente por el titular.</li>
+                    <li>Interacciones realizadas mediante el sitio web.</li>
+                    <li>Relaciones comerciales o contractuales.</li>
+                    <li>Fuentes de acceso público lícitas, cuando corresponda.</li>
+                </ul>
+                <p>La Canasta procurará que los datos personales sean obtenidos desde fuentes lícitas y para finalidades específicas, explícitas y legítimas.</p>
+                <p>El titular podrá solicitar información sobre el origen de sus datos cuando corresponda conforme a la legislación aplicable.</p>
+
+                <h2>26. Actualización de esta política</h2>
+                <p>La Canasta podrá actualizar esta Política de Privacidad cuando resulte necesario debido a: Cambios legales o regulatorios, cambios en los procesos comerciales, incorporación o modificación de tecnologías, cambios de proveedores, nuevas finalidades de tratamiento, cambios en las medidas de seguridad, o modificaciones de los servicios ofrecidos.</p>
+                <p>La versión vigente estará disponible permanentemente en: <a href="http://www.lacanastacomercializadora.cl/">www.lacanastacomercializadora.cl</a></p>
+                <p>Toda modificación indicará la fecha de actualización y la versión correspondiente.</p>
+
+                <h2>27. Contacto</h2>
+                <p>Para consultas, solicitudes, ejercicio de derechos o materias relacionadas con privacidad y protección de datos personales:</p>
+                <ul>
+                    <li><strong>Comercializadora La Canasta SpA</strong></li>
+                    <li><strong>RUT:</strong> 77.160.947-3</li>
+                    <li><strong>Representante legal:</strong> Jaime Marcelo Dapik Bunde</li>
+                    <li><strong>Domicilio:</strong> Longitudinal Antiguo, Lote D-2, Parcelación 10, Olivar, Región del Libertador General Bernardo O'Higgins, Chile</li>
+                    <li><strong>Correo electrónico:</strong> <a href="mailto:contacto@lacanastacomercializadora.cl">contacto@lacanastacomercializadora.cl</a></li>
+                    <li><strong>Sitio web:</strong> <a href="http://www.lacanastacomercializadora.cl/">www.lacanastacomercializadora.cl</a></li>
+                </ul>
+
+                <h2>28. Entrada en vigencia</h2>
+                <p>La presente Política de Privacidad ha sido preparada considerando el régimen establecido por la Ley N.º 21.719, que regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales.</p>
+                <p>La Ley N.º 21.719 entra en vigencia el 1 de diciembre de 2026.</p>
+                <p><strong>Versión:</strong> 2.0<br>
+                <strong>Última actualización:</strong> Agosto 2026<br>
+                <strong>Entrada en vigencia:</strong> 1 de diciembre de 2026</p>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo logo-white" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; margin-bottom: 0.5rem;">
-                    <img src="assets/canasta-logo.webp?v=2" alt="La Canasta Logo" style="height: 38px; max-width: 130px; object-fit: contain; background: white; padding: 4px; border-radius: 4px; box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; flex-direction: column; justify-content: center;">
-                        <span class="logo-light" style="font-size: 0.65rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 2px; line-height: 1.2;">Comercializadora y<br>Distribuidora</span>
+    <footer style="background-color: var(--color-primary); color: white; padding: 4rem 0 2rem 0; margin-top: 4rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                <div>
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--color-secondary);">La Canasta</h4>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Distribución y logística de excelencia para el canal tradicional y comercios minoristas de la Región de O'Higgins.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <!-- RRSS Icons si existieran -->
                     </div>
-                </a>
-                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
-                    Operador comercial y logístico B2B. Conectando marcas líderes con el canal tradicional y comercio local de la Región de O'Higgins.
+                </div>
+                <div>
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem;">Enlaces Rápidos</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s ease;">Inicio</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="sobre-nosotros.php" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s ease;">Sobre Nosotros</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="index.html#marcas" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s ease;">Nuestras Marcas</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="index.html#catalogo" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s ease;">Catálogo de Productos</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="hazte-cliente.php" style="color: var(--color-secondary); text-decoration: none; font-weight: 600; transition: color 0.3s ease;">Hazte Cliente</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem;">Información Legal</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="terminos.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s ease;">Términos y Condiciones</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="privacidad.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s ease;">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem;">Contacto</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; color: rgba(255,255,255,0.8);">
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.5rem; align-items: flex-start;">
+                            <span>📍</span> Longitudinal Antiguo, Lote D-2, Parcelación 10, Olivar
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.5rem; align-items: center;">
+                            <span>📞</span> +56 9 4256 7472
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.5rem; align-items: center;">
+                            <span>📧</span> <a href="mailto:contacto@lacanastacomercializadora.cl" style="color: rgba(255,255,255,0.8); text-decoration: none;">contacto@lacanastacomercializadora.cl</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; padding-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin: 0; text-align: center;">
+                    &copy; 2026 Comercializadora La Canasta SpA. Todos los derechos reservados.
                 </p>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Navegación</h3>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sobre-nosotros.php">Sobre Nosotros</a></li>
-                    <li><a href="index.html#marcas">Nuestras Marcas</a></li>
-                    <li><a href="index.html#catalogo">Catálogo</a></li>
-                    <li><a href="reclamos.php">Formulario de Reclamos</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-contact">
-                <h3>Contacto</h3>
-                <ul>
-                    <li><strong>Correo Único:</strong> contacto@lacanastacomercializadora.cl</li>
-                    <li><strong>WhatsApp / Call Center:</strong> +56 9 4256 7472</li>
-                    <li><strong>Dirección:</strong> Longitudinal Antiguo lote D-2, PC10, Olivar</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                <p>&copy; 2026 La Canasta Comercializadora y Distribuidora. Todos los derechos reservados. | Desarrollado por <a href="https://bastiascid.github.io/portafolio" target="_blank" rel="noopener" style="color: var(--color-secondary-light); text-decoration: none; font-weight: bold;">Cristian Bastias Cid</a></p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="privacidad.html" style="color: rgba(255,255,255,0.6); font-size: 0.8rem; text-decoration: none;">Política de Privacidad</a>
-                    <a href="terminos.html" style="color: rgba(255,255,255,0.6); font-size: 0.8rem; text-decoration: none;">Términos y Condiciones</a>
+                <div style="font-size: 0.75rem; color: rgba(255,255,255,0.4);">
+                    Desarrollado por <a href="https://bastiascid.github.io/portafolio" target="_blank" rel="noopener" style="color: var(--color-secondary); text-decoration: none; font-weight: bold;">Cristian Bastias Cid</a>
                 </div>
             </div>
         </div>
     </footer>
-
 </body>
 </html>

@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (tabId === 'tab-leads') loadLeads();
             else if (tabId === 'tab-claims') loadClaims();
             else if (tabId === 'tab-settings') loadSettings();
+            else if (tabId === 'tab-bulk') loadBulkProducts();
         });
     });
 
@@ -1165,7 +1166,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'offer-image',
         'subbrand-logo',
         'partner-logo',
-        'settings-logo'
+        'settings-logo',
+        'settings-popup-image'
     ];
 
     imageInputs.forEach(inputId => {
@@ -1432,7 +1434,106 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.open(`api/claims.php?${params.toString()}`, '_blank');
             });
         }
-    });
+
+    // --- TAB MASIVA LOGIC ---
+    let bulkCache = [];
+
+    window.loadBulkProducts = function() {
+        const headers = getAuthHeaders();
+        fetch('api/products.php', { headers })
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 'success') {
+                    // Filter to products whose name contains "Watts Producto" or "Traverso Producto"
+                    bulkCache = res.data.filter(p => p.category === 'Watts' || p.category === 'Traverso');
+                    document.getElementById('bulkPendingCount').textContent = bulkCache.length;
+                    renderBulkGrid();
+                }
+            });
+    }
+
+    function renderBulkGrid() {
+        const container = document.getElementById('bulkProductsGrid');
+        if (!container) return;
+        
+        if (bulkCache.length === 0) {
+            container.innerHTML = `<div style="grid-column: 1 / -1; padding: 2rem; text-align: center; color: #6b7280; background: #f3f4f6; border-radius: 8px;">No hay imágenes pendientes de renombrar.</div>`;
+            return;
+        }
+
+        container.innerHTML = bulkCache.map(prod => `
+            <div class="admin-card" id="bulk-card-${prod.id}" style="padding: 1rem; text-align: center; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                <img src="${prod.image_url}" alt="Foto" style="width: 100%; height: 180px; object-fit: contain; margin-bottom: 1rem; border-radius: 6px; background: #fff;">
+                <input type="text" id="bulk-name-${prod.id}" value="" placeholder="Ej: Salsa Tomate Italiana 250g" style="width: 100%; margin-bottom: 1rem; font-size: 0.9rem;">
+                <div style="display: flex; gap: 0.5rem;">
+                    <button onclick="saveBulkProduct(${prod.id})" class="btn btn-primary btn-sm" style="flex: 1; padding: 0.5rem; justify-content: center;">Guardar</button>
+                    <button onclick="deleteBulkProduct(${prod.id})" class="btn btn-secondary btn-sm" style="flex: 1; padding: 0.5rem; justify-content: center; background: #ef4444; color: white; border: none;">Eliminar</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    window.saveBulkProduct = function(id) {
+        const newName = document.getElementById(`bulk-name-${id}`).value.trim();
+        if (!newName) {
+            alert('Por favor escribe un nombre para guardar el producto.');
+            return;
+        }
+        
+        const p = bulkCache.find(x => x.id == id);
+        if(!p) return;
+        
+        const payload = {
+            id: p.id,
+            name: newName,
+            brand_id: p.brand_id,
+            image_url: p.image_url,
+            description: p.description,
+            category: p.category,
+            featured: p.featured,
+            sort_order: p.sort_order
+        };
+
+        fetch('api/products.php', {
+            method: 'POST',
+            headers: getAuthHeaders(),
+            body: JSON.stringify(payload)
+        })
+        .then(res => res.json())
+        .then(res => {
+            if (res.status === 'success') {
+                const card = document.getElementById(`bulk-card-${id}`);
+                card.innerHTML = `<div style="padding: 2rem 0; color: #10b981; font-weight: bold;">¡Guardado!</div>`;
+                setTimeout(() => card.remove(), 1500);
+                
+                bulkCache = bulkCache.filter(x => x.id != id);
+                document.getElementById('bulkPendingCount').textContent = bulkCache.length;
+            } else {
+                alert('Error al guardar: ' + res.message);
+            }
+        });
+    }
+
+    window.deleteBulkProduct = function(id) {
+        if (!confirm('¿Seguro que quieres eliminar esta imagen basura?')) return;
+        
+        fetch(`api/products.php?action=delete&id=${id}`, {
+            method: 'POST',
+            headers: getAuthHeaders()
+        })
+        .then(res => res.json())
+        .then(res => {
+            if (res.status === 'success') {
+                document.getElementById(`bulk-card-${id}`).remove();
+                bulkCache = bulkCache.filter(x => x.id != id);
+                document.getElementById('bulkPendingCount').textContent = bulkCache.length;
+            } else {
+                alert('Error al eliminar: ' + res.message);
+            }
+        });
+    }
+
+});
 
 
 

@@ -266,13 +266,34 @@ try {
         // Watt's (Brand ID 3)
         ['Aceite Vegetal Belmont 1L (Caja 12 un)', $brand_ids['Watt\'s'], 'assets/up_6a2493123e600.webp', 'Aceite 100% vegetal para todo tipo de cocinas, formato mayorista.', 'Aceites', 1, 1],
         ['Néctar Watt\'s Durazno 1.5L (Caja 6 un)', $brand_ids['Watt\'s'], 'https://images.unsplash.com/photo-1610970881699-44a5587caaec?w=600&auto=format&fit=crop&q=60', 'Jugos y néctares de fruta natural, alto nivel de ventas en minimarkets.', 'Bebidas y Jugos', 0, 2],
+        ['Jugo Watt\'s Selección Naranja 1.5L (Caja 6 un)', $brand_ids['Watt\'s'], 'assets/productos/jugo_watts_naranja.jpg', 'Jugo 100% de naranja exprimido, sin agua, sin azúcar añadida y sin preservantes.', 'Bebidas y Postres', 1, 10],
+        ['Jugo Watt\'s Selección Piña 1.5L (Caja 6 un)', $brand_ids['Watt\'s'], 'assets/productos/jugo_watts_pina.jpg', 'Jugo 100% de piña exprimido de fruta seleccionada, sin preservantes ni colorantes.', 'Bebidas y Postres', 0, 11],
+        ['Néctar Watt\'s Selección Frambuesa 1L (Caja 12 un)', $brand_ids['Watt\'s'], 'assets/productos/nectar_watts_frambuesa.jpg', 'Néctar de fruta natural sabor frambuesa en envase reciclable de 1 litro.', 'Bebidas y Postres', 0, 12],
+        ['Frugo Fresh Frutilla 1.75L (Caja 6 un)', $brand_ids['Watt\'s'], 'assets/productos/frugo_fresh_frutilla.jpg', 'Néctar refrescante de frutas sabor frutilla con más contenido de fruta.', 'Bebidas y Postres', 0, 13],
+        ['Frugo Fresh Piña 1.75L (Caja 6 un)', $brand_ids['Watt\'s'], 'assets/productos/frugo_fresh_pina.jpg', 'Néctar refrescante de frutas sabor piña, ideal para el abastecimiento comercial.', 'Bebidas y Postres', 1, 14],
+        ['Crema para Batir Loncoleche 500ml (Caja 12 un)', $brand_ids['Watt\'s'], 'assets/productos/loncoleche_crema.jpg', 'Crema de leche UHT para batir con 35% materia grasa, elaborada con leche natural.', 'Lácteos y Quesos', 1, 15],
+        ['Queso Cheddar Laminado Calo 1.92kg', $brand_ids['Watt\'s'], 'assets/productos/calo_cheddar_slices.jpg', 'Queso fundido procesado sabor cheddar laminado (160 láminas), formato industrial.', 'Lácteos y Quesos', 1, 16],
+        ['Piña en Rodajas Wasil 3kg (Lata)', $brand_ids['Watt\'s'], 'assets/productos/wasil_pina_slices.jpg', 'Fruta seleccionada en conserva de piñas en rodajas, sin preservantes ni colorantes.', 'Conservas', 0, 17],
+        ['Manjar Artesanal Loncoleche Balde 5kg', $brand_ids['Watt\'s'], 'assets/productos/loncoleche_manjar.jpg', 'Balde de manjar artesanal de receta tradicional, fabricado en Osorno.', 'Abarrotes', 1, 18],
         
         // Traverso (Brand ID 4)
         ['Vinagre de Manzana Traverso 1L (Caja 12 un)', $brand_ids['Traverso'], 'assets/up_6a248ed0b1608.webp', 'Vinagre de manzana puro, ideal para ensaladas y conservas.', 'Condimentos', 1, 1],
         ['Salsa de Tomate Traverso 200g (Caja 24 un)', $brand_ids['Traverso'], 'https://images.unsplash.com/photo-1533560224820-f3d1419e2c36?w=600&auto=format&fit=crop&q=60', 'Salsa de tomates clásica lista para servir.', 'Abarrotes', 0, 2],
         
         // Mercado Nacional (Brand ID 5)
-        ['Arroz Grado 1 Mercado Nacional (Saco 20kg)', $brand_ids['Mercado Nacional'], 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop&q=60', 'Arroz grano largo de alta calidad, óptimo rendimiento comercial.', 'Abarrotes', 0, 1]
+        ['Arroz Grado 1 Mercado Nacional (Saco 20kg)', $brand_ids['Mercado Nacional'], 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop&q=60', 'Arroz grano largo de alta calidad, óptimo rendimiento comercial.', 'Abarrotes', 0, 1],
+        ['Turbo Plus Frambuesa 20g (Caja 10 un)', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_plus_frambuesa.jpg', 'Bebida instantánea en polvo sabor frambuesa, cada sobre rinde 2 litros.', 'Bebidas y Postres', 1, 10],
+        ['Turbo Iced Tea Limón 25g (Caja 12 un)', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_iced_tea_limon.jpg', 'Té helado instantáneo sabor limón con vitamina C, cada sobre rinde 1 litro.', 'Bebidas y Postres', 0, 11],
+        ['Turbo Zero Naranja 10g (Caja 10 un)', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_zero_naranja.jpg', 'Bebida instantánea sabor naranja libre de azúcar, rinde 2 litros.', 'Bebidas y Postres', 1, 12],
+        ['Turbo Benny Chocolate Bolsa 200g', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_benny_200g.jpg', 'Modificador de leche sabor chocolate enriquecido con vitaminas y hierro, rinde 20 porciones.', 'Bebidas y Postres', 0, 13],
+        ['Turbo Benny Zero Chocolate Bolsa 20g', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_benny_zero_20g.jpg', 'Modificador de leche sabor chocolate libre de azúcar, libre de lactosa.', 'Bebidas y Postres', 1, 14],
+        ['Turbo Flan Vainilla Estuche 50g', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_flan_vainilla.jpg', 'Mezcla en polvo para preparar flan sabor vainilla, rinde 5 porciones.', 'Bebidas y Postres', 0, 15],
+        ['Turbo Gelatina Frutilla Estuche 40g', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_gelatina_frutilla.jpg', 'Gelatina en polvo sabor frutilla con stevia, rinde 5 porciones.', 'Bebidas y Postres', 1, 16],
+        ['Turbo Gelatina Sin Sabor Estuche 30g', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_gelatina_sin_sabor.jpg', 'Gelatina en polvo sin sabor ideal para preparar postres y recetas.', 'Bebidas y Postres', 0, 17],
+        ['Turbo Flan Zero Vainilla Estuche 20g', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_flan_zero.jpg', 'Flan en polvo sabor vainilla libre de azúcar, rinde 10 porciones.', 'Bebidas y Postres', 0, 18],
+        ['Turbo Gelatina Zero Frutilla Estuche 22g', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_gelatina_zero.jpg', 'Gelatina en polvo sabor frutilla libre de azúcar, rinde 10 porciones.', 'Bebidas y Postres', 1, 19],
+        ['Turbo Energy Lata 473ml (Pack 6 un)', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_energy_can.jpg', 'Bebida energética con taurina y vitaminas del complejo B, formato lata.', 'Bebidas y Postres', 1, 20],
+        ['Turbo Iced Tea Durazno Lata 473ml (Pack 6 un)', $brand_ids['Mercado Nacional'], 'assets/productos/turbo_iced_tea_can.jpg', 'Té helado líquido sabor durazno refrescante en formato lata.', 'Bebidas y Postres', 0, 21]
     ];
 
     $stmt = $pdo->prepare("INSERT INTO products (`name`, `brand_id`, `image_url`, `description`, `category`, `featured`, `sort_order`) VALUES (?, ?, ?, ?, ?, ?, ?)");

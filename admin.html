@@ -66,6 +66,7 @@
                 <button class="admin-tab-btn" data-tab="tab-leads">Leads / Contactos</button>
                 <button class="admin-tab-btn" data-tab="tab-claims">Reclamos</button>
                 <button class="admin-tab-btn" data-tab="tab-settings">Configuraciones</button>
+                <button class="admin-tab-btn" data-tab="tab-bulk" style="background: #ef4444; color: white;">Gestión Masiva</button>
             </div>
 
             <!-- TAB 1: DASHBOARD -->
@@ -794,6 +795,25 @@
                 </div>
             </div>
 
+            <!-- TAB: GESTIÓN MASIVA (RENOMBRAR CATÁLOGOS) -->
+            <div id="tab-bulk" class="admin-tab-content">
+                <div class="admin-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--color-primary); margin: 0;">Gestión Masiva de Productos</h3>
+                        <p style="font-size: 0.9rem; margin: 0; color: var(--color-text-muted);">
+                            Pendientes: <strong id="bulkPendingCount">0</strong>
+                        </p>
+                    </div>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: #4b5563;">
+                        Aquí se muestran todas las imágenes extraídas automáticamente de los catálogos. 
+                        Asigna el nombre correcto y haz clic en "Guardar", o haz clic en "Eliminar" si la imagen es basura (fondos, logos, etc).
+                    </p>
+                    <div id="bulkProductsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <!-- JS populated -->
+                    </div>
+                </div>
+            </div>
+
         </main>
     </div>
 
@@ -802,9 +822,6 @@
         Desarrollado por <a href="https://bastiascid.github.io/portafolio" target="_blank" rel="noopener" style="color: #D81B60; text-decoration: none; font-weight: bold;">Cristian Bastias Cid</a>
     </div>
 
-    <script src="admin.js?v=1.0.4"></script>
+    <script src="admin.js?v=2"></script>
 </body>
 </html>
-
-
-

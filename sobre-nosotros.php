@@ -95,14 +95,14 @@ try {
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            padding: 5rem 0;
+            padding: 3rem 0;
         }
         .values-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin-top: 3rem;
-            padding: 4rem 0;
+            margin-top: 2rem;
+            padding: 2rem 0 3rem 0;
             border-top: 1px solid var(--color-border);
             border-bottom: 1px solid var(--color-border);
         }
@@ -236,8 +236,21 @@ try {
             </div>
         </div>
 
+        <!-- Nuestro Equipo Section -->
+        <div style="padding: 2rem 0 1rem 0;">
+            <div class="section-header" style="text-align: center; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; color: var(--color-primary);">Nuestro Equipo</h2>
+                <p style="color: var(--color-text-muted); font-size: 1.05rem;">Canal presencial y canales remotos: trabajando en conjunto</p>
+            </div>
+            
+            <div style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: 1rem;">
+                <img src="assets/nuestro-equipo.jpg" alt="Equipo La Canasta" style="width: 100%; height: auto; display: block;">
+            </div>
+
+        </div>
+
         <!-- Values / Value Proposition pillars -->
-        <div style="padding: 5rem 0;">
+        <div style="padding: 2rem 0 5rem 0;">
             <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
                 <h2 style="font-size: 1.8rem; font-weight: 700; color: var(--color-primary);">Propuesta de Valor Comercial</h2>
                 <p style="color: var(--color-text-muted);">Los pilares que sostienen nuestra operación diaria.</p>
@@ -306,8 +319,8 @@ try {
             <div class="footer-social">
                 <h4>Síguenos</h4>
                 <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="https://www.facebook.com/profile.php?id=61591557490392" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="https://www.instagram.com/lacanastacomercializadora/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                 </div>
                 
                 <div style="margin-top: 2rem;">

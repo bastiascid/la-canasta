@@ -782,24 +782,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     container.innerHTML = '';
                     res.data.forEach(p => {
                         const card = document.createElement('div');
-                        card.className = 'brand-showcase-card animate-on-scroll';
-                        card.style.padding = '2rem';
-                        card.style.textAlign = 'center';
-                        card.style.background = 'white';
-                        card.style.border = '1px solid var(--color-border)';
-                        card.style.borderRadius = 'var(--border-radius)';
-                        card.style.boxShadow = 'var(--shadow-sm)';
+                        card.className = 'offer-card animate-on-scroll';
                         card.style.display = 'flex';
                         card.style.flexDirection = 'column';
-                        card.style.alignItems = 'center';
-                        card.style.justifyContent = 'center';
-                        card.style.transition = 'all 0.3s ease';
                         
                         card.innerHTML = `
-                            <img src="${p.logo_url}" alt="${p.name} Logo" style="height: 60px; max-width: 100%; object-fit: contain; margin-bottom: 1rem;" onerror="this.src='https://placehold.co/120x60/0f2c59/ffffff?text=${encodeURIComponent(p.name)}'">
-                            <h4 style="font-size: 1.1rem; color: var(--color-primary); margin: 0 0 0.5rem 0; font-weight: 700;">${p.name}</h4>
-                            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.4; margin: 0 0 1rem 0;">${p.description || ''}</p>
-                            ${p.link_url && p.link_url !== '#' ? `<a href="${p.link_url}" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--color-secondary); text-decoration: underline;">Saber más</a>` : ''}
+                            <div class="offer-img-wrapper" style="height: 200px; padding: 1.5rem; background: white; display: flex; align-items: center; justify-content: center;">
+                                <img src="${p.logo_url}" alt="${p.name} Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;" onerror="this.src='https://placehold.co/400x250/f4f6f9/0f2c59?text=${encodeURIComponent(p.name)}'" loading="lazy">
+                            </div>
+                            <div class="offer-details" style="display: flex; flex-direction: column; flex-grow: 1; padding: 1.5rem;">
+                                <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary); margin: 0 0 0.5rem 0;">${p.name}</h3>
+                                <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; flex-grow: 1; margin: 0;">${p.description || ''}</p>
+                            </div>
                         `;
                         container.appendChild(card);
                         scrollObserver.observe(card);
