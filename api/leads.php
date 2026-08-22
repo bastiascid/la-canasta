@@ -56,29 +56,69 @@ if ($method === 'POST') {
     }
     
     $name = isset($data['name']) ? trim($data['name']) : '';
+    $rut_raw = isset($data['rut']) ? trim($data['rut']) : '';
     $company = isset($data['company']) ? trim($data['company']) : '';
     $role = isset($data['role']) ? trim($data['role']) : '';
     $phone = isset($data['phone']) ? trim($data['phone']) : '';
     $email = isset($data['email']) ? trim($data['email']) : '';
     $region = isset($data['region']) ? trim($data['region']) : '';
+    $comuna = isset($data['comuna']) ? trim($data['comuna']) : '';
     $comments = isset($data['comments']) ? trim($data['comments']) : '';
     $origin = isset($data['origin']) ? trim($data['origin']) : 'Formulario General';
     
-    // Google reCAPTCHA validation has been disabled to prevent domain blockages.
+    // RUT Validation and Normalization
+    function valida_rut($rut) {
+        $rut = preg_replace('/[^kK0-9]/i', '', $rut);
+        if (strlen($rut) < 8) return false;
+        $dv = substr($rut, -1);
+        $numero = substr($rut, 0, strlen($rut) - 1);
+        $i = 2;
+        $suma = 0;
+        foreach (array_reverse(str_split($numero)) as $v) {
+            if ($i == 8) $i = 2;
+            $suma += $v * $i;
+            ++$i;
+        }
+        $dvr = 11 - ($suma % 11);
+        if ($dvr == 11) $dvr = 0;
+        if ($dvr == 10) $dvr = 'K';
+        return strtoupper($dv) == strtoupper($dvr);
+    }
+    
+    function normaliza_rut($rut) {
+        $rut = preg_replace('/[^kK0-9]/i', '', $rut);
+        if (empty($rut)) return '';
+        $dv = substr($rut, -1);
+        $numero = substr($rut, 0, strlen($rut) - 1);
+        return number_format($numero, 0, "", ".") . '-' . strtoupper($dv);
+    }
+
+    $rut = '';
+    if (!empty($rut_raw)) {
+        if (!valida_rut($rut_raw)) {
+            http_response_code(400);
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'El RUT ingresado no es válido.'
+            ]);
+            exit;
+        }
+        $rut = normaliza_rut($rut_raw);
+    }
     
     // Server-side required fields & email format validation
-    if (empty($name) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (empty($name) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($rut)) {
         http_response_code(400);
         echo json_encode([
             'status' => 'error',
-            'message' => 'Nombre y correo electrónico válido son campos obligatorios.'
+            'message' => 'Nombre, RUT y correo electrónico válido son campos obligatorios.'
         ]);
         exit;
     }
     
     try {
-        $stmt = $pdo->prepare("INSERT INTO leads (name, company, role, phone, email, region, comments, origin, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Nuevo')");
-        $stmt->execute([$name, $company, $role, $phone, $email, $region, $comments, $origin]);
+        $stmt = $pdo->prepare("INSERT INTO leads (name, rut, company, role, phone, email, region, comuna, comments, origin, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Nuevo')");
+        $stmt->execute([$name, $rut, $company, $role, $phone, $email, $region, $comuna, $comments, $origin]);
         
         // --- Send Email Notifications ---
         
@@ -100,11 +140,13 @@ if ($method === 'POST') {
                 <p>Se ha recibido una nueva solicitud comercial a través del sitio web:</p>
                 <table style='width: 100%; border-collapse: collapse; margin-top: 15px;'>
                     <tr><td style='padding: 8px 0; font-weight: bold; width: 150px;'>Nombre:</td><td>" . htmlspecialchars($name) . "</td></tr>
+                    <tr><td style='padding: 8px 0; font-weight: bold;'>RUT:</td><td>" . htmlspecialchars($rut) . "</td></tr>
                     <tr><td style='padding: 8px 0; font-weight: bold;'>Empresa:</td><td>" . htmlspecialchars($company) . "</td></tr>
                     <tr><td style='padding: 8px 0; font-weight: bold;'>Cargo:</td><td>" . htmlspecialchars($role) . "</td></tr>
                     <tr><td style='padding: 8px 0; font-weight: bold;'>Teléfono:</td><td>" . htmlspecialchars($phone) . "</td></tr>
                     <tr><td style='padding: 8px 0; font-weight: bold;'>Correo:</td><td><a href='mailto:" . htmlspecialchars($email) . "'>" . htmlspecialchars($email) . "</a></td></tr>
-                    <tr><td style='padding: 8px 0; font-weight: bold;'>Región/Comuna:</td><td>" . htmlspecialchars($region) . "</td></tr>
+                    <tr><td style='padding: 8px 0; font-weight: bold;'>Región:</td><td>" . htmlspecialchars($region) . "</td></tr>
+                    <tr><td style='padding: 8px 0; font-weight: bold;'>Comuna:</td><td>" . htmlspecialchars($comuna) . "</td></tr>
                     <tr><td style='padding: 8px 0; font-weight: bold;'>Origen:</td><td><span style='background: #5d4637; color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.85em;'>" . htmlspecialchars($origin) . "</span></td></tr>
                     <tr><td style='padding: 8px 0; font-weight: bold;'>Comentarios:</td><td>" . nl2br(htmlspecialchars($comments)) . "</td></tr>
                 </table>

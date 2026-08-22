@@ -15,7 +15,7 @@ $static_pages = [
     '/' => ['priority' => '1.0', 'changefreq' => 'daily'],
     '/sobre-nosotros.php' => ['priority' => '0.8', 'changefreq' => 'monthly'],
     '/hazte-cliente.php' => ['priority' => '0.8', 'changefreq' => 'monthly'],
-    '/reclamos.php' => ['priority' => '0.6', 'changefreq' => 'monthly'],
+    '/sugerencias.php' => ['priority' => '0.6', 'changefreq' => 'monthly'],
     '/privacidad.html' => ['priority' => '0.5', 'changefreq' => 'yearly'],
     '/terminos.html' => ['priority' => '0.5', 'changefreq' => 'yearly'],
     '/flyer.html' => ['priority' => '0.7', 'changefreq' => 'monthly']

@@ -3,7 +3,7 @@
  */
 
 window.onerror = function(message, source, lineno, colno, error) {
-    alert("Runtime Error: " + message + "\nIn: " + source + "\nLine: " + lineno + "\nCol: " + colno + (error ? "\nStack: " + error.stack : ""));
+    alert("Runtime Error: " + message + "nIn: " + source + "nLine: " + lineno + "nCol: " + colno + (error ? "nStack: " + error.stack : ""));
     return false;
 };
 
@@ -675,7 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         document.getElementById('coverage-id').value = zone.id;
         document.getElementById('coverage-name').value = zone.name;
-        document.getElementById('coverage-region').value = zone.region || "Región de O'Higgins";
+        document.getElementById('coverage-region').value = zone.region || "Región de O\'Higgins";
         document.getElementById('coverage-order').value = zone.sort_order;
         
         document.getElementById('coverageFormTitle').textContent = 'Editar Zona: ' + zone.name;
@@ -738,7 +738,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return;
         
         if (leadsCache.length === 0) {
-            container.innerHTML = `<tr><td colspan="10" class="text-center">No hay registros de contacto que coincidan con la búsqueda.</td></tr>`;
+            container.innerHTML = `<tr><td colspan="12" class="text-center">No hay registros de contacto que coincidan con la búsqueda.</td></tr>`;
             return;
         }
         
@@ -746,11 +746,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <tr>
                 <td style="white-space: nowrap;">${lead.created_at}</td>
                 <td><strong>${lead.name}</strong></td>
+                <td>${lead.rut || '-'}</td>
                 <td>${lead.company || '-'}</td>
                 <td>${lead.role || '-'}</td>
                 <td>${lead.phone || '-'}</td>
                 <td><a href="mailto:${lead.email}" style="text-decoration: underline; color: var(--color-primary);">${lead.email}</a></td>
                 <td>${lead.region || '-'}</td>
+                <td>${lead.comuna || '-'}</td>
                 <td style="max-width: 200px; font-size: 0.85rem; line-height: 1.4;">${lead.comments || '-'}</td>
                 <td><span style="font-size: 0.75rem; background: #e5e7eb; padding: 2px 6px; border-radius: 4px; font-weight: 700; color: var(--color-primary); white-space: nowrap;">${lead.origin || 'General'}</span></td>
                 <td>
@@ -866,6 +868,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('settings-popup-title').value = settings.welcome_popup_title || '¡Bienvenidos a La Canasta!';
                     document.getElementById('settings-popup-desc').value = settings.welcome_popup_description || 'Somos el distribuidor mayorista líder de la Región de O\'Higgins. Abastécete con marcas de alta rotación directo en tu local.';
                     document.getElementById('settings-popup-btn').value = settings.welcome_popup_btn_text || '¡Comenzar Pedido!';
+
+                    // Carousel Opacity
+                    if(document.getElementById('carousel-opacity-setting')) {
+                        const opacityVal = settings.carousel_opacity !== undefined ? settings.carousel_opacity : '0.85';
+                        document.getElementById('carousel-opacity-setting').value = opacityVal;
+                        document.getElementById('carousel-opacity-val').innerText = Math.round(opacityVal * 100) + '%';
+                    }
                 }
             })
             .catch(err => console.error("Error loading settings:", err));
@@ -1324,7 +1333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!container) return;
             
             if (claimsCache.length === 0) {
-                container.innerHTML = `<tr><td colspan="8" class="text-center">No hay registros de reclamos que coincidan con la búsqueda.</td></tr>`;
+                container.innerHTML = `<tr><td colspan="10" class="text-center">No hay registros de sugerencias que coincidan con la búsqueda.</td></tr>`;
                 return;
             }
             
@@ -1332,8 +1341,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <tr>
                     <td style="white-space: nowrap;">${claim.created_at}</td>
                     <td><strong>${claim.name}</strong></td>
-                    <td>${claim.company || '-'}<br><span style="font-size: 0.8rem; color: var(--color-text-muted);">${claim.rut || ''}</span></td>
+                    <td>${claim.company || '-'}</td>
+                    <td>${claim.rut || '-'}</td>
                     <td>${claim.phone || '-'}<br><a href="mailto:${claim.email}" style="font-size: 0.85rem; color: var(--color-primary);">${claim.email}</a></td>
+                    <td>${claim.comuna || '-'}</td>
                     <td><span style="font-size: 0.8rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${claim.claim_type}</span></td>
                     <td>${claim.invoice_number || '-'}</td>
                     <td style="max-width: 250px; font-size: 0.85rem; line-height: 1.4;">${claim.comments}</td>
@@ -1539,3 +1550,219 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+// CAROUSEL MANAGEMENT
+function loadCarousel() {
+    fetch('api/carousel.php?action=list_all', { headers: { 'X-Admin-Passcode': sessionStorage.getItem('laCanastaAdminPasscode') } })
+        .then(res => res.json())
+        .then(resData => {
+            const data = resData.data || [];
+            const tbody = document.getElementById('carousel-table-body');
+            tbody.innerHTML = '';
+            
+            if (data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay imágenes registradas</td></tr>';
+                return;
+            }
+            
+            let maxOrder = 0;
+            data.forEach(item => {
+                if (parseInt(item.orden) > maxOrder) maxOrder = parseInt(item.orden);
+                const tr = document.createElement('tr');
+                const toggleText = item.activo == 1 ? 'Desactivar' : 'Activar';
+                tr.innerHTML = `
+                    <td>${item.id}</td>
+                    <td>
+                        <a href="${item.imagen}" target="_blank">
+                            <img src="${item.imagen}" style="height: 60px; border-radius: 4px; object-fit: cover; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        </a>
+                    </td>
+                    <td>${item.orden}</td>
+                    <td>
+                        <span class="status-badge ${item.activo == 1 ? 'status-active' : 'status-inactive'}">
+                            ${item.activo == 1 ? 'ACTIVO' : 'INACTIVO'}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm" onclick="editCarousel(${item.id})" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;" title="Editar">✏️</button>
+                        <button class="btn btn-secondary btn-sm" onclick="toggleCarouselStatus(${item.id}, ${item.activo})" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;" title="${toggleText}">${item.activo == 1 ? '👁️' : '🚫'}</button>
+                        <button class="btn btn-secondary btn-sm" onclick="deleteCarousel(${item.id})" style="padding: 0.25rem 0.5rem; color: #dc2626;" title="Eliminar">🗑️</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+            
+            const orderInput = document.getElementById('carousel-order');
+            if (document.getElementById('carousel-id').value === '') {
+                orderInput.value = maxOrder + 1;
+            }
+        })
+        .catch(err => console.error('Error loading carousel:', err));
+}
+
+let allCarousel = [];
+function editCarousel(id) {
+    fetch('api/carousel.php?action=list_all', { headers: { 'X-Admin-Passcode': sessionStorage.getItem('laCanastaAdminPasscode') } })
+        .then(res => res.json())
+        .then(resData => {
+            const data = resData.data || [];
+            const item = data.find(x => x.id == id);
+            if(item) {
+                document.getElementById('carousel-id').value = item.id;
+                document.getElementById('carousel-order').value = item.orden;
+                document.getElementById('carousel-active').checked = item.activo == 1;
+                
+                const preview = document.getElementById('carousel-preview');
+                preview.style.display = 'block';
+                preview.querySelector('img').src = item.imagen;
+                
+                document.getElementById('carouselAdminForm').scrollIntoView({behavior: 'smooth'});
+            }
+        });
+}
+
+function deleteCarousel(id) {
+    if(confirm('¿Estás seguro de eliminar esta imagen del carrusel?')) {
+        fetch(`api/carousel.php?id=${id}`, { method: 'DELETE', headers: { 'X-Admin-Passcode': sessionStorage.getItem('laCanastaAdminPasscode') } })
+            .then(res => res.json())
+            .then(res => {
+                if(res.status === 'success') {
+                    alert('Imagen eliminada correctamente.');
+                    loadCarousel();
+                } else {
+                    alert('Error al eliminar');
+                }
+            });
+    }
+}
+
+function resetCarouselForm() {
+    document.getElementById('carouselAdminForm').reset();
+    document.getElementById('carousel-id').value = '';
+    document.getElementById('carousel-preview').style.display = 'none';
+    document.getElementById('carousel-preview').querySelector('img').src = '';
+}
+
+document.getElementById('carouselAdminForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const id = document.getElementById('carousel-id').value;
+    const order = document.getElementById('carousel-order').value;
+    const isActive = document.getElementById('carousel-active').checked ? 1 : 0;
+    const fileInput = document.getElementById('carousel-image');
+    
+    const formData = new FormData();
+    formData.append('orden', order);
+    formData.append('activo', isActive);
+    
+    if (fileInput.files.length > 0) {
+        formData.append('image', fileInput.files[0]);
+    }
+    
+    let url = 'api/carousel.php';
+    let method = 'POST';
+    
+    if (id) {
+        formData.append('id', id);
+        // PHP doesn't parse multipart/form-data well with PUT. Best is POST with an action parameter.
+        // We will just use POST, the API checks for 'id' and updates.
+    }
+    
+    fetch(url, {
+        method: method,
+        headers: {
+            'X-Admin-Passcode': sessionStorage.getItem('laCanastaAdminPasscode')
+        },
+        body: formData
+    })
+    .then(res => res.json())
+    .then(res => {
+        if (res.status === 'success') {
+            alert(id ? 'Imagen actualizada correctamente.' : 'Imagen agregada correctamente.');
+            resetCarouselForm();
+            loadCarousel();
+        } else {
+            alert(res.message || 'Error al guardar');
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert('Error de conexión');
+    });
+});
+
+// Image preview handler
+document.getElementById('carousel-image')?.addEventListener('change', function(e) {
+    if (this.files && this.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const preview = document.getElementById('carousel-preview');
+            preview.style.display = 'block';
+            preview.querySelector('img').src = e.target.result;
+        }
+        reader.readAsDataURL(this.files[0]);
+    }
+});
+
+// Load on tab switch
+const originalSwitchTab = window.switchTab || function(){};
+document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        if (btn.dataset.tab === 'tab-carousel') {
+            loadCarousel();
+        }
+    });
+});
+
+function toggleCarouselStatus(id, currentStatus) {
+    const newStatus = currentStatus == 1 ? 0 : 1;
+    fetch('api/carousel.php?action=toggle_status', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Admin-Passcode': sessionStorage.getItem('laCanastaAdminPasscode')
+        },
+        body: JSON.stringify({ id: id, activo: newStatus })
+    })
+    .then(res => res.json())
+    .then(res => {
+        if(res.status === 'success') {
+            alert(newStatus === 1 ? 'Imagen activada.' : 'Imagen desactivada.');
+            loadCarousel();
+        } else {
+            alert(res.message || 'Error al cambiar estado');
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert('Error de conexión al servidor');
+    });
+}
+
+// Dynamic slider update
+document.getElementById('carousel-opacity-setting')?.addEventListener('input', function() {
+    document.getElementById('carousel-opacity-val').innerText = Math.round(this.value * 100) + '%';
+});
+
+function saveCarouselOpacity() {
+    const val = document.getElementById('carousel-opacity-setting').value;
+    fetch('api/settings.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Admin-Passcode': sessionStorage.getItem('laCanastaAdminPasscode')
+        },
+        body: JSON.stringify({ carousel_opacity: val })
+    })
+    .then(res => res.json())
+    .then(res => {
+        if(res.status === 'success') {
+            alert('Opacidad guardada correctamente.');
+        } else {
+            alert(res.message || 'Error al guardar');
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert('Error de conexión');
+    });
+}

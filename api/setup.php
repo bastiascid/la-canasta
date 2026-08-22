@@ -48,11 +48,13 @@ try {
         "CREATE TABLE IF NOT EXISTS leads (
             `id` INT AUTO_INCREMENT PRIMARY KEY,
             `name` VARCHAR(100) NOT NULL,
+            `rut` VARCHAR(20),
             `company` VARCHAR(100),
             `role` VARCHAR(100),
             `phone` VARCHAR(30),
             `email` VARCHAR(100) NOT NULL,
             `region` VARCHAR(100),
+            `comuna` VARCHAR(100),
             `comments` TEXT,
             `origin` VARCHAR(100) DEFAULT 'Formulario General',
             `status` VARCHAR(30) DEFAULT 'Nuevo',
@@ -98,11 +100,24 @@ try {
             `rut` VARCHAR(20),
             `phone` VARCHAR(30),
             `email` VARCHAR(100) NOT NULL,
+            `comuna` VARCHAR(100),
             `claim_type` VARCHAR(50),
             `invoice_number` VARCHAR(50),
             `comments` TEXT,
             `status` VARCHAR(30) DEFAULT 'Nuevo',
             `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )",
+        "CREATE TABLE IF NOT EXISTS carousel_portada (
+            `id` INT AUTO_INCREMENT PRIMARY KEY,
+            `producto_id` INT,
+            `imagen` VARCHAR(255) NOT NULL,
+            `titulo` VARCHAR(150),
+            `marca` VARCHAR(100),
+            `descripcion` TEXT,
+            `orden` INT DEFAULT 0,
+            `activo` TINYINT(1) DEFAULT 1,
+            `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         )"
     ];
 
@@ -139,6 +154,24 @@ try {
         $pdo->query("SELECT type FROM offers LIMIT 1");
     } catch (PDOException $e) {
         $pdo->exec("ALTER TABLE offers ADD COLUMN type VARCHAR(50) DEFAULT 'Campañas comerciales'");
+    }
+    
+    try {
+        $pdo->query("SELECT rut FROM leads LIMIT 1");
+    } catch (PDOException $e) {
+        $pdo->exec("ALTER TABLE leads ADD COLUMN rut VARCHAR(20)");
+    }
+    
+    try {
+        $pdo->query("SELECT comuna FROM leads LIMIT 1");
+    } catch (PDOException $e) {
+        $pdo->exec("ALTER TABLE leads ADD COLUMN comuna VARCHAR(100)");
+    }
+    
+    try {
+        $pdo->query("SELECT comuna FROM claims LIMIT 1");
+    } catch (PDOException $e) {
+        $pdo->exec("ALTER TABLE claims ADD COLUMN comuna VARCHAR(100)");
     }
 
     // 3. Ensure all required default settings exist (including welcome popup keys)

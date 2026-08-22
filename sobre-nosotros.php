@@ -330,7 +330,7 @@ try {
                         <li><a href="sobre-nosotros.php" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem; transition: var(--transition);">Sobre Nosotros</a></li>
                         <li><a href="index.html#marcas" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem; transition: var(--transition);">Nuestras Marcas</a></li>
                         <li><a href="index.html#catalogo" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem; transition: var(--transition);">Catálogo</a></li>
-                        <li><a href="reclamos.php" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem; transition: var(--transition);">Formulario de Reclamos</a></li>
+                        <li><a href="sugerencias.php" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem; transition: var(--transition);">Formulario de Sugerencias</a></li>
                     </ul>
                 </div>
             </div>

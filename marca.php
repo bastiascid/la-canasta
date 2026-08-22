@@ -415,7 +415,7 @@ try {
                     <li><a href="index.html#nosotros">¿Por qué nosotros?</a></li>
                     <li><a href="index.html#marcas">Nuestras Marcas</a></li>
                     <li><a href="index.html#catalogo">Catálogo</a></li>
-                    <li><a href="reclamos.php">Formulario de Reclamos</a></li>
+                    <li><a href="sugerencias.php">Formulario de Sugerencias</a></li>
                 </ul>
             </div>
             

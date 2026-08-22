@@ -21,7 +21,7 @@ FILES_TO_UPLOAD = [
     "marca.php",
     "hazte-cliente.php",
     "sobre-nosotros.php",
-    "reclamos.php",
+    "sugerencias.php",
     "privacidad.html",
     "terminos.html",
     "robots.txt",
@@ -60,6 +60,7 @@ API_TO_UPLOAD = [
     "api/partners.php",
     "api/sub_brands.php",
     "api/claims.php",
+    "api/carousel.php",
     "api/upload.php"
 ]
 

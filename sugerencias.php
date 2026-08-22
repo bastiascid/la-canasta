@@ -1,5 +1,5 @@
 <?php
-// reclamos.php
+// sugerencias.php
 // Public claims submission form
 
 require_once 'api/db.php';
@@ -13,11 +13,16 @@ try {
     $whatsapp_enabled = isset($settings['whatsapp_enabled']) ? $settings['whatsapp_enabled'] : '0';
     $whatsapp_number = isset($settings['whatsapp_number']) ? $settings['whatsapp_number'] : '+56 9 4256 7472';
 
+    // Fetch Coverage zones for comuna dropdown
+    $stmt_c = $pdo->query("SELECT name FROM coverage ORDER BY sort_order ASC, name ASC");
+    $coverage_zones = $stmt_c->fetchAll(PDO::FETCH_COLUMN);
+
 } catch (Exception $e) {
     // Fallback default variables if db error
     $logo_url = 'assets/canasta-logo.webp';
     $whatsapp_enabled = '0';
     $whatsapp_number = '+56 9 4256 7472';
+    $coverage_zones = ['Rancagua', 'Machalí', 'Graneros', 'Mostazal', 'San Fernando', 'Santa Cruz'];
 }
 ?>
 <!DOCTYPE html>
@@ -25,16 +30,16 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Reclamos - La Canasta Comercializadora y Distribuidora</title>
-    <meta name="description" content="Canal formal para el ingreso y seguimiento de reclamos, mermas o problemas con tu pedido. Atendemos tu caso a la brevedad.">
+    <title>Formulario de Sugerencias - La Canasta Comercializadora y Distribuidora</title>
+    <meta name="description" content="Canal formal para el ingreso y seguimiento de sugerencias o problemas con tu pedido. Atendemos tu caso a la brevedad.">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="canonical" href="https://www.lacanastacomercializadora.cl/reclamos.php" />
+    <link rel="canonical" href="https://www.lacanastacomercializadora.cl/sugerencias.php" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.lacanastacomercializadora.cl/reclamos.php">
-    <meta property="og:title" content="Formulario de Reclamos - La Canasta">
-    <meta property="og:description" content="Canal de postventa para el ingreso de requerimientos o reclamos. Comercializadora La Canasta.">
+    <meta property="og:url" content="https://www.lacanastacomercializadora.cl/sugerencias.php">
+    <meta property="og:title" content="Formulario de Sugerencias - La Canasta">
+    <meta property="og:description" content="Canal de postventa para el ingreso de requerimientos o sugerencias. Comercializadora La Canasta.">
     <meta property="og:image" content="https://www.lacanastacomercializadora.cl/assets/canasta-logo.webp">
     
     <!-- Google Fonts -->
@@ -87,7 +92,7 @@ try {
             padding: 6rem 0 3.5rem 0;
             text-align: center;
         }
-        .reclamos-grid {
+        .sugerencias-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 4rem;
@@ -146,7 +151,7 @@ try {
             text-decoration: underline;
         }
         @media (max-width: 768px) {
-            .reclamos-grid {
+            .sugerencias-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
                 padding: 3rem 0;
@@ -195,25 +200,25 @@ try {
     <!-- Header Banner -->
     <header class="page-header-banner">
         <div class="container">
-            <h1 style="font-family: var(--font-heading); font-size: 2.5rem; margin: 0 0 0.5rem 0; font-weight: 800;">Ingreso de Reclamos y Mermas</h1>
+            <h1 style="font-family: var(--font-heading); font-size: 2.5rem; margin: 0 0 0.5rem 0; font-weight: 800;">Sugerencias y Postventa</h1>
             <p style="font-size: 1.1rem; margin: 0; opacity: 0.9;">Canal formal de postventa y soporte comercial para comercios asociados</p>
         </div>
     </header>
 
     <div class="container">
-        <div class="reclamos-grid">
+        <div class="sugerencias-grid">
             <!-- Left Side: Instructions and Support -->
             <div>
                 <div class="info-card-claim">
                     <h3>Atención Postventa La Canasta</h3>
-                    <p>En Comercializadora y Distribuidora La Canasta valoramos la calidad de nuestro servicio de despacho. Si has experimentado un problema con tu pedido, diferencias en facturación, mermas de origen o demoras, por favor completa este formulario.</p>
+                    <p>En Comercializadora y Distribuidora La Canasta valoramos la calidad de nuestro servicio de despacho. Si has experimentado un problema con tu pedido, diferencias en facturación, o demoras, por favor completa este formulario.</p>
                     
                     <div style="margin: 2rem 0; border-top: 1px dashed var(--color-border); padding-top: 1.5rem;">
                         <div class="claim-channel-item">
                             <div class="claim-channel-icon">📝</div>
                             <div class="claim-channel-text">
                                 <strong>Plazo de Reporte</strong>
-                                <span>Reporta mermas físicas dentro de las primeras 48 horas hábiles de recibido el despacho.</span>
+                                <span>Reporta sugerencias dentro de las primeras 48 horas hábiles de recibido el despacho.</span>
                             </div>
                         </div>
                         <div class="claim-channel-item">
@@ -265,18 +270,29 @@ try {
                             <input type="tel" name="phone" required placeholder="Ej: +56 9 1234 5678" style="padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); font-size: 0.9rem;">
                         </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-dark);">Correo Electrónico *</label>
-                        <input type="email" name="email" required placeholder="Ej: contacto@minisuper.cl" style="padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); font-size: 0.9rem;">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-dark);">Correo Electrónico *</label>
+                            <input type="email" name="email" required placeholder="Ej: contacto@minisuper.cl" style="padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); font-size: 0.9rem;">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-dark);">Comuna *</label>
+                            <select name="comuna" required style="padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); font-size: 0.9rem; background: white;">
+                                <option value="" disabled selected>Selecciona tu comuna</option>
+                                <?php foreach ($coverage_zones as $zone): ?>
+                                    <option value="<?php echo htmlspecialchars($zone); ?>"><?php echo htmlspecialchars($zone); ?></option>
+                                <?php endforeach; ?>
+                                <option value="Otra Comuna">Otra Comuna (Región de O'Higgins)</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-grid">
                         <div class="form-group">
-                            <label style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-dark);">Tipo de Reclamo *</label>
+                            <label style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-dark);">Tipo de Sugerencia *</label>
                             <select name="claim_type" required style="padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); font-size: 0.9rem; background: white;">
                                 <option value="" disabled selected>Selecciona una opción</option>
-                                <option value="Merma física o Producto Defectuoso">Merma física / Producto Defectuoso</option>
+                                <option value="Sugerencia General">Sugerencia General</option>
                                 <option value="Diferencia de Facturación / Precios">Diferencia de Facturación o Precios</option>
                                 <option value="Problemas con la Entrega / Chofer">Problemas con la Entrega</option>
                                 <option value="Productos Faltantes en Pedido">Productos Faltantes en Pedido</option>
@@ -290,7 +306,7 @@ try {
                     </div>
 
                     <div class="form-group">
-                        <label style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-dark);">Detalle del Reclamo / Requerimiento *</label>
+                        <label style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-dark);">Detalle de la Sugerencia / Requerimiento *</label>
                         <textarea name="comments" rows="4" required placeholder="Describe de manera detallada el problema y los productos afectados (marca, unidades, lote si corresponde)..." style="padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); font-size: 0.9rem; font-family: inherit; resize: none;"></textarea>
                     </div>
 
@@ -299,13 +315,13 @@ try {
                     </div>
 
                     <button type="submit" id="submitClaimBtn" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.9rem; border-radius: 6px; font-weight: 700;">
-                        Enviar Reclamo Formal
+                        Enviar Sugerencia Formal
                     </button>
                 </form>
 
                 <div id="claimFormSuccess" class="form-success-alert" style="display: none; padding: 2rem 1.5rem; text-align: center; gap: 0.75rem; margin-top: 1.5rem;">
                     <div class="success-icon" style="width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; background-color: #2e7d32; color: white; border-radius: 50%; margin: 0 auto 10px auto;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 24px; height: 24px;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                    <h4 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 800; margin: 0;">¡Reclamo Registrado!</h4>
+                    <h4 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 800; margin: 0;">¡Sugerencia Registrado!</h4>
                     <p id="successCaseText" style="font-size: 0.95rem; color: var(--color-text-main); margin: 5px 0 0 0;"></p>
                     <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 10px;">Hemos enviado una confirmación de caso a tu correo. Un ejecutivo del área de operaciones y postventa te contactará en un plazo máximo de 24-48 horas hábiles.</p>
                 </div>
@@ -347,7 +363,7 @@ try {
                 <a href="index.html" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Inicio / Catálogo</a>
                 <a href="sobre-nosotros.php" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Sobre Nosotros</a>
                 <a href="hazte-cliente.php" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Hazte Cliente</a>
-                <a href="reclamos.php" style="color: white; text-decoration: underline; font-weight: bold; font-size: 0.9rem;">Formulario de Reclamos</a>
+                <a href="sugerencias.php" style="color: white; text-decoration: underline; font-weight: bold; font-size: 0.9rem;">Formulario de Sugerencias</a>
             </div>
         </div>
 
@@ -375,7 +391,7 @@ try {
                     
                     submitBtn.disabled = true;
                     const originalBtnText = submitBtn.innerHTML;
-                    submitBtn.innerHTML = "Enviando Reclamo...";
+                    submitBtn.innerHTML = "Enviando Sugerencia...";
                     
                     const formData = {
                         name: form.querySelector('[name="name"]').value.trim(),
@@ -383,6 +399,7 @@ try {
                         rut: form.querySelector('[name="rut"]').value.trim(),
                         phone: form.querySelector('[name="phone"]').value.trim(),
                         email: form.querySelector('[name="email"]').value.trim(),
+                        comuna: form.querySelector('[name="comuna"]').value.trim(),
                         claim_type: form.querySelector('[name="claim_type"]').value,
                         invoice_number: form.querySelector('[name="invoice_number"]').value.trim(),
                         comments: form.querySelector('[name="comments"]').value.trim()
@@ -402,11 +419,11 @@ try {
                                 fbq('track', 'Contact');
                             }
                             form.style.display = 'none';
-                            successText.innerHTML = `Reclamo enviado exitosamente con el número de ticket: <strong>#${res.case_id}</strong>.`;
+                            successText.innerHTML = `Sugerencia enviado exitosamente con el número de ticket: <strong>#${res.case_id}</strong>.`;
                             successDiv.style.display = 'flex';
                             successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         } else {
-                            alert(res.message || "Error al enviar el reclamo.");
+                            alert(res.message || "Error al enviar la sugerencia.");
                             submitBtn.disabled = false;
                             submitBtn.innerHTML = originalBtnText;
                         }
@@ -426,7 +443,7 @@ try {
     <?php if ($whatsapp_enabled === '1'): ?>
         <div class="whatsapp-float-container" style="display: block;">
             <div class="whatsapp-tooltip">¿Cómo puedo ayudarte?</div>
-            <a href="https://wa.me/<?php echo preg_replace('/[^\d]/', '', $whatsapp_number); ?>?text=<?php echo urlencode("Hola, me interesa conocer más sobre los productos y servicios de La Canasta Distribuidora."); ?>" class="whatsapp-float-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="Escríbenos">
+            <a href="https://wa.me/<?php echo preg_replace('/[^d]/', '', $whatsapp_number); ?>?text=<?php echo urlencode("Hola, me interesa conocer más sobre los productos y servicios de La Canasta Distribuidora."); ?>" class="whatsapp-float-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="Escríbenos">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
             </a>
         </div>

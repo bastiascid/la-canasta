@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => {
                 if (res.status === 'success' && res.data) {
                     globalSettings = res.data;
+                    // Set Carousel Opacity
+                    if(globalSettings.carousel_opacity !== undefined) {
+                        const overlay = document.querySelector('.carousel-overlay');
+                        if (overlay) {
+                            overlay.style.opacity = globalSettings.carousel_opacity;
+                        }
+                    }
                     
                     // Handle Logo replacement (if image exists, use it, else keep text)
                     const logoContainer = document.getElementById('logoContainer');
@@ -606,35 +613,41 @@ document.addEventListener('DOMContentLoaded', () => {
             if (formId === 'heroContactForm') {
                 payload = {
                     name: document.getElementById('hero-name').value.trim(),
+                    rut: document.getElementById('hero-rut').value.trim(),
                     email: document.getElementById('hero-email').value.trim(),
                     company: document.getElementById('hero-company').value.trim(),
                     role: document.getElementById('hero-role').value.trim(),
                     phone: document.getElementById('hero-phone').value.trim(),
                     region: document.getElementById('hero-region').value,
+                    comuna: document.getElementById('hero-comuna').value.trim(),
                     comments: document.getElementById('hero-comments').value.trim(),
                     origin: 'Formulario Hero'
                 };
             } else if (formId === 'middleContactForm') {
                 payload = {
                     name: document.getElementById('middle-name').value.trim(),
+                    rut: document.getElementById('middle-rut').value.trim(),
                     email: document.getElementById('middle-email').value.trim(),
                     company: document.getElementById('middle-company').value.trim(),
                     role: document.getElementById('middle-role').value.trim(),
                     phone: document.getElementById('middle-phone').value.trim(),
                     region: document.getElementById('middle-region').value,
+                    comuna: document.getElementById('middle-comuna').value.trim(),
                     comments: document.getElementById('middle-comments').value.trim(),
                     origin: 'Formulario Mitad Página'
                 };
             } else {
                 payload = {
                     name: document.getElementById('bottom-name').value.trim(),
+                    rut: document.getElementById('bottom-rut').value.trim(),
                     email: document.getElementById('bottom-email').value.trim(),
                     company: document.getElementById('bottom-company').value.trim(),
                     role: document.getElementById('bottom-role').value.trim(),
                     phone: document.getElementById('bottom-phone').value.trim(),
                     region: document.getElementById('bottom-region').value,
+                    comuna: document.getElementById('bottom-comuna').value.trim(),
                     comments: document.getElementById('bottom-comments').value.trim(),
-                    origin: 'Formulario Footer'
+                    origin: 'Formulario Final'
                 };
             }
             
@@ -693,6 +706,21 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => {
                 if (res.status === 'success' && res.data.length > 0) {
                     window.loadedCommunes = res.data; // Save loaded communes globally for search
+                    // Populate Comuna selectors in index.html
+                    const comunaSelects = document.querySelectorAll('#hero-comuna, #middle-comuna, #bottom-comuna');
+                    if (comunaSelects.length > 0) {
+                        let optionsHTML = '<option value="" disabled selected>Selecciona tu comuna</option>';
+                        res.data.forEach(zone => {
+                            optionsHTML += `<option value="${zone.name}">${zone.name}</option>`;
+                        });
+                        optionsHTML += '<option value="Otra Comuna">Otra Comuna (Región de O\'Higgins)</option>';
+                        
+                        comunaSelects.forEach(select => {
+                            if(select.tagName === 'SELECT') {
+                                select.innerHTML = optionsHTML;
+                            }
+                        });
+                    }
                     grid.innerHTML = '';
                     res.data.forEach(zone => {
                         const card = document.createElement('div');
@@ -1203,4 +1231,108 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init Cart
     updateCartBadge();
     setupCartDrawerEvents();
+});
+
+// Dynamic Carousel Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const bgContainer = document.getElementById('hero-carousel-bg');
+    if (!bgContainer) return;
+    
+    // Create style for crossfade animation
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 0;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+        }
+    `;
+    document.head.appendChild(style);
+
+    fetch('api/carousel.php')
+        .then(res => res.json())
+        .then(response => {
+            const images = response.data || [];
+            if (images.length === 0) return;
+            
+            // Create slides
+            const slides = [];
+            images.forEach((imgObj, index) => {
+                const div = document.createElement('div');
+                div.className = 'carousel-slide' + (index === 0 ? ' active' : '');
+                div.style.backgroundImage = `url('${imgObj.imagen || imgObj.image_url}')`;
+                bgContainer.appendChild(div);
+                slides.push(div);
+            });
+            
+            // Rotate slides if more than 1
+            if (slides.length > 1) {
+                let currentIndex = 0;
+                setInterval(() => {
+                    slides[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    slides[currentIndex].classList.add('active');
+                }, 5000); // 5 seconds
+            }
+        })
+        .catch(err => console.error('Error fetching carousel images:', err));
+});
+
+// RUT Validation function
+function validateRUT(rut) {
+    if (!rut || rut.trim() === '') return true; // Optional fields shouldn't fail validation if empty
+    
+    // Clean RUT: remove dots and hyphens
+    let value = rut.replace(/\./g, '').replace(/-/g, '');
+    
+    if (value.length < 8) return false;
+    
+    // Extract body and verifier digit
+    const body = value.slice(0, -1);
+    const dv = value.slice(-1).toUpperCase();
+    
+    // Calculate expected DV
+    let sum = 0;
+    let multiplier = 2;
+    for (let i = body.length - 1; i >= 0; i--) {
+        sum += parseInt(body.charAt(i)) * multiplier;
+        multiplier = multiplier === 7 ? 2 : multiplier + 1;
+    }
+    
+    const remainder = sum % 11;
+    const expectedDv = 11 - remainder;
+    
+    let calculatedDv = expectedDv.toString();
+    if (expectedDv === 11) calculatedDv = '0';
+    if (expectedDv === 10) calculatedDv = 'K';
+    
+    return dv === calculatedDv;
+}
+
+// Hook RUT validation to all forms
+document.addEventListener('DOMContentLoaded', () => {
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        const rutInput = form.querySelector('[name="rut"]');
+        if (rutInput) {
+            form.addEventListener('submit', (e) => {
+                const rutValue = rutInput.value.trim();
+                if (rutValue !== '' && !validateRUT(rutValue)) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    alert('El RUT ingresado no es válido. Por favor verifique el formato (ej: 12.345.678-9).');
+                }
+            }, true); // Use capture phase to intercept before fetch
+        }
+    });
 });

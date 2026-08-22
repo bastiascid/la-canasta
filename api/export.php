@@ -68,12 +68,14 @@ try {
         echo "\xEF\xBB\xBF";
         
         // Headers
-        echo "ID\tNombre\tEmpresa\tCargo\tTeléfono\tEmail\tRegión/Comuna\tComentarios\tOrigen del Lead\tEstado\tFecha Registro\n";
+        echo "ID\tNombre\tRUT\tEmpresa\tCargo\tTeléfono\tEmail\tRegión\tComuna\tComentarios\tOrigen del Lead\tEstado\tFecha Registro\n";
         
         foreach ($leads as $row) {
             // Clean tabs/newlines in comments
             $comments = str_replace(["\r", "\n", "\t"], ' ', $row['comments']);
-            echo "{$row['id']}\t{$row['name']}\t{$row['company']}\t{$row['role']}\t{$row['phone']}\t{$row['email']}\t{$row['region']}\t{$comments}\t{$row['origin']}\t{$row['status']}\t{$row['created_at']}\n";
+            $rut = isset($row['rut']) ? $row['rut'] : '';
+            $comuna = isset($row['comuna']) ? $row['comuna'] : '';
+            echo "{$row['id']}\t{$row['name']}\t{$rut}\t{$row['company']}\t{$row['role']}\t{$row['phone']}\t{$row['email']}\t{$row['region']}\t{$comuna}\t{$comments}\t{$row['origin']}\t{$row['status']}\t{$row['created_at']}\n";
         }
     } else {
         // CSV format (Semicolon separated, UTF-8 with BOM for Spanish Excel compatibility)
@@ -88,17 +90,21 @@ try {
         $output = fopen('php://output', 'w');
         
         // Column Headers
-        fputcsv($output, ['ID', 'Nombre', 'Empresa', 'Cargo', 'Teléfono', 'Email', 'Región/Comuna', 'Comentarios', 'Origen del Lead', 'Estado', 'Fecha Registro'], ';');
+        fputcsv($output, ['ID', 'Nombre', 'RUT', 'Empresa', 'Cargo', 'Teléfono', 'Email', 'Región', 'Comuna', 'Comentarios', 'Origen del Lead', 'Estado', 'Fecha Registro'], ';');
         
         foreach ($leads as $row) {
+            $rut = isset($row['rut']) ? $row['rut'] : '';
+            $comuna = isset($row['comuna']) ? $row['comuna'] : '';
             fputcsv($output, [
                 $row['id'],
                 $row['name'],
+                $rut,
                 $row['company'],
                 $row['role'],
                 $row['phone'],
                 $row['email'],
                 $row['region'],
+                $comuna,
                 $row['comments'],
                 $row['origin'],
                 $row['status'],
