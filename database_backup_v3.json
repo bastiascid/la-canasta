@@ -347,6 +347,4846 @@
                 "category": "Abarrotes",
                 "featured": 1,
                 "sort_order": 18
+            },
+            {
+                "id": 122,
+                "name": "ACEITE CHEF OLIVA EX VIRGEN SPRA 12 U x 180 mi",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002046",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 123,
+                "name": "K——— ACEITE CHEF OLIVA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000053",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 124,
+                "name": "ACEITE CHEF OLIVA MARAVILLA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001881",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 125,
+                "name": "ACEITE CHEF MAÍZ 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000052",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 126,
+                "name": "ACEITE CHEF MARAVILLA 30 U X 500 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000050",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 127,
+                "name": "ACEITE CHEF MARAVILLA 4UXS5L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000057",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 128,
+                "name": "a ACEITE CHEF PEPITA DE UVA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000054",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 129,
+                "name": "ACEITE BELMONT CANOLA 12 UX 900 mi",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001780",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 130,
+                "name": "ACEITE BELMONT VEGETAL CON CANOLA 4UX5L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000041",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 131,
+                "name": "ACEITE CRISTAL VEGETAL 12 U X 900 mi",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001364",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 132,
+                "name": "LONCOLECHE POLVO ENTERA 20UX7609",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002125",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 133,
+                "name": "AAA LONCOLECHE POLVO SEMI DESCREMAD; 10UX760 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001715",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 134,
+                "name": "LONCOLECHE POLVO DESCREMADA 20UX7609",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001895",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 135,
+                "name": "LONCOLECHE POLVO EXTRA CALCIO 10 UX 800 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001665",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 136,
+                "name": "LONCOLECHE POLVO S/L 10 U X 800 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000321",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 137,
+                "name": "LONCOLECHE EXTRA PROTEIN POLVO 14 U X 550 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000542",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 138,
+                "name": "LECHE POLVO CALO CRECER 1+ $UX1.5kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001150",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 139,
+                "name": "LECHE POLVO CALO CRECER 4+ 10 U X 800 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000395",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 140,
+                "name": "LECHE POLVO CALO CRECER 1+ 10 U X 800 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000394",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 141,
+                "name": "ee LECHE POLVO CALO 26% ENTERA $UX 1440 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001410",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 142,
+                "name": "LECHE POLVO CALO 26% ENTERA 20 UX 850 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001409",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 143,
+                "name": "LONCOLECHE L BLANCA ENTERA B 12UX1L 1",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000522",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 144,
+                "name": "1E LONCOLECHE | BLANCA SEMI DESCREMADA E 12UX1L 1",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000523",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 145,
+                "name": "LONCOLECHE CREMADA — BLANCA DESCREMADA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000524",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 146,
+                "name": "LONCOLECHE — LONC S/L ENTERA S/L SEMI! 12UX1L 12UX1",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000325",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 147,
+                "name": "LONCOLECHE LON S/L SEMIDESCREMADA S/L DI 12UX1L 12UX",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000326",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 148,
+                "name": "LONCOLECHE — LON DA S/L DESCREMADA S/L E 12UX1L 12UX",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000353",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 149,
+                "name": "CHE  LONCOLECHE ADA S/L EXTRA CALCIO 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000360",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 150,
+                "name": "LONCOLECHE l PLÁTANO F 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002078",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 151,
+                "name": "LONCOLECHE l FRUTILLA A 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002066",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 152,
+                "name": "LONCOLECHE VAINILLA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002077",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 153,
+                "name": "LONCOLECHE CHOCOLATE 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002065",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 154,
+                "name": "LONCOLECHE DESC LIGHT CHOCOLATE 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002076",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 155,
+                "name": "LONCOLECHE l S/L CHOCOLATE E 12UX1L 1",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000328",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 156,
+                "name": "LONCOLECHE | S/L VAINILLA E 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000421",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 157,
+                "name": "LONCOLECHE S/L FRUTILLA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000327",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 158,
+                "name": "YOGU YOGU SABOR MORA 30 U X 200 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000309",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 159,
+                "name": "YOGU YOGU SABOR PIÑA 30 U X 200 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000307",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 160,
+                "name": "YOGU YOGU SABOR DAMASCO 30 U X 200 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000306",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 161,
+                "name": "YOGU YOGU SABOR CHIRIMOYA 30 U X 200 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000318",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 162,
+                "name": "YOGU YOGU SABOR VAINILLA 30 U X 200 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000308",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 163,
+                "name": "YOGU YOGU SABOR FRUTILLA 30 U X 200 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000305",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 164,
+                "name": "eel YOGU YOGU ORIGINAL SABOR MORA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001574",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 165,
+                "name": "SHAKE SHAKE CHOCOLATE 30 UX 190 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002178",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 166,
+                "name": "SHAKE SHAKE MANJAR 30 UX 190 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002180",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 167,
+                "name": "LONCOLECHE LO! BREAK CAPPUCCINO BRE) 12UX1L 12U",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000478",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 168,
+                "name": "LONCOLECHE LO NO BREAK CHOCO AVELLANAS BRE 12UX1L 120",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000479",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 169,
+                "name": "13 LONCOLECHE ELLANAS BREAK CARAMEL 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001992",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 170,
+                "name": "LONCOLECHE BREAK CAPPUCCINO 18 U X 250 mi",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001404",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 171,
+                "name": "ES LONCOLECHE BREAK CARAMEL 18 U X 250 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001405",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 172,
+                "name": "LONCOLECHE BREAK CHOCO AVELLA! 18 U X 250 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001407",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 173,
+                "name": "DANONE BON DAN MOMENT MOCACCINO MOME! 12UX1L 12UX:",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000006",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 174,
+                "name": "BON DANONE BON DAN ACCINO MOMENT CAPPUCCINO MOME 12UX1L 18UX:",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000010",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 175,
+                "name": "DANONE BON D MOMENT MOCACCINO M 18 U X 200 ml 16",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001415",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 176,
+                "name": "DANONE BON MOMENT CAPPUCCINO 18 U X 200 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001414",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 177,
+                "name": "LONCOLECHE PROTEIN BLANCA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000481",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 178,
+                "name": "LONCOLECHE PROTEIN CAPPUCCINO 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000514",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 179,
+                "name": "LONCOLECHE ) PROTEIN CHOCOLATE 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000516",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 180,
+                "name": "LONCOLECHE | PROTEIN CAPPUCCINO F 18 U X 200 ml ]",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001411",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 181,
+                "name": "LONCOLECHE PROTEIN CHOCOLATE _ 18UX200ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001412",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 182,
+                "name": "LONCOLECHE FULL PRO CAPPUCCINO 18 UX 250 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001980",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 183,
+                "name": "LONCOLECHE FULL PRO CHOCOLATE 18 UX 250 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001376",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 184,
+                "name": "LONCOLECHE FULL PRO VAINILLA 18 UX 250 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001423",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 185,
+                "name": "LONCOLECHE VEGETAL SOYA $UX1TL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001976",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 186,
+                "name": "LONCOLECHE VEGETAL AVENA CHOCO $UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001973",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 187,
+                "name": "LONCOLECHE VEGETAL AVENA $6UXIL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000543",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 188,
+                "name": "LONCOLECHE VEGETAL ALMENDRA 6UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001977",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 189,
+                "name": "LONCOLECHE CREMA PARA BATIR 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000334",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 190,
+                "name": "LONCOLECHE CREMA S/L 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000383",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 191,
+                "name": "LONCOLECHE CREMA PARA BATIR 12 UX 500 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001882",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 192,
+                "name": "LONCOLECHE CREMA LISTA 30 U X 200 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000347",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 193,
+                "name": "LONCOLECHE CREMA LISTA 18 U X 250 mi",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001716",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 194,
+                "name": "NECTAR WATT' NARANJA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000244",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 195,
+                "name": "o 'S NÉCTAR WATT” DURAZNO _ RUXIL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000246",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 196,
+                "name": "ar RT NECTAR WATT”. LV WATT'S NARANJA MI 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001924",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 197,
+                "name": "NECTAR WATT LV WATT'S MANZANA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001776",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 198,
+                "name": "JUGO 100% FR LV WATTS MANZANA 30 U X 200 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001487",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 199,
+                "name": "AAA MERMELADA SACHET FRUTILLA 24UX 2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001760",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 200,
+                "name": "AA MERMELADA SACHET MORA 24UX2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001753",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 201,
+                "name": "Br MERMELADA SACHET FRUTAS DEL SUR - 24UX2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001752",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 202,
+                "name": "ol MERMELADA ] SACHET CIRUELA _  24UX2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001748",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 203,
+                "name": "AAA MERMELADA SACHET DAMASCO 24UX 2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001749",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 204,
+                "name": "MERMELADA SACHET DAMASCO 24UX 2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001749",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 205,
+                "name": "AAA MERMELADA SACHET FRAMBUESA _ 24UX2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001750",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 206,
+                "name": "e MERMELADA SACHET ALCAYOTA 24UX2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001754",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 207,
+                "name": "AAA MERMELADA SACHET DURAZNO _  24UX22g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001751",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 208,
+                "name": "e MERMELADA SACHET MEMBRILLO 24UX 2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001883",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 209,
+                "name": "al MERMELADA SACHET MORA 12UX 225 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001756",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 210,
+                "name": "AAA MERMELADA SACHET FRUTILLA 12UX 2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001755",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 211,
+                "name": "AAA MERMELADA SACHET DURAZNO 12UX 2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001758",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 212,
+                "name": "ad MERMELADA SACHET DAMASCO _ 12UX2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001757",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 213,
+                "name": "MERMELADA SACHET S/A FRUTILLA 24 U X 200 y",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000169",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 214,
+                "name": "AA MERMELADA SACHET S/A MORA 24UX200 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000178",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 215,
+                "name": "MERMELADA SACHET S/A ARÁNDANO 24 U X 200 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000180",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 216,
+                "name": "MERMELADA NO SACHET S/A FRAMBUESA __ 24UX2009",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000179",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 217,
+                "name": "FA MERMELADA SACHET S/A DURAZNO 24 U X 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000176",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 218,
+                "name": "Y MERMELADA SACHET S/A DAMASCO 24U X 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000177",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 219,
+                "name": "MERMELADA O SACHET S/A MANGO _  24UX2009",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001885",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 220,
+                "name": "MERMELADA DOYPACK DAMASCO 12UX 3609",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001661",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 221,
+                "name": "MERMELADA DOYPACK MORA 12UX360g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001656",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 222,
+                "name": "MERMELADA DOYPACK FRUTILLA 12UX 360 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001657",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 223,
+                "name": "MERMELADA DOYPACK S/A BERRIES",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000172",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 224,
+                "name": "nn MERMELADA DOYPACK S/A DURAZNO 12 U X 350 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000173",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 225,
+                "name": "MERMELADA DOYPACK S/A MORA 12 U X 350 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000171",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 226,
+                "name": "MERMELADA Av FRASCO DAMASCO FF 10 U X 500 g 1",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001142",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 227,
+                "name": "MERMELADA v FRASCO MORA FR _ 10UX5009 10",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001143",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 228,
+                "name": "FRASCONARANJA FR 10 UX 500 g 101",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002114",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 229,
+                "name": "FRASCO FRAMBUESA 10 UX 500 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002113",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 230,
+                "name": "MERMELADA LOS LAGOS DAMASCO 24UX 2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001767",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 231,
+                "name": "MERMELADA I LOS LAGOS FRUTILLA L _  24UX225g :",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001765",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 232,
+                "name": "MERMELADA | LOS LAGOS DURAZNO | _ 24UX22%5g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001766",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 233,
+                "name": "MERMELADA LOS LAGOS MORA _  24UX2259",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001764",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 234,
+                "name": "e MERMELADA REGIMEL DURAZNO 24U X 2009",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000634",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 235,
+                "name": "pe de MERMELADA REGIMEL DAMASCO 24 U X 2009",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000633",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 236,
+                "name": "MERMELADA REGIMEL BERRIES 24U X 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000631",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 237,
+                "name": "MERMELADA REGIMEL MORA 24U X 200 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000636",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 238,
+                "name": "MERMELADA REGIMEL FRUTILLA 24U X 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000635",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 239,
+                "name": "POUCH WATT'S MULTIFRUTAS 36UX 909",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001480",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 240,
+                "name": "POUCH WATT'S DURAZNO 36UX 909",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001481",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 241,
+                "name": "POUCH WATT'S MANZANA 36UX 909",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001482",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 242,
+                "name": "DULCE DE MEMBRILLO BOLSA 12 UX 500 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000192",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 243,
+                "name": "DULCE DE MEMBRILLO BOLSA 12UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000195",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 244,
+                "name": "10UX920g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002177",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 245,
+                "name": "MANJAR LONCOLECHE DOYPACK Ml 12UX7509",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002098",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 246,
+                "name": "DURAZNOS CUBITOS WASIL 16 U X 500 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000644",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 247,
+                "name": "DURAZNOS MITADES WASIL 16 UX 500 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001598",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 248,
+                "name": "DURAZNOS CUBITOS WASIL 16 U X 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000626",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 249,
+                "name": "CASTAÑAS WASIL 16UX5709",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001886",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 250,
+                "name": "FRUTILLAS WASIL 16 UX 500 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001597",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 251,
+                "name": "DAMASCOS MITADES WASIL 16 UX 500 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001683",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 252,
+                "name": "AAA CEREZAS WASIL 16 UX 500 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001954",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 253,
+                "name": "MANGO TROZOS WASIL 16 UX 500 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002138",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 254,
+                "name": "al PAPAYAS TROCITOS WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000641",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 255,
+                "name": "e ARANDANOS WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000640",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 256,
+                "name": "e DURAZNOS EN CUBITOS REGIMEL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000629",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 257,
+                "name": "POROTOS WASIL _ 16UX3809",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000643",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 258,
+                "name": "BB POROTOS NEGROS WASIL — 16UX3809",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000637",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 259,
+                "name": "od POROTOS ROJC WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000668",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 260,
+                "name": "k OS LENTEJAS WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000638",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 261,
+                "name": "e GARBANZOS WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000639",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 262,
+                "name": "HABAS WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001522",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 263,
+                "name": "Sáez ARVEJITAS ESPECIALES WASIL _ 16UX340g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000627",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 264,
+                "name": "PRIMAVERA DE VERDURAS WASIL 16 UX 340 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000628",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 265,
+                "name": "ooo TOMATES EN TROCITOS WASIL _ T6UX3809",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001152",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 266,
+                "name": "CHOCLO DULCE WASIL _ 16UX3409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000630",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 267,
+                "name": "CREMA DE LENTEJAS WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000667",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 268,
+                "name": "CREMA DE ESPÁRRAGOS WASIL __ 16UX3809",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000665",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 269,
+                "name": "CREMA DE TOMATE WASIL _ 16UX3809",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000662",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 270,
+                "name": "CREMA DE ZAPALLO WASIL __ T6UX3809",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000666",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 271,
+                "name": "CARBONADA CASERA WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000648",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 272,
+                "name": "LENTEJAS CON CHORIZO WASIL _ 16UX3809",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000671",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 273,
+                "name": "POROTOS GRANADOS WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000642",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 274,
+                "name": "PASTELERA DE CHOCLO WASIL _ 16UX3809",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001540",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 275,
+                "name": "AS CURRY DE GARBANZOS WASIL 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001820",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 276,
+                "name": "KÁKÁKÁKÁ TOMATICÁN L CAMPESTRE WASIL _ 16UX3809",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000653",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 277,
+                "name": "AS SS CHILI CON CARNE WASIL. 16 UX 380 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002081",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 278,
+                "name": "RF=» COCTEL DE FRUTAS WASIL 20U X 820 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000673",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 279,
+                "name": "TS — DURAZNOS EN MITADES WASIL 24UX 5909",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000599",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 280,
+                "name": "DURAZNOS EN TROCITOS WASIL 24UX 590 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000600",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 281,
+                "name": "SAS COCTEL DE FRUTAS WASIL 24UX 560 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000608",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 282,
+                "name": "PINAS EN TROCITOS WASIL 24UX 565 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000610",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 283,
+                "name": "PINAS EN RODAJAS WASIL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000609",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 284,
+                "name": "ARVEJITAS WASIL 48 U X 300 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000674",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 285,
+                "name": "SAA PALMITOS ENTEROS WASIL 24 U X 400 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000616",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 286,
+                "name": "PALMITOS EN RODAJAS WASIL 24U X 400 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000615",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 287,
+                "name": "CHAMPINONES ENTEROS WASIL 24 U X 400 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000612",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 288,
+                "name": "CHAMPIÑONES LAMINADOS WASIL 24 U X 400 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000613",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 289,
+                "name": "AAA SALSA BOLOGNES VEGETAL WASIL 16 U X 340 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001527",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 290,
+                "name": "EN SALSA POMODORO WASIL 16 UX 340 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001536",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 291,
+                "name": "pa] SALSA TOMATE SACHET WASIL 24UX 180 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001698",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 292,
+                "name": "QUESO GAUDA CALO P-3 T PIEZA",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000304",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 293,
+                "name": "QUESO GAUDA CALO LAMINADO 4UX25kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001774",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 294,
+                "name": "QUESO GAUDA CALO LAMINADO 16 UX 233 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000552",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 295,
+                "name": "o. MA A CALO LAMINADO CA 12UX1kg 40",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000555",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 296,
+                "name": "Mn y QUESO GAUDA CALO LAMINADO 12UX 4679",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000551",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 297,
+                "name": "QUESO CREMA CALO TRIPA 40 U X 100 y",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001541",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 298,
+                "name": "QUESO MANTECOSO QU LAS PARCELAS PIEZA 10 KG LAS! 1UX10kg 4UX",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000441",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 299,
+                "name": "QUESO MANTECOSO ( LAS PARCELAS PIEZA 3 KG L 4UX3kg 1",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000466",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 300,
+                "name": "O 0 QUESO MANTECOSO LAS PARCELAS EXTRA MADURO TUX 10 kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000464",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 301,
+                "name": "AAA QUESO MANTEC( LAS PARCELAS LAMINADO 16UX3509",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000560",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 302,
+                "name": "SAA QUESO MANTECO LAS PARCELAS LAMINADO SIN E 12UX 4709",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001400",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 303,
+                "name": "QUESO MANTECOS LAS PARCELAS LAMINADO SIN BC 20UX2109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001918",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 304,
+                "name": "QUESO MANTECOSO 'S LAS PARCELAS TROZO 12UX 4509",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001876",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 305,
+                "name": "QUESO MANTEC( LAS PARCELAS TROZO 16 UX 350 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000559",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 306,
+                "name": "QUESO CHANCO LAS PARCELAS P3",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 300001735",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 307,
+                "name": "QUESO CHANCO LAS PARCELAS 12 U X 434 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001689",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 308,
+                "name": "QUESO CHANCO LAS PARCELAS 20 U X 233 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001773",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 309,
+                "name": "QUESO MANTECOSO LAS PARCELAS RUEDA 18 U X 500 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002162",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 310,
+                "name": "Sc QUESO MANTECO LAS PARCELAS RUEDA MER 16 UX 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002164",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 311,
+                "name": "QUESO MANTEC( LAS PARCELAS RUEDA ALBAH/ 16 UX 2009",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002163",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 312,
+                "name": "SS QUESO CABRA LAS PARCELAS 20 UX 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002095",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 313,
+                "name": "QUESO CREMA LAS PARCELAS NATURAL 28 UX 150 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002137",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 314,
+                "name": "QUESO CREMA LAS PARCELAS MERKEN 28 UX 150 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002145",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 315,
+                "name": "MARGARINA SUREÑA $ UX 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001861",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 316,
+                "name": "MARGARINA SUREÑA LIGHT $UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000068",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 317,
+                "name": "HA AA MARGARINA SUREÑA 12UX 450 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001871",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 318,
+                "name": "A MARGARINA SUREÑA MIX 12UX 4509",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001873",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 319,
+                "name": "MARGARINA SUREÑA LIGHT 12 UX 450 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002169",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 320,
+                "name": "MARGARINA M CALO CA! $UX900 g 12.",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001403",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 321,
+                "name": "MARGARINA CALO 12UX4509",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001401",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 322,
+                "name": "N — MARGARINA CALO LIGHT 12 UX 4509",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001402",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 323,
+                "name": "I-_ AAA ! MARGARINA | CALO MIX ( 12 UX 3509 d",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000097",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 324,
+                "name": "PAMPERITA 40 UX 250 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000067",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 325,
+                "name": "MARGARINA PAMPERITA 10 UX 900 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001862",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 326,
+                "name": "MARGARINA LONCOLECHE S/L 12 UX 500 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000088",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 327,
+                "name": "PA MANTEQUILLA CON SAL CALO 40UX125g9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000301",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 328,
+                "name": "MANTEQUILLA CON SAL CALO 20 U X 250 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000302",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 329,
+                "name": "MANTEQUILLA UNTABLE CALO 12UX 3509",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000469",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 330,
+                "name": "MANTEQUILLA CON CANOLA LONCOLECHE 20 U X 250 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000087",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 331,
+                "name": "A AA = MANTEQUILLA M HE CON CANOLA LONCOLECHE LO",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000086",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 332,
+                "name": "AAA A MANTEQUILLA LONCOLECHE 20 UX 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001888",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 333,
+                "name": "el MANTEQUILLA LAS PARCELAS ARTESANAL 20UX 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001887",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 334,
+                "name": "MANTECA ASTRA 12UX 900 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001341",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 335,
+                "name": "MANTECA ASTRA 40 U X 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000115",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 336,
+                "name": "MANTECA PALMIN 40 UX 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000117",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 337,
+                "name": "UA MANTECA CRUCINA 40 U X 200 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000079",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 338,
+                "name": "MANTECA ASTRA ESTANDAR $X 12UX 100 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000116",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 339,
+                "name": "MANTECA PALMIN",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000119",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 340,
+                "name": "NS MANTECA CRUCINA $X12UX 100 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000090",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 341,
+                "name": "de LONCOLECHE TROZOS POTE S/L BERRIES 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001709",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 342,
+                "name": "d LONCOLECHE TROZOS POTE S/L PAPAYA 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 300017",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 343,
+                "name": "dd LONCOLECHE TROZOS POTE S/L DURAZNO 24UX1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 344,
+                "name": "d LONCOLECHE POTE S/L CHIRIMOYA 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001707",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 345,
+                "name": "dd LONCOLECHE POTE S/L FRUTILLA 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001708",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 346,
+                "name": "LONCOLECHE VEGETAL SOYA TROZOS MANGO MARACUYA POTE 12UX 130 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001829",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 347,
+                "name": "LONCOLECHE VEGETAL SOYA TROZOS FRUTILLA POTE 12UX 130 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001828",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 348,
+                "name": "LONCOLECHE | BOTELLA S/L FRUTILLA É 6UX900 y ¿",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000493",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 349,
+                "name": "LONCOLECHE BOTELLA S/L VAINILLA 6 UX 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000494",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 350,
+                "name": "LONCOLECHE BOTELLA S/L CHIRIMOYA $ UX 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000495",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 351,
+                "name": "LONCOLECHE BOLSA S/L FRUTILLA 12 UX 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000489",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 352,
+                "name": "LONCOLECHE BOLSA S/L VAINILLA 12 UX 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000490",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 353,
+                "name": "LONCOLECHE BOLSA S/L CHIRIMOYA 12 U X 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000488",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 354,
+                "name": "DT LONCOLECHE YOG LONCOLECHE S/L PACK",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001899",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 355,
+                "name": "LONCOLECHE PROTEIN FRUTILLA POTE 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001056",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 356,
+                "name": "LONCOLECHE PROTEIN ARÁNDANO POTE 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001058",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 357,
+                "name": "de LONCOLECHE PROTEIN VAINILLA POTE 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001057",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 358,
+                "name": "LONCOLECHE PROTEIN NATURAL END POTE 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001055",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 359,
+                "name": "LONCOLECHE PROTEIN NATURAL NO END POTE 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002165",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 360,
+                "name": "LONCOLECHE TROZOS PROTEIN FRUTILLA 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001935",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 361,
+                "name": "L E LONCOLECHE TROZOS PROTEIN MANGO MAF 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001060",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 362,
+                "name": "o LONCOLECHE 12UX1509",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002090",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 363,
+                "name": "AA LONCOLECHE LONCO PROTEIN FULL PRO FLLA 12UX 1509",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002091",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 364,
+                "name": "LONCOLECHE PROTEIN SHOT VAINILLA",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000436",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 365,
+                "name": "LONCOLECHE PROTEIN SHOT BERRIES",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000435",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 366,
+                "name": "LONCOLECHE LONCO PROTEIN BALDE NAT $ UX 800 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002198",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 367,
+                "name": "LONCOLECHE CAPUCHÓN PROTEIN GRANOLA 24UX 1429",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001494",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 368,
+                "name": "YOGU YOGU YOGURT MORA/BOT $ UX 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001901",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 369,
+                "name": "YOGU YOGU YOGURT FRUTILLA/BOT $UX 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001902",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 370,
+                "name": "DANONE ACTIV! CIRUELA S/L POTE 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 300018152",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 371,
+                "name": "xx DANONE ACT! FRUTILLA S/L POTE 24UX 140 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002085",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 372,
+                "name": "xx DANONE ACT! NATURAL S/L POTE 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002087",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 373,
+                "name": "Mr\" \"Du DANONE ACT COLCHÓN SEMILLAS DURA, 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001856",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 374,
+                "name": "il DANONE ACT! COLCHÓN FRUTOS DEL BOS 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001857",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 375,
+                "name": "DANONE ACTIVI TROZOS SEMILLAS FRUTILLA S/ 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001854",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 376,
+                "name": "DANONE ACTIV TROZOS MANGO MARACUYÁ S, 24UX 1409",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001853",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 377,
+                "name": "DANONE OIKOS NATURAL S/E BALDE $ UX 800 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002199",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 378,
+                "name": "pt DANONE OIKO* NATURAL ENDULZADO POT! 48UX 1109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001074",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 379,
+                "name": "rn DANONE OIKO CHIRIMOYA POTE 48UX 1109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001076",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 380,
+                "name": "DANONE OIKO: MIEL POTE 48UX 1109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001981",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 381,
+                "name": "DANONE OIKO FRUTILLA POTE 48UX 1109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001075",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 382,
+                "name": "DANONE OIKOS MIEL GRANOLA CAPUCHÓN 12UX 1429",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001983",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 383,
+                "name": "DANONE OIKOS CHOCO CRUNCH CAPUCHÓN 12UX 142 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001489",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 384,
+                "name": "DANONE OIKOS CARAMEL CRUNCH CAPUCHÓN 12UX 1429",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001490",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 385,
+                "name": "DANONE OIKOS TROZOS FRUTILLA POTE 48UX 1109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001081",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 386,
+                "name": "ad DANONE OIKOS TROZOS DURAZNO POT 48UX 1109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001080",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 387,
+                "name": "e a DANONE OIKOS TROZOS PAPAYA POTE 48UX 1109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001079",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 388,
+                "name": "A: DANONE OIKOS TROZOS COCO RALLADO PC 48UX 1109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001083",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 389,
+                "name": "DANONE OIKO YOGURT MIEL FOB 48 U X 150 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001982",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 390,
+                "name": "DANONE LIGHT 8: FREE POTE FRUTILLA 48UX 1159",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001017",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 391,
+                "name": "DANONE LIGHT 8: FREE POTE ARÁNDANO 48UX 1159",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001019",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 392,
+                "name": "DANONE LIGHT 8: FREE POTE NARTURAL ENDULZADO 48UX 1159",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001018",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 393,
+                "name": "DANONE LIGHT 8: FREE )  POTE VAINILLA 48UX 1159",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001020",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 394,
+                "name": "DANONE LIGHT ¿% Fi BOTE FRUTILLA 6UX 900 9",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001036",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 395,
+                "name": "DANONE LIGHT 8: FREE POTE TROZOS PAPAYA 24UX 1459",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001536",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 396,
+                "name": "DANONE LIGHT 8: FREE POTE TROZOS FRUTILLA 24UX 1459",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001537",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 397,
+                "name": "EE DANONE LIGHT 8: FREE A POTE GRANOLA CRUNCH _ 1RUXI429",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002061",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 398,
+                "name": "DANONE LIGHT €: FREE ) BOLSA NATURAL ENDULZADO 12 U X 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001032",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 399,
+                "name": "2 E DANONE LIGHT €: FREE JO BOLSA VAINILLA 12 U X 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001033",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 400,
+                "name": "sE DANONE LIGHT 8: FREE BOLSA FRUTILLA 12 U X 900 g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001031",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 401,
+                "name": "KK DANONE CAL FRUTILLA POTE 48UX 1109",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001041",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 402,
+                "name": "N DANONE CAL VAINILLA POTE _ 4BUXTOg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001042",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 403,
+                "name": "AAA N DANONE CAL CHIRIMOYA POTE _ BUX1MOg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001043",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 404,
+                "name": "REE ——— N DANONE CAL DAMASCO POTE _ BUX1OG",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002155",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 405,
+                "name": "DANONE CALÁN CHIRIMOYA BOLSA 12UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001049",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 406,
+                "name": "DANONE CALÁN VAINILLA BOLSA 12UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001052",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 407,
+                "name": "AA DANONE CALÁN FRUTILLA BOLSA 12UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001051",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 408,
+                "name": "AA DANONE CALÁN DAMASCO BOLSA 12UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001050",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 409,
+                "name": "AA DANONE CALÁN PACK YOGURT POTE",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001816",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 410,
+                "name": "DANONE CALÁN PACK YOGURT POTE",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001038",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 411,
+                "name": "SA _—— CALAN FRUTILLA PROBIÓTICO PACK 8 $UX909g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001045",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 412,
+                "name": "SA MULTIFRUTAS PROBIÓTICO PACK 8. $UX909g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001047",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 413,
+                "name": "SA A KÁ MORA PROBIÓTICO PACK 8 $UX90g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001048",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 414,
+                "name": "SA MANZANA PROBIÓTICO PACK 8 8UX110g",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001046",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 415,
+                "name": "o REGIMEL JALEA PACK 4 ARÁNDANO",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000660",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 416,
+                "name": "REGIMEL JALEA PACK 4 FRAMBUESA",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 3000658",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 417,
+                "name": "REGIMEL JALEA PACK 4 NARANJA",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001889",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 418,
+                "name": "LONCOLECHE JALEA PACK 4 PIÑA",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001898",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 419,
+                "name": "LONCOLECHE JALEA PACK 4 GUINDA",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001897",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 420,
+                "name": "AA DANONE OIKOS POSTRE PIE DE LIMÓN 12UX 1329",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002093",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 421,
+                "name": "DANONE OIKOS POSTRE CHEESCAKE BERRIES 12UX 1329",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002094",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 422,
+                "name": "LONCOLECHE LECHE CULTIVADA LIGHT CHIRIMOYA BOTE 6 UX 900 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000500",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 423,
+                "name": "LONCOLECHE LECHE CULTIVADA EXTRA PROTEÍNA CHIRIMOYA BOTELL 6 U X 900 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001881",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 424,
+                "name": "LONCOLECHE LECHE CULTIVADA LA EXTRA PROTEÍNA BERRIES BOTELLA 6 UX 900 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001474",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 425,
+                "name": "o LONCOLECHE CREMA REFRIGERADA 15 U X 500 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002132",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 426,
+                "name": "LONCOLECHE CREMA ÁCIDA 12 UX 140 mi",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002126",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 427,
+                "name": "AAA NECTAR FRUGO BERRIES 6UX175L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000265",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 428,
+                "name": "NECTAR FRUGO NARANJA SUXLEL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000264",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 429,
+                "name": "SA NECTAR FRUGO MARACUYÁ SUXTSL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000266",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 430,
+                "name": "JUGO EXPRIMIDO NARANJA 6UX15L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001996",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 431,
+                "name": "Po ) JUGO FRESCO NARANJA MIX SUX1SL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001939",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 432,
+                "name": "JUGO FRESCO NARANJA SUXI6L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001944",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 433,
+                "name": "LL a JUGO FRESCO — JL ARÁNDANO PIR SUXIL su",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000250",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 434,
+                "name": "dot ESCO  JUGO FRESCO Jl PINA N 6UXIL 6",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000239",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 435,
+                "name": "JUGO FRESCO NARANJA-PINA. 6UX1L6L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002134",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 436,
+                "name": "JUGO FRESCO NARANJA-ZANAHORIA 6UX16L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002135",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 437,
+                "name": "NECTAR NECTAR WATTS PIÑA/COCO 6UX16L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001945",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 438,
+                "name": "NECTAR NECTAR WATTS SEL MANGO/MAR S5UX1L6L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001946",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 439,
+                "name": "NECTAR JUYÁ - NECTAR WATTS SEL FRAMBUESA S5UX1L6L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001942",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 440,
+                "name": "NECTAR SA NECTAR WATTS SEL PAPAYA 6UX16L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001943",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 441,
+                "name": "NECTR NI MANGO MARACUYÁ FR/ S5UXIL 5U",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000253",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 442,
+                "name": "NECTAR CUYA FRAMBUESA S5UXIL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000252",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 443,
+                "name": "E NECTAR GUAYABA S5UXIL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000251",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 444,
+                "name": "AGENE LA REINA AGE VEGETAL FREÍR A4UX5L 4UX/",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000047",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 445,
+                "name": "NA ACEITE LA REINA FRITO FREÍR PLUS _ 4UX5L 2UX10L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000048",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 446,
+                "name": "PLUS 2UX10L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000065",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 447,
+                "name": "ACEITE CHEF FR FREÍR PLU 2UX10L 4U:",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000036",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 448,
+                "name": "ACEITE CHEF MAÍZ 2UX10L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000058",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 449,
+                "name": "FRITO MASTER PLUS 4UX5L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001777",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 450,
+                "name": "7 MANTECA VEGETAL 12UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001448",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 451,
+                "name": "MANTECA CRUCINA MA PANADERA CRU 10UX 1 kg 10U",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 3000014",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 452,
+                "name": "MANTECA PANADERA N CRUCINA VEGETAL P 10UX 1 kg 1",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000091",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 453,
+                "name": "JERA MANTECA CRUCINA PANADERA CERDO 10UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001588",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 454,
+                "name": "GRASA PAMPERO  N BLOQUE C 10UX1kg 1",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000077",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 455,
+                "name": "EF MARGARINA DONA JUANITA 12UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001447",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 456,
+                "name": "MARGARINA HORNITO PANADERA 10UX 1 kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000110",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 457,
+                "name": "MARGARINA CONDESA HOJA VEGETAL 10UX2kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000102",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 458,
+                "name": "Producto Watt's 30000106",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000106",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 459,
+                "name": "Anos midi MERMELADA WATT” DOYPACK GUINDA $UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000164",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 460,
+                "name": "S MERMELADA WATT DOYPACK DAMASCO $UXIkg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000183",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 461,
+                "name": "T'S MERMELADA WATT'S DOYPACK FRAMBUESA : 6UXITkg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000162",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 462,
+                "name": "TT'S MERMELADA WATT'S , DOYPACK MARACUYÁ _ $UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001868",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 463,
+                "name": "1419 MERMELADA WAI > GOLD FRAMBUESA _ TUX5kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000185",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 464,
+                "name": "MERMELADA WATT'S GOLD GUINDA TUX5kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000183",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 465,
+                "name": "AAA DURAZNOS MITADES WASIL $UX3kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000603",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 466,
+                "name": "REE DURAZNOS TROCITOS WASIL $UX3kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000607",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 467,
+                "name": "AA _ A COCTEL DE FRUTAS WASIL $UX3kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000619",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 468,
+                "name": "PINAS EN TROCITOS WASIL $UX3kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000621",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 469,
+                "name": "EA PINAS EN RODAJAS WASIL $UX3kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000620",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 470,
+                "name": "ANJAR 3 KILOS MANJAR 5 KILOS ICOLECHE ARTESANAL LONCOLECHE X 3 kg 2UX5kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001963",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 471,
+                "name": "MIA DULCE RELLENO | CALO ( 2UX6kg 7",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000392",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 472,
+                "name": "ss L O DULCE Ñ CHILENO CALO L _ 2UXékg 4",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000362",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 473,
+                "name": "MANJAR 3 KILOS M LONCOLECHE AR 4UX3kg 21",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001778",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 474,
+                "name": "EA CREMA__ PARA REPOSTERÍA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000349",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 475,
+                "name": "EMA__ CREMA CREMA 'A REPOSTERÍA LÁCTEA PASTEURIZADA VEGETAL CALO IX1L 9UX1L 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001970",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 476,
+                "name": "CREMA CR IDA VEGETAL CALO VEGÍ 12UX1L 124",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000413",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 477,
+                "name": "CREMA VEGETAL DELIGHT 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002031",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 478,
+                "name": "LECHE CONDENSADA LONCOLECHE 4UX5kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001920",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 479,
+                "name": "NECLCIW Ebo WwIcbIVIIE5) MELIA BIANCA FORNO CINNAI 1UX6kg 1UX6",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002188",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 480,
+                "name": "NEIVE). NELLEIVOY hb WIcEIVI5. MEL! CINNAMON NOCCI 1UX6kg TUX6",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002189",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 481,
+                "name": "NEIVIE)  NELEIVY YE NOCCIOLA 1UX6 kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002192",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 482,
+                "name": "v€UDENIVIVA SALI ww SUPREME BIANC/ 1UX6kg 1UX6",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002193",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 483,
+                "name": "Add WUDENIVIVA SALTIEN BIANCA TUX6kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002195",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 484,
+                "name": "DAJE LN FULVO DAS QUEQUE DOÑA JUANITA. BROW 25UX1kg 25UX",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002127",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 485,
+                "name": "NY DAJE LIN FULVO DAS ANITA BROWNIE DOÑA JUANITA BIZCO 25UX1kg 25UX",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002128",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 486,
+                "name": "NY DAJE LN FULVO DAS JANITA BIZCOCHO CHOCOLATE BIZCO! 25UX1kg 25UX",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002129",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 487,
+                "name": "QUID DADE EN FULVO LATE BIZCOCHO TRES LECHES 25UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002130",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 488,
+                "name": "O PREPARADO CALO PARA HELADOS MORA CREMA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000476",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 489,
+                "name": "LO PREPARADO CALO y PARA HELADOS BASE 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000340",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 490,
+                "name": "PREPARADO CALO PARA HELADOS FRUTILLA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000336",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 491,
+                "name": "O PREPARADO CALO PARA HELADOS LÚCUMA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000339",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 492,
+                "name": "O PREPARADO CALO PARA HELADOS BOCADO 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000338",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 493,
+                "name": "PREPARADO CALO PARA HELADOS CHOCO 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000337",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 494,
+                "name": "EA LO PREPARADO CALO PARA HELADOS BLUE ICE 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001916",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 495,
+                "name": "O PREPARADO CALO PARA HELADOS NARANJA 12UX1L",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001915",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 496,
+                "name": "SALIA HELADERÍA MANJAR CALO 10UXIL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000386",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 497,
+                "name": "SALSA CHOCOLATE AMERICANO CALO 10UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002249",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 498,
+                "name": "PARA HELADO BOCADO PREMIUM 1UXIOL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000537",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 499,
+                "name": "PARA HELADO CHOCO PREMIUM: 1UXIOL",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000538",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 500,
+                "name": "Producto Watt's 30000315",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000315",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 501,
+                "name": "CALO 2UX3,5kg '",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000335",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 502,
+                "name": "QUESO GAUDA , LAMINADO $UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000389",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 503,
+                "name": "2 mc MANTEQUILLA LONCOLECHE 10UX1kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000303",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 504,
+                "name": "ELLA QUESU GAUDA",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 301",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 505,
+                "name": "QUESO CREMA CÁLO 10 UX 1,36 kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000527",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 506,
+                "name": "o EBmrmeE Ko QUESO CHEDDAR SUCEDANEO CALO 2UX1.92kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002183",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 507,
+                "name": "QUESO CREMA CALO $UX 1,36 kg",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30002231",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 508,
+                "name": "VINO SC RESERVA DE FAMILI/ 12UX750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000295",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 509,
+                "name": "SA VINO SC RESERVA DE FAMILIA 12UX 750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000293",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 510,
+                "name": "CAROLINA GRAN RESERVA CR 6UX750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001434",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 511,
+                "name": "CAROLINA GRAN RESERVA ASS 6UX750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001435",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 512,
+                "name": "CAROLINA GRAN RESERVA CS 6UX750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001433",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 513,
+                "name": "VINO CAROL! RESERVA SB NAC 6 UX 750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001666",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 514,
+                "name": "VINO BLANCO CAROLINA LH 12 UX 500 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000285",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 515,
+                "name": "e VINO ESTRELLA DE ORO MER 12UX750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000290",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 516,
+                "name": "VINO ESTRELLA DE ORO CAR 12UX 750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000292",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 517,
+                "name": "e VINO ESTRELLA DE ORO CS 12 UX 750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000288",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 518,
+                "name": "e VINO TRES ESTRELLAS CR 12UX 750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000287",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 519,
+                "name": "SC SPARKLING BRUT 6UX750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000592",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 520,
+                "name": "SC SPARKLING DEMI 6 UX750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30000593",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 521,
+                "name": "Na SC FRIZZANTE SC FRZ ROSE NAC TR 6UX750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001948",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 522,
+                "name": "tm SC FRIZZANTE SC FRZ ROSE NAC TR 6UX750 ml",
+                "brand_id": 3,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 30001949",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 523,
+                "name": "8ml 300 SACHET 7802337942021 SUCEDANEO DE LIMON",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 121010495",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 524,
+                "name": "250ml 24 7802337801014 SUCEDANEO DE LIMON",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 121010255",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 525,
+                "name": "250ml 48 7802337801014 SUCEDANEO DE LIMON",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 121010300",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 526,
+                "name": "500ml 12 7802337801038 SUCEDANEO DE LIMON",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 121010175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 527,
+                "name": "500ml 30 7802337801038 SUCEDANEO DE LIMON",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 121010290",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 528,
+                "name": "1000ml 12 7802337801052 SUCEDANEO DE LIMON",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 121010115",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 529,
+                "name": "1000 ml 20 7802337801052 SUCEDANEO DE LIMON",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 121010210",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 530,
+                "name": "5000ml 4 7802356296174 SUCEDANEO DE LIMON",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 121010320",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 531,
+                "name": "500ml 12 7802356296198 SUCEDANEO DE LIMON DE PICA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 122010175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 532,
+                "name": "500ml 30 7802356296198 SUCEDANEO DE LIMON DE PICA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 122010290",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 533,
+                "name": "1000ml 20 7802337801076 SUCEDANEO DE LIMON DE PICA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 122010210",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 534,
+                "name": "250ml 12 7802337978006 LIMON 100%",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 124010150",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 535,
+                "name": "250ml 12 7802337978013 LIMON 100%",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 124010151",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 536,
+                "name": "320ml 12 7802337977764 LIMON 60%",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 123010160",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 537,
+                "name": "320ml 24 7802337977764 LIMON 60%",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 123010260",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 538,
+                "name": "250ml 24 7802337101022 VINAGRE DE VINO ROSADO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 112010255",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 539,
+                "name": "250ml 48 7802337101022 VINAGRE DE VINO ROSADO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 112010300",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 540,
+                "name": "500ml 12 7802337101046 VINAGRE DE VINO ROSADO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 112010175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 541,
+                "name": "500ml 30 7802337101046 VINAGRE DE VINO ROSADO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 112010290",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 542,
+                "name": "1000ml 12 7802337101060 VINAGRE DE VINO ROSADO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 112010115",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 543,
+                "name": "1000ml 20 7802337101060 VINAGRE DE VINO ROSADO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 112010210",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 544,
+                "name": "5000ml 4 7802356296167 VINAGRE DE VINO ROSADO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 112010320",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 545,
+                "name": "8ml 300 SACHET 7802337942038 VINAGRE DE MANZANA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 113010495",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 546,
+                "name": "250ml 24 7802356000009 VINAGRE DE MANZANA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 113010255",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 547,
+                "name": "500ml 12 7802337102302 VINAGRE DE MANZANA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 113010175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 548,
+                "name": "500ml 30 7802337102302 VINAGRE DE MANZANA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 113010290",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 549,
+                "name": "1000ml 12 7802337105617 VINAGRE DE MANZANA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 113010115",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 550,
+                "name": "1000ml 20 7802337105617 VINAGRE DE MANZANA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 113010210",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 551,
+                "name": "5000ml 4 7802337105624 VINAGRE DE MANZANA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 113010320",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 552,
+                "name": "250ml 24 7802337101015 VINAGRE DE VINO BLANCO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 111010255",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 553,
+                "name": "250ml 48 7802337101015 VINAGRE DE VINO BLANCO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 111010300",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 554,
+                "name": "500ml 12 7802337101039 VINAGRE DE VINO BLANCO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 111010175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 555,
+                "name": "500ml 30 7802337101039 VINAGRE DE VINO BLANCO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 111010290",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 556,
+                "name": "1000ml 12 7802337101053 VINAGRE DE VINO BLANCO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 111010115",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 557,
+                "name": "1000ml 20 7802337101053 VINAGRE DE VINO BLANCO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 111010210",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 558,
+                "name": "5000ml 4 7802356296150 VINAGRE DE VINO BLANCO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 111010320",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 559,
+                "name": "500ml 30 PET 7802337101121 VINAGRE INCOLORO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 114010290",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 560,
+                "name": "1000ml 12 PET 7802337101152 VINAGRE INCOLORO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 114010115",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 561,
+                "name": "500ml 6 VIDRIO 7802337979409 VINAGRE DE MANZANA ORGANICO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 118017340",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 562,
+                "name": "500ml 12 VIDRIO 7802337942205 VINAGRE DE MANZANA SIN FILTRAR",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 113110175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 563,
+                "name": "1000ml 6 VIDRIO 7802337942212 VINAGRE DE MANZANA SIN FILTRAR",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 113110325",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 564,
+                "name": "8ml 300 SACHET 7802337942045 ACETO BALSAMICO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 115010495",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 565,
+                "name": "250ml 12 7802356297287 ACETO BALSAMICO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 115014150",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 566,
+                "name": "500ml 12 7802315560476 ACETO BALSAMICO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 115014175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 567,
+                "name": "500ml 6 7802315560476 ACETO BALSAMICO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 115014340",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 568,
+                "name": "5000ml 4 PET ACETO BALSAMICO",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 115014320",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 569,
+                "name": "ACETO BALSAMICO 500ml 12 7802356296181 VILLA CONTI",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 115015175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 570,
+                "name": "CONDIMENTO BALSAMICO 500ml 12 7802337105525 VILLA CONTI",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 116015175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 571,
+                "name": "LIMONETA 255ml 12 7802337942175 LINEA A LA MESA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 115015175",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 572,
+                "name": "VINAGRETA 255ml 12 7802337942168 LINEA A LA MESA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 125010520",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 573,
+                "name": "CON. BALSÁMICO BLANCO 255ml 12 7802337942137 LINEA A LA MESA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 116110520",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 574,
+                "name": "CON. BALSÁMICO FINAS HIERBAS 255ml 12 7802337942144 LINEA A LA MESA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 116210520",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 575,
+                "name": "ACETO BALSÁMICO MANZANA 255ml 12 7802337942151 LINEA A LA MESA",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 115110520",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 576,
+                "name": "AJI CREMA 8g 300 7802337942052",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 210010495",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 577,
+                "name": "KETCHUP 8g 300 7802337942076",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 250010495",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 578,
+                "name": "MOSTAZA 8g 300 7802337942069",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 260010495",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 579,
+                "name": "AJI CREMA 100g 108 7802337920333",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 210010100",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 580,
+                "name": "AJI SALSA 100g 108 7802337920326",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 230010100",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 581,
+                "name": "KETCHUP 100g 108 7802337976064",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 250010100",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 582,
+                "name": "MOSTAZA 100g 108 7802337920340",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 260010100",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 583,
+                "name": "KETCHUP 240g 24 7802337930240",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 250010240",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 584,
+                "name": "MOSTAZA 240g 24 7802337930226",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 260010240",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 585,
+                "name": "AJI PEBRE 230g 24 7802337930233",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 220010245",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 586,
+                "name": "AJI CREMA 240g 24 7802337930219",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 210010250",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 587,
+                "name": "AJI CREMA 350g 24 7802337910020",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 210010265",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 588,
+                "name": "AJI PEBRE 350g 24 7802337000561",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 220010265",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 589,
+                "name": "KETCHUP 350g 24 7802337000493",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 250010265",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 590,
+                "name": "MOSTAZA 350g 24 7802337910013",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 260010265",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 591,
+                "name": "BBQ 240g 24 7802337976347",
+                "brand_id": 4,
+                "image_url": "assets/productos/default.jpg",
+                "description": "Código: 251010250",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 592,
+                "name": "TURBO PLUS 2L",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 593,
+                "name": "TURBO ICED TEA 1L",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 594,
+                "name": "TURBO ICED TEA DOYPACK 10L",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 595,
+                "name": "TURBO ICED TEA TARRO 6L",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 596,
+                "name": "TURBO ZERO 2L",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 597,
+                "name": "TURBO BENNY ZERO 20g",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 598,
+                "name": "TURBO BENNY 200g",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 599,
+                "name": "TURBO FLAN",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 600,
+                "name": "TURBO GELATINA",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 601,
+                "name": "TURBO GELATINA SIN SABOR",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 602,
+                "name": "TURBO FLAN ZERO",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 603,
+                "name": "TURBO GELATINA ZERO",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 604,
+                "name": "TURBO ENERGY 473ml",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 605,
+                "name": "TURBO ICED TEA LATA 473ml",
+                "brand_id": 5,
+                "image_url": "assets/productos/default.jpg",
+                "description": "",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
             }
         ],
         "leads": [

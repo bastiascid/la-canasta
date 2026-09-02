@@ -12,6 +12,7 @@ WEB_DIR = "public_html"
 
 # Files to upload relative to workspace root
 FILES_TO_UPLOAD = [
+    ".env.example",
     "index.html",
     "styles.css",
     "script.js",
@@ -61,7 +62,13 @@ API_TO_UPLOAD = [
     "api/sub_brands.php",
     "api/claims.php",
     "api/carousel.php",
-    "api/upload.php"
+    "api/upload.php",
+    "api/whatsapp_setup.php",
+    "api/whatsapp_admin.php",
+    "api/whatsapp/BotStateMachine.php",
+    "api/whatsapp/CustomerService.php",
+    "api/whatsapp/WhatsAppService.php",
+    "api/whatsapp/webhook.php"
 ]
 
 def main():

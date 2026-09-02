@@ -1241,7 +1241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create style for crossfade animation
     const style = document.createElement('style');
     style.innerHTML = `
-        .carousel-slide {
+        .hero-bg-slide {
             position: absolute;
             top: 0;
             left: 0;
@@ -1253,7 +1253,7 @@ document.addEventListener('DOMContentLoaded', () => {
             transition: opacity 1.5s ease-in-out;
             z-index: 0;
         }
-        .carousel-slide.active {
+        .hero-bg-slide.active {
             opacity: 1;
         }
     `;
@@ -1269,7 +1269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const slides = [];
             images.forEach((imgObj, index) => {
                 const div = document.createElement('div');
-                div.className = 'carousel-slide' + (index === 0 ? ' active' : '');
+                div.className = 'hero-bg-slide' + (index === 0 ? ' active' : '');
                 div.style.backgroundImage = `url('${imgObj.imagen || imgObj.image_url}')`;
                 bgContainer.appendChild(div);
                 slides.push(div);

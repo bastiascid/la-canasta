@@ -76,7 +76,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css?v=18">
+    <link rel="stylesheet" href="styles.css?v=202608241409">
     
     
     <!-- Google Analytics 4 -->
@@ -164,35 +164,90 @@
         <!-- Dynamic Carousel Background Container -->
         <div id="hero-carousel-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
             <!-- Slides will be injected here via JS -->
-            <div class="carousel-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(253, 246, 237, 0.95) 0%, rgba(253, 246, 237, 0.8) 100%); z-index: 1;"></div>
+            <div class="carousel-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(253, 246, 237, 0.85) 0%, rgba(253, 246, 237, 0.5) 100%); z-index: 1;"></div>
         </div>
         
-        <div class="container hero-content" style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding-top: 4rem; padding-bottom: 4rem;">
-            <div class="hero-text hero-text-panel" style="
-                background: rgba(255, 255, 255, 0.75);
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-                padding: 3rem;
-                border-radius: 16px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-                max-width: 800px;
-                width: 95%;
-                text-align: center;
-                margin: 0 auto;
-            ">
-                <div style="margin-bottom: 1.25rem;">
-                    <img src="assets/canasta-logo.webp?v=17" alt="La Canasta Logo" style="height: 220px; width: auto; object-fit: contain; margin: 0 auto;">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div style="margin-top: 1rem; margin-bottom: 1.25rem;">
+                    <img src="assets/canasta-logo.webp?v=17" alt="La Canasta Logo" style="height: 220px; width: auto; object-fit: contain; filter: drop-shadow(1px 1px 0px rgba(255,255,255,0.9)) drop-shadow(-1px -1px 0px rgba(255,255,255,0.9)) drop-shadow(1px -1px 0px rgba(255,255,255,0.9)) drop-shadow(-1px 1px 0px rgba(255,255,255,0.9)) drop-shadow(0 0 15px rgba(255,255,255,1)) drop-shadow(0 0 30px rgba(255,255,255,1));">
                 </div>
-                <h1 class="hero-title-adjust" style="font-size: 2.2rem; line-height: 1.2; margin-top: 0.5rem; margin-bottom: 1.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-secondary);">
+                <h1 class="hero-title-adjust" style="font-size: 2.2rem; line-height: 1.2; margin-top: 0.5rem; margin-bottom: 1.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-secondary); text-shadow: 1px 1px 0px rgba(255,255,255,0.9), -1px -1px 0px rgba(255,255,255,0.9), 1px -1px 0px rgba(255,255,255,0.9), -1px 1px 0px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,1);">
                     COMERCIALIZADORA Y<br>DISTRIBUIDORA
                 </h1>
-                <h2 style="font-size: 1.5rem; color: var(--color-primary); font-weight: 500; margin-top: 0.5rem; margin-bottom: 1rem; font-family: var(--font-heading);">Operador Comercial y Logístico para el Canal Tradicional</h2>
-                <p style="margin-top: 1rem; margin-bottom: 2.5rem; font-size: 1.15rem; color: #333; font-weight: 500;">Impulsamos marcas y conectamos productos con almacenes, minimarkets y comercios de barrio.</p>
-                
-                <div class="hero-buttons" style="display: flex; justify-content: center; width: 100%;">
-                    <a href="hazte-cliente.php" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.15rem 2rem; border-radius: 50px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.3); text-align: center; display: inline-block; transition: all 0.3s ease;">
-                        HAZ TU PEDIDO, CONVIÉRTETE EN CLIENTE
-                    </a>
+                <h2 style="font-size: 1.5rem; color: var(--color-primary); font-weight: 700; margin-top: 0.5rem; margin-bottom: 1rem; font-family: var(--font-heading); text-shadow: 1px 1px 0px rgba(255,255,255,0.9), -1px -1px 0px rgba(255,255,255,0.9), 1px -1px 0px rgba(255,255,255,0.9), -1px 1px 0px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,1);">Operador Comercial y Logístico para el Canal Tradicional</h2>
+                <p style="margin-top: 1rem; margin-bottom: 1.5rem; font-weight: 600; color: #111; text-shadow: 1px 1px 0px rgba(255,255,255,0.8), -1px -1px 0px rgba(255,255,255,0.8), 1px -1px 0px rgba(255,255,255,0.8), -1px 1px 0px rgba(255,255,255,0.8), 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,1);">Impulsamos marcas y conectamos productos con almacenes, minimarkets y comercios de barrio.</p>
+                <div class="hero-buttons" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <a href="#" class="btn btn-secondary whatsapp-btn whatsapp-only-node" onclick="openWhatsApp('Hola, quisiera ser cliente de La Canasta Distribuidora.'); return false;" style="background: #25d366; border-color: #25d366; color: white;">Hablar con un Ejecutivo</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="hero-split-form">
+                    <div class="form-slogan">¡Haz tu Pedido!</div>
+                    <h3 class="form-title">¡Conviértete en <span style="white-space: nowrap;"><span class="highlight">Cliente!</span></span></h3>
+                    <form id="heroContactForm" class="contact-form" style="gap: 0.75rem;">
+                        <input type="hidden" id="hero-subject" value="Solicita información">
+                        <div class="form-grid" style="gap: 0.5rem;">
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-name" style="font-size: 0.75rem; font-weight: 700;">Nombre</label>
+                                <input type="text" id="hero-name" required placeholder="Tu nombre" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-rut" style="font-size: 0.75rem; font-weight: 700;">RUT</label>
+                                <input type="text" id="hero-rut" required placeholder="12.345.678-9" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                        </div>
+                        <div class="form-grid" style="gap: 0.5rem;">
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-email" style="font-size: 0.75rem; font-weight: 700;">Correo</label>
+                                <input type="email" id="hero-email" required placeholder="Tu correo" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-phone" style="font-size: 0.75rem; font-weight: 700;">Teléfono</label>
+                                <input type="tel" id="hero-phone" required placeholder="+56 9..." style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                        </div>
+                        <div class="form-grid" style="gap: 0.5rem;">
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-company" style="font-size: 0.75rem; font-weight: 700;">Empresa</label>
+                                <input type="text" id="hero-company" required placeholder="Nombre local" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-role" style="font-size: 0.75rem; font-weight: 700;">Cargo</label>
+                                <input type="text" id="hero-role" required placeholder="Ej: Dueño" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                            </div>
+                        </div>
+                        <div class="form-grid" style="gap: 0.5rem;">
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-region" style="font-size: 0.75rem; font-weight: 700;">Región</label>
+                                <select id="hero-region" required style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+                                    <option value="" disabled selected>Selecciona tu región</option>
+                                    <option value="Región de O'Higgins">Región de O'Higgins</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="gap: 0.15rem;">
+                                <label for="hero-comuna" style="font-size: 0.75rem; font-weight: 700;">Comuna</label>
+                                <select id="hero-comuna" required style="padding: 0.45rem 0.65rem; font-size: 0.85rem; background: white;"><option value="" disabled selected>Cargando...</option></select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="gap: 0.15rem;">
+                            <label for="hero-comments" style="font-size: 0.75rem; font-weight: 700;">Comentarios</label>
+                            <textarea id="hero-comments" rows="2" placeholder="Ej: Me interesa comprar y cotizar..." style="padding: 0.45rem 0.65rem; font-size: 0.85rem; resize: none;"></textarea>
+                        </div>
+                        <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); background-color: rgba(184, 59, 29, 0.08); border: 1px solid rgba(184, 59, 29, 0.15); padding: 0.5rem; border-radius: 4px; text-align: center; margin-top: 0.25rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.35rem; line-height: 1.2;">
+                            <span style="font-size: 1rem;">📦</span>
+                            <span>El Ticket mínimo de Compra desde $25.000</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.6rem; font-size: 0.9rem; margin-top: 0.25rem;">
+                            Solicitar Información
+                        </button>
+                    </form>
+                    <div id="heroFormSuccess" class="form-success-alert" style="display: none; padding: 2rem 1.5rem; gap: 0.5rem;">
+                        <div class="success-icon" style="width: 48px; height: 48px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 24px; height: 24px;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <h4 style="color: var(--color-primary); font-size: 1.25rem; font-family: var(--font-heading); font-weight: 800; margin: 5px 0;">¡Registro Exitoso!</h4>
+                        <p style="font-size: 0.85rem; color: var(--color-text-muted);">Tus datos han sido guardados. Un ejecutivo te contactará pronto.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -216,43 +271,43 @@
                 <div class="carousel-container" id="advantagesCarouselContainer">
                     <div id="advantagesCarouselTrack" class="carousel-track">
                         <div class="carousel-slide">
-                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; margin: 0; gap: 0.75rem;">
                                 <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Cobertura territorial</h3>
                                 <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Amplia presencia y red de despachos en las comunas clave de la Región de O'Higgins.</p>
                             </div>
                         </div>
                         <div class="carousel-slide">
-                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; margin: 0; gap: 0.75rem;">
                                 <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Logística eficiente</h3>
                                 <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Formatos mayoristas y entregas semanales programadas en la puerta de tu negocio.</p>
                             </div>
                         </div>
                         <div class="carousel-slide">
-                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; margin: 0; gap: 0.75rem;">
                                 <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Contacto permanente</h3>
                                 <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Establecemos un <strong>contacto permanente</strong> y personalizado, garantizando asesoría constante para potenciar los negocios de nuestros clientes.</p>
                             </div>
                         </div>
                         <div class="carousel-slide">
-                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; margin: 0; gap: 0.75rem;">
                                 <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Desarrollo de marcas</h3>
                                 <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Posicionamos activamente a las marcas líderes en el comercio minorista detallista.</p>
                             </div>
                         </div>
                         <div class="carousel-slide">
-                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; margin: 0; gap: 0.75rem;">
                                 <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Experiencia probada</h3>
                                 <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Años de conocimiento operativo en las dinámicas y necesidades del canal tradicional.</p>
                             </div>
                         </div>
                         <div class="carousel-slide">
-                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; margin: 0; gap: 0.75rem;">
                                 <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Venta en terreno</h3>
                                 <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Contamos con una activa <strong>fuerza de ventas en terreno</strong> dedicada al desarrollo de los negocios, impulsando tu crecimiento diario.</p>
                             </div>
                         </div>
                         <div class="carousel-slide">
-                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; height: 100%; width: 100%; margin: 0; gap: 0.75rem;">
+                            <div class="brand-showcase-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; margin: 0; gap: 0.75rem;">
                                 <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 700; margin: 0;">Rapidez de respuesta</h3>
                                 <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); margin: 0;">Despachos rápidos y soporte comercial ágil ante cualquier eventualidad.</p>
                             </div>
@@ -316,7 +371,7 @@
 
             <div class="logistica-grid" style="align-items: start; gap: 3rem;">
                 <!-- Left Column: Commune list/badges -->
-                <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 2rem;">
+                <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;">
                     <div>
                         <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-top: 0; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
                             <span>📍</span> Comunas Abastecidas
@@ -855,7 +910,7 @@
             }
         });
     </script>
-    <script src="script.js?v=20" defer></script>
+    <script src="script.js?v=202608241409" defer></script>
     
     <!-- Floating B2B Cart Button -->
     <div id="cartFloatingBtn" class="cart-floating-btn" style="display: none;">

@@ -1766,3 +1766,118 @@ function saveCarouselOpacity() {
         alert('Error de conexión');
     });
 }
+
+// WHATSAPP ADMIN LOGIC
+let activeWaChatId = null;
+
+async function loadWhatsAppConversations() {
+    try {
+        const response = await fetch('api/whatsapp_admin.php?action=list');
+        const res = await response.json();
+        const listDiv = document.getElementById('whatsappConversationsList');
+        
+        if (res.status === 'success') {
+            listDiv.innerHTML = res.data.length === 0 ? '<p>No hay conversaciones.</p>' : '';
+            res.data.forEach(chat => {
+                const badgeColor = chat.status === 'BOT_ACTIVE' ? '#3b82f6' : (chat.status === 'PENDIENTE_EJECUTIVO' ? '#ef4444' : '#10b981');
+                const div = document.createElement('div');
+                div.style.cssText = 'padding: 1rem; border-bottom: 1px solid #e5e7eb; cursor: pointer; transition: background-color 0.2s;';
+                div.onclick = () => openWaChat(chat.id, chat.name || 'Sin Nombre', chat.phone_number, chat.status);
+                div.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <strong style="color: var(--color-primary);">${chat.name || chat.phone_number}</strong>
+                        <span style="font-size: 0.8rem; background: ${badgeColor}; color: white; padding: 2px 6px; border-radius: 4px;">${chat.status}</span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                        ${chat.company ? 'Empresa: ' + chat.company : ''}
+                    </div>
+                `;
+                listDiv.appendChild(div);
+            });
+        }
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+async function openWaChat(id, name, phone, status) {
+    activeWaChatId = id;
+    document.getElementById('whatsappChatView').style.display = 'flex';
+    document.getElementById('waChatName').textContent = name;
+    document.getElementById('waChatPhone').textContent = phone;
+    
+    const badge = document.getElementById('waChatStatusBadge');
+    badge.textContent = status;
+    badge.style.backgroundColor = status === 'BOT_ACTIVE' ? '#3b82f6' : (status === 'PENDIENTE_EJECUTIVO' ? '#ef4444' : '#10b981');
+    badge.style.color = 'white';
+
+    const takeBtn = document.getElementById('waTakeChatBtn');
+    if (status === 'PENDIENTE_EJECUTIVO' || status === 'BOT_ACTIVE') {
+        takeBtn.style.display = 'block';
+        takeBtn.onclick = () => takeWaChat(id);
+    } else {
+        takeBtn.style.display = 'none';
+    }
+
+    // Load messages
+    try {
+        const response = await fetch(`api/whatsapp_admin.php?action=messages&id=${id}`);
+        const res = await response.json();
+        const msgDiv = document.getElementById('waChatMessages');
+        msgDiv.innerHTML = '';
+        
+        if (res.status === 'success') {
+            res.data.forEach(msg => {
+                const isClient = msg.direction === 'CLIENT';
+                const wrapper = document.createElement('div');
+                wrapper.style.display = 'flex';
+                wrapper.style.justifyContent = isClient ? 'flex-start' : 'flex-end';
+                
+                const bubble = document.createElement('div');
+                bubble.style.cssText = `
+                    max-width: 70%;
+                    padding: 8px 12px;
+                    border-radius: 8px;
+                    background-color: ${isClient ? 'white' : '#dcf8c6'};
+                    border: 1px solid ${isClient ? '#e5e7eb' : '#b2d8a3'};
+                `;
+                bubble.innerHTML = `<strong style="font-size: 0.7rem; color: #6b7280; display: block; margin-bottom: 2px;">${msg.direction}</strong>
+                                    <span style="font-size: 0.9rem;">${msg.content}</span>
+                                    <div style="font-size: 0.65rem; color: #9ca3af; text-align: right; margin-top: 4px;">${msg.created_at}</div>`;
+                
+                wrapper.appendChild(bubble);
+                msgDiv.appendChild(wrapper);
+            });
+            msgDiv.scrollTop = msgDiv.scrollHeight;
+        }
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+async function takeWaChat(id) {
+    if (!confirm('¿Estás seguro de tomar esta conversación? El bot dejará de responder.')) return;
+    try {
+        const formData = new FormData();
+        formData.append('id', id);
+        const response = await fetch('api/whatsapp_admin.php?action=take', { method: 'POST', body: formData });
+        const res = await response.json();
+        if (res.status === 'success') {
+            loadWhatsAppConversations();
+            document.getElementById('waTakeChatBtn').style.display = 'none';
+            document.getElementById('waChatStatusBadge').textContent = 'EXECUTIVE_ACTIVE';
+            document.getElementById('waChatStatusBadge').style.backgroundColor = '#10b981';
+        }
+    } catch (e) {}
+}
+
+// Interceptar clicks a las tabs para cargar WhatsApp
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            if (e.target.dataset.tab === 'tab-whatsapp') {
+                loadWhatsAppConversations();
+            }
+        });
+    });
+});

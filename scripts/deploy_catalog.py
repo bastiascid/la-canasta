@@ -32,6 +32,8 @@ for fname in os.listdir(productos_dir):
 # 2. PDF catalog files
 catalogos_dir = os.path.join(LOCAL_BASE, "assets/catalogos")
 for fname in os.listdir(catalogos_dir):
+    if os.path.isdir(os.path.join(catalogos_dir, fname)):
+        continue
     local = os.path.join(catalogos_dir, fname)
     remote = f"assets/catalogos/{fname}"
     files_to_upload.append((local, remote))

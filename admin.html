@@ -66,6 +66,7 @@
                 <button class="admin-tab-btn" data-tab="tab-partners">Confían en Nosotros</button>
                 <button class="admin-tab-btn" data-tab="tab-leads">Leads / Contactos</button>
                 <button class="admin-tab-btn" data-tab="tab-claims">Reclamos</button>
+                <button class="admin-tab-btn" data-tab="tab-whatsapp" style="background-color: #25D366; color: white;">Chat WhatsApp</button>
                 <button class="admin-tab-btn" data-tab="tab-settings">Configuraciones</button>
                 <button class="admin-tab-btn" data-tab="tab-bulk" style="background: #ef4444; color: white;">Gestión Masiva</button>
             </div>
@@ -861,6 +862,34 @@
             </div>
 
             <!-- TAB: GESTIÓN MASIVA (RENOMBRAR CATÁLOGOS) -->
+<!-- TAB: WHATSAPP -->
+<div id="tab-whatsapp" class="admin-tab-content">
+    <div class="admin-grid" style="grid-template-columns: 1fr 2fr;">
+        <!-- Lista de Conversaciones -->
+        <div class="admin-card" style="max-height: 800px; overflow-y: auto;">
+            <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Conversaciones</h3>
+            <div id="whatsappConversationsList">
+                <p class="text-center" style="color: var(--color-text-muted);">Cargando conversaciones...</p>
+            </div>
+        </div>
+
+        <!-- Chat Activo -->
+        <div class="admin-card" id="whatsappChatView" style="display: none; display: flex; flex-direction: column; max-height: 800px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem;">
+                <div>
+                    <h3 id="waChatName" style="color: var(--color-primary); margin: 0;">Nombre</h3>
+                    <p id="waChatPhone" style="margin: 0; font-size: 0.9rem; color: var(--color-text-muted);">+569...</p>
+                    <span id="waChatStatusBadge" style="display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin-top: 5px;">ESTADO</span>
+                </div>
+                <button id="waTakeChatBtn" class="btn btn-primary" style="background-color: #25D366; display: none;">Tomar Conversación</button>
+            </div>
+            
+            <div id="waChatMessages" style="flex: 1; overflow-y: auto; padding: 1rem; background-color: #f3f4f6; border-radius: 8px; display: flex; flex-direction: column; gap: 10px;">
+                <!-- Mensajes aquí -->
+            </div>
+        </div>
+    </div>
+</div>
             <div id="tab-bulk" class="admin-tab-content">
                 <div class="admin-card">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">

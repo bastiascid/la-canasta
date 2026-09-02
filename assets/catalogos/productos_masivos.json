@@ -4810,5 +4810,752 @@
         "price": 0,
         "category": "Watts",
         "stock": 100
+    },
+    {
+        "id": "1001",
+        "name": "8ml 300 SACHET 7802337942021 SUCEDANEO DE LIMON",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 121010495",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1002",
+        "name": "250ml 24 7802337801014 SUCEDANEO DE LIMON",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 121010255",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1003",
+        "name": "250ml 48 7802337801014 SUCEDANEO DE LIMON",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 121010300",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1004",
+        "name": "500ml 12 7802337801038 SUCEDANEO DE LIMON",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 121010175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1005",
+        "name": "500ml 30 7802337801038 SUCEDANEO DE LIMON",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 121010290",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1006",
+        "name": "1000ml 12 7802337801052 SUCEDANEO DE LIMON",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 121010115",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1007",
+        "name": "1000 ml 20 7802337801052 SUCEDANEO DE LIMON",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 121010210",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1008",
+        "name": "5000ml 4 7802356296174 SUCEDANEO DE LIMON",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 121010320",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1009",
+        "name": "500ml 12 7802356296198 SUCEDANEO DE LIMON DE PICA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 122010175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1010",
+        "name": "500ml 30 7802356296198 SUCEDANEO DE LIMON DE PICA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 122010290",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1011",
+        "name": "1000ml 20 7802337801076 SUCEDANEO DE LIMON DE PICA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 122010210",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1012",
+        "name": "250ml 12 7802337978006 LIMON 100%",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 124010150",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1013",
+        "name": "250ml 12 7802337978013 LIMON 100%",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 124010151",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1014",
+        "name": "320ml 12 7802337977764 LIMON 60%",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 123010160",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1015",
+        "name": "320ml 24 7802337977764 LIMON 60%",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 123010260",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1016",
+        "name": "250ml 24 7802337101022 VINAGRE DE VINO ROSADO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 112010255",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1017",
+        "name": "250ml 48 7802337101022 VINAGRE DE VINO ROSADO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 112010300",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1018",
+        "name": "500ml 12 7802337101046 VINAGRE DE VINO ROSADO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 112010175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1019",
+        "name": "500ml 30 7802337101046 VINAGRE DE VINO ROSADO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 112010290",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1020",
+        "name": "1000ml 12 7802337101060 VINAGRE DE VINO ROSADO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 112010115",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1021",
+        "name": "1000ml 20 7802337101060 VINAGRE DE VINO ROSADO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 112010210",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1022",
+        "name": "5000ml 4 7802356296167 VINAGRE DE VINO ROSADO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 112010320",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1023",
+        "name": "8ml 300 SACHET 7802337942038 VINAGRE DE MANZANA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 113010495",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1024",
+        "name": "250ml 24 7802356000009 VINAGRE DE MANZANA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 113010255",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1025",
+        "name": "500ml 12 7802337102302 VINAGRE DE MANZANA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 113010175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1026",
+        "name": "500ml 30 7802337102302 VINAGRE DE MANZANA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 113010290",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1027",
+        "name": "1000ml 12 7802337105617 VINAGRE DE MANZANA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 113010115",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1028",
+        "name": "1000ml 20 7802337105617 VINAGRE DE MANZANA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 113010210",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1029",
+        "name": "5000ml 4 7802337105624 VINAGRE DE MANZANA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 113010320",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1030",
+        "name": "250ml 24 7802337101015 VINAGRE DE VINO BLANCO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 111010255",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1031",
+        "name": "250ml 48 7802337101015 VINAGRE DE VINO BLANCO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 111010300",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1032",
+        "name": "500ml 12 7802337101039 VINAGRE DE VINO BLANCO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 111010175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1033",
+        "name": "500ml 30 7802337101039 VINAGRE DE VINO BLANCO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 111010290",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1034",
+        "name": "1000ml 12 7802337101053 VINAGRE DE VINO BLANCO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 111010115",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1035",
+        "name": "1000ml 20 7802337101053 VINAGRE DE VINO BLANCO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 111010210",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1036",
+        "name": "5000ml 4 7802356296150 VINAGRE DE VINO BLANCO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 111010320",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1037",
+        "name": "500ml 30 PET 7802337101121 VINAGRE INCOLORO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 114010290",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1038",
+        "name": "1000ml 12 PET 7802337101152 VINAGRE INCOLORO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 114010115",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1039",
+        "name": "500ml 6 VIDRIO 7802337979409 VINAGRE DE MANZANA ORGANICO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 118017340",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1040",
+        "name": "500ml 12 VIDRIO 7802337942205 VINAGRE DE MANZANA SIN FILTRAR",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 113110175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1041",
+        "name": "1000ml 6 VIDRIO 7802337942212 VINAGRE DE MANZANA SIN FILTRAR",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 113110325",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1042",
+        "name": "8ml 300 SACHET 7802337942045 ACETO BALSAMICO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 115010495",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1043",
+        "name": "250ml 12 7802356297287 ACETO BALSAMICO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 115014150",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1044",
+        "name": "500ml 12 7802315560476 ACETO BALSAMICO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 115014175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1045",
+        "name": "500ml 6 7802315560476 ACETO BALSAMICO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 115014340",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1046",
+        "name": "5000ml 4 PET ACETO BALSAMICO",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 115014320",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1047",
+        "name": "ACETO BALSAMICO 500ml 12 7802356296181 VILLA CONTI",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 115015175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1048",
+        "name": "CONDIMENTO BALSAMICO 500ml 12 7802337105525 VILLA CONTI",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 116015175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1049",
+        "name": "LIMONETA 255ml 12 7802337942175 LINEA A LA MESA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 115015175",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1050",
+        "name": "VINAGRETA 255ml 12 7802337942168 LINEA A LA MESA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 125010520",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1051",
+        "name": "CON. BALSÁMICO BLANCO 255ml 12 7802337942137 LINEA A LA MESA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 116110520",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1052",
+        "name": "CON. BALSÁMICO FINAS HIERBAS 255ml 12 7802337942144 LINEA A LA MESA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 116210520",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1053",
+        "name": "ACETO BALSÁMICO MANZANA 255ml 12 7802337942151 LINEA A LA MESA",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 115110520",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1054",
+        "name": "AJI CREMA 8g 300 7802337942052",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 210010495",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1055",
+        "name": "KETCHUP 8g 300 7802337942076",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 250010495",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1056",
+        "name": "MOSTAZA 8g 300 7802337942069",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 260010495",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1057",
+        "name": "AJI CREMA 100g 108 7802337920333",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 210010100",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1058",
+        "name": "AJI SALSA 100g 108 7802337920326",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 230010100",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1059",
+        "name": "KETCHUP 100g 108 7802337976064",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 250010100",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1060",
+        "name": "MOSTAZA 100g 108 7802337920340",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 260010100",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1061",
+        "name": "KETCHUP 240g 24 7802337930240",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 250010240",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1062",
+        "name": "MOSTAZA 240g 24 7802337930226",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 260010240",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1063",
+        "name": "AJI PEBRE 230g 24 7802337930233",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 220010245",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1064",
+        "name": "AJI CREMA 240g 24 7802337930219",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 210010250",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1065",
+        "name": "AJI CREMA 350g 24 7802337910020",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 210010265",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1066",
+        "name": "AJI PEBRE 350g 24 7802337000561",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 220010265",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1067",
+        "name": "KETCHUP 350g 24 7802337000493",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 250010265",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1068",
+        "name": "MOSTAZA 350g 24 7802337910013",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 260010265",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1069",
+        "name": "BBQ 240g 24 7802337976347",
+        "image": "assets/productos/default.jpg",
+        "description": "Código: 251010250",
+        "category": "Traverso",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1070",
+        "name": "TURBO PLUS 2L",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1071",
+        "name": "TURBO ICED TEA 1L",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1072",
+        "name": "TURBO ICED TEA DOYPACK 10L",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1073",
+        "name": "TURBO ICED TEA TARRO 6L",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1074",
+        "name": "TURBO ZERO 2L",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1075",
+        "name": "TURBO BENNY ZERO 20g",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1076",
+        "name": "TURBO BENNY 200g",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1077",
+        "name": "TURBO FLAN",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1078",
+        "name": "TURBO GELATINA",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1079",
+        "name": "TURBO GELATINA SIN SABOR",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1080",
+        "name": "TURBO FLAN ZERO",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1081",
+        "name": "TURBO GELATINA ZERO",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1082",
+        "name": "TURBO ENERGY 473ml",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
+    },
+    {
+        "id": "1083",
+        "name": "TURBO ICED TEA LATA 473ml",
+        "image": "assets/productos/default.jpg",
+        "description": "Abarrotes",
+        "category": "Mercado Nacional",
+        "price": 0,
+        "stock": 100
     }
 ]
