@@ -5187,6 +5187,286 @@
                 "category": "Abarrotes",
                 "featured": 0,
                 "sort_order": 100
+            },
+            {
+                "id": 606,
+                "name": "Porotos Blancos 1Kg Iansa Agro",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/iansa-agro-porotos-blancos-1kg.webp",
+                "description": "Catálogo Iansa",
+                "category": "Legumbres y Arroz",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 607,
+                "name": "Azucar Light Sucralosa 500G Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-light-sucralosa-500g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 608,
+                "name": "Stevia Sucralosa 250Ml Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/stevia-sucralosa-250ml.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 609,
+                "name": "Azucar Flor 500G Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-flor-iansa-500g_1.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 610,
+                "name": "Alulosa Sucralosa 250Ml Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/alulosa-sucralosa-250ml.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 611,
+                "name": "Azucar 1Kg Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-iansa-1kg.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 612,
+                "name": "Azucar 5Kg Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-iansa-5kg.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 613,
+                "name": "Azucar Rubia 500G Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-rubia-iansa-500g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 614,
+                "name": "Alulosa Sucralosa 90Ml Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/alulosa-sucralosa-90ml.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 615,
+                "name": "Tradicional 250Ml Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/tradicional-250ml.webp",
+                "description": "Catálogo Iansa",
+                "category": "Abarrotes",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 616,
+                "name": "Sucralosa 250Ml Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/sucralosa-250ml.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 617,
+                "name": "Azucar 750G Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-iansa-750g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 618,
+                "name": "Azucar Flor 1Kg Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-flor-iansa-1kg.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 619,
+                "name": "Garbanzos Listos 390G Iansa Agro",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/iansa-agro-garbanzos-listos-390g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Legumbres y Arroz",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 620,
+                "name": "Porotos Negros Listos 390G Iansa Agro",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/iansa-agro-porotos-negros-listos-390g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Legumbres y Arroz",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 621,
+                "name": "Azucar 400G Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-iansa-400g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 622,
+                "name": "Stevia Sucralosa 90Ml Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/stevia-sucralosa-90ml.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 623,
+                "name": "Arroz Grado2 1Kg Iansa Agro",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/iansa-agro-arroz-grado2-1kg.webp",
+                "description": "Catálogo Iansa",
+                "category": "Legumbres y Arroz",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 624,
+                "name": "Sucralosa 180Ml Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/sucralosa-180ml.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 625,
+                "name": "Chancaca 225G Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/chancaca-iansa-225g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 626,
+                "name": "Garbanzos 1Kg Iansa Agro",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/iansa-agro-garbanzos-1kg.webp",
+                "description": "Catálogo Iansa",
+                "category": "Legumbres y Arroz",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 627,
+                "name": "Lentejas Listas 390G Iansa Agro",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/iansa-agro-lentejas-listas-390g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Legumbres y Arroz",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 628,
+                "name": "Azucar Rubia 1Kg Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-rubia-iansa-1kg.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 629,
+                "name": "Stevia Sucralosa 180Ml Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/stevia-sucralosa-180ml.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 630,
+                "name": "Porotos Blancos Listos 390G Iansa Agro",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/iansa-agro-porotos-blancos-listos-390g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Legumbres y Arroz",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 631,
+                "name": "Arroz Grado1 1Kg Iansa Agro",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/iansa-agro-arroz-grado1-1kg.webp",
+                "description": "Catálogo Iansa",
+                "category": "Legumbres y Arroz",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 632,
+                "name": "Azucar Light Stevia 500G Iansa",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/azucar-light-stevia-500g.webp",
+                "description": "Catálogo Iansa",
+                "category": "Endulzantes y Azúcar",
+                "featured": 0,
+                "sort_order": 100
+            },
+            {
+                "id": 633,
+                "name": "Lentejas 6Mm 1Kg Iansa Agro",
+                "brand_id": 2,
+                "image_url": "assets/catalogos/images/iansa-agro-lentejas-6mm-1kg.webp",
+                "description": "Catálogo Iansa",
+                "category": "Legumbres y Arroz",
+                "featured": 0,
+                "sort_order": 100
             }
         ],
         "leads": [
